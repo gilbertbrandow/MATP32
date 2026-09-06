@@ -63,7 +63,8 @@ To obtain Pass with distinction, the student must obtain at least 75% of the tot
 
 ## Important dates
 
-No course-specific dates have yet been published.
+- 10 September 2026 - Seminar 1: discussion of [Exercises 1](exercises/Seminar1-26.pdf)
+- No further course-specific dates have yet been published.
 
 ## Entry requirements
 
