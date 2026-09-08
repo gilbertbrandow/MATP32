@@ -64,7 +64,9 @@ To obtain Pass with distinction, the student must obtain at least 75% of the tot
 ## Important dates
 
 - 10 September 2026 - Seminar 1: discussion of [Exercises 1](exercises/Seminar1-26.pdf)
-- No further course-specific dates have yet been published.
+- 16, 20, and 23 October 2026 - project-preparation lectures
+- Dates to be announced - project presentations (Lectures 17-18)
+- No homework or project-submission deadlines have yet been published.
 
 ## Entry requirements
 
@@ -85,12 +87,14 @@ The following courses are recommended but not required:
 
 - Loukas Grafakos, Classical Fourier Analysis, 3rd ed., Graduate Texts in Mathematics 249, Springer, 2014
 - Loukas Grafakos, Modern Fourier Analysis, 3rd ed., Graduate Texts in Mathematics 250, Springer, 2014
+- Maria Cristina Pereyra and Lesley A. Ward, Harmonic Analysis: From Fourier to Wavelets, Student Mathematical Library 63, AMS and IAS, 2012
+- Javier Duoandikoetxea, Fourier Analysis, Graduate Studies in Mathematics 29, AMS, 2001 (additional reading)
 - Javier Duoandikoetxea, Forty Years of Muckenhoupt Weights, Function Spaces and Inequalities, Lecture Notes Paseky nad Jizerou 2013, pp. 23-75 (supplementary)
 - Maria Cristina Pereyra, Dyadic Harmonic Analysis and Weighted Inequalities: The Sparse Revolution, New Trends in Applied Harmonic Analysis, Volume 2, 2019, pp. 159-239 (supplementary)
-- Maria Cristina Pereyra and Lesley A. Ward, Harmonic Analysis: From Fourier to Wavelets, Student Mathematical Library 63, AMS and IAS, 2012 (supplementary)
 
 ## Official course information
 
+- [Tentative course schedule](misc/CoursePlan26.pdf)
 - [Official syllabus in English](http://kursplaner.lu.se/english/MATP32.pdf)
 - [Official syllabus in Swedish](http://kursplaner.lu.se/svenska/MATP32.pdf)
 - [Repository copy of the syllabus](misc/syllabus.pdf)
@@ -98,7 +102,7 @@ The following courses are recommended but not required:
 
 ## Repository contents
 
-- [PLAN.md](PLAN.md) - official weekly course plan and review list
+- [PLAN.md](PLAN.md) - tentative weekly course plan and review list
 - [lectures/](lectures) - lecture material
 - [exercises/](exercises) - exercise sheets and available solutions
 - [exams/](exams) - examination material
