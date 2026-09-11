@@ -64,6 +64,7 @@ To obtain Pass with distinction, the student must obtain at least 75% of the tot
 ## Important dates
 
 - 10 September 2026 - Seminar 1: discussion of [Exercises 1](exercises/Seminar1-26.pdf)
+- 17 September 2026 - Seminar 2: discussion of [Exercises 2](exercises/Seminar2-26.pdf)
 - 16, 20, and 23 October 2026 - project-preparation lectures
 - Dates to be announced - project presentations (Lectures 17-18)
 - No homework or project-submission deadlines have yet been published.

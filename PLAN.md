@@ -30,6 +30,7 @@ The schedule is tentative. The literature sections below are listed as relevant 
 ## Week 38 (14-20 September)
 
 - [ ] Lecture 5: Calderón-Zygmund decomposition and operators, continued (relevant material: Grafakos, *Classical Fourier Analysis*, Sections 5.3.1 and 5.3.3) (Tuesday, 15 September)
+- [ ] Prepare [Exercises 2](exercises/Seminar2-26.pdf) for discussion at Seminar 2 (Thursday, 17 September)
 - [ ] Lecture 6: Calderón-Zygmund decomposition and operators, continued (relevant material: Grafakos, *Classical Fourier Analysis*, Sections 5.3.1 and 5.3.3) (Friday, 18 September)
 
 ## Week 39 (21-27 September)
