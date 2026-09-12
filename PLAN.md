@@ -10,13 +10,13 @@ The schedule is tentative. The literature sections below are listed as relevant 
 
 ## Week 36 (31 August-6 September)
 
-- [ ] Lecture 1: Course introduction; maximal operators and their basic properties ([handwritten notes](lectures/Notes%20for%20Lect.%201.pdf); relevant material: Grafakos, *Classical Fourier Analysis*, Section 2.1.1) (Tuesday, 1 September)
+- [x] Lecture 1: Course introduction; maximal operators and their basic properties ([handwritten notes](lectures/Notes%20for%20Lect.%201.pdf); relevant material: Grafakos, *Classical Fourier Analysis*, Section 2.1.1) (Tuesday, 1 September)
 - [ ] Lecture 2: Marcinkiewicz interpolation; \(L^p\)-boundedness of maximal operators for \(1<p\leq\infty\); applications to differentiation theory ([handwritten notes](lectures/Notes%20for%20Lect.%202.pdf); relevant material: Grafakos, *Classical Fourier Analysis*, Sections 1.3.1, 2.1.2, and 2.1.3) (Friday, 4 September)
 
 ## Week 37 (7-13 September)
 
 - [ ] Lecture 3: Approximate identities; basic facts about Schwartz functions and tempered distributions ([handwritten notes](lectures/Notes%20for%20Lect.%203.pdf); relevant material: Grafakos, *Classical Fourier Analysis*, Sections 2.2 and 2.3) (Tuesday, 8 September)
-- [ ] Prepare [Exercises 1](exercises/Seminar1-26.pdf) for discussion at Seminar 1 (Thursday, 10 September)
+- [x] Prepare [Exercises 1](exercises/Seminar1-26.pdf) for discussion at Seminar 1 (Thursday, 10 September)
 - [ ] Lecture 4: Calderón-Zygmund decomposition for \(L^1\); \(L^p\)-boundedness of Calderón-Zygmund operators for \(1<p<\infty\) (relevant material for Lectures 4-6: Grafakos, *Classical Fourier Analysis*, Sections 5.3.1 and 5.3.3) (Friday, 11 September)
 
 ### Seminar 1 reading guide
