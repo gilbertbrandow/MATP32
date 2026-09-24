@@ -22,6 +22,23 @@
 \maketitle
 
 \section*{Problem 1}
+
+\subsection*{(a)}
+
+Since the half-diagonal of the cube $x+(-r/2,r/2)^d$ equals $r\sqrt{d}/2$, we have
+$x+(-r/2,r/2)^d \subseteq B(x, r\sqrt{d}/2)$.
+Setting $\rho = r\sqrt{d}/2$, so that $r^d = 2^d d^{-d/2}\rho^d$, gives
+\begin{align*}
+  M'_c(f)(x)
+  &= \sup_{r>0}\frac{1}{r^d}\int_{x+(-r/2,r/2)^d}|f(y)|\,dy \\
+  &\leq \sup_{r>0}\frac{1}{r^d}\int_{B(x,\,r\sqrt{d}/2)}|f(y)|\,dy \\
+  &= \sup_{\rho>0}\frac{d^{d/2}}{2^d\rho^d}\int_{B(x,\rho)}|f(y)|\,dy \\
+  &= d^{d/2}\cdot v_d\cdot 2^{-d} \sup_{\rho>0}\frac{1}{v_d\rho^d}\int_{B(x,\rho)}|f(y)|\,dy \\
+  &= d^{d/2}\cdot v_d\cdot 2^{-d}\cdot M_c(f)(x).
+\end{align*}
+
+\subsection*{(b)}
+
 \section*{Problem 2}
 \section*{Problem 3}
 
