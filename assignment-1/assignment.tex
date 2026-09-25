@@ -79,10 +79,36 @@ Since $f$ is real-valued and $\mathbb{Q}$ is dense in $\mathbb{R}$, choose $q \i
     &&\text{($|f(x)-q|$ const.\ in $y$)}\\
   &= |f(x)-q| + |f(x)-q| = 2|f(x)-q| < \varepsilon
 \end{align*}
-Since $\epsilon$ was arbitrary we are done.\qedhere
+Since $\varepsilon > 0$ was arbitrary,
+\begin{equation}\label{eq:ldt-b}
+  \lim_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-f(x)|\,dy = 0 \quad \forall x \in \mathbb{R}^d \setminus A. \qedhere
+\end{equation}
 \end{proof}
 
 \subsection*{(c)}
+
+\begin{proof}
+Let $A$ be the null set from part (b) and let $r_n := \sqrt{d}\cdot 2^{-n}$, so $Q_n(x) \subseteq B(x,r_n)$.
+
+Fix $x \in \mathbb{R}^d \setminus A$ and $\varepsilon > 0$, by \eqref{eq:ldt-b}, $\exists N \in \mathbb{N}$ such that $\forall n \geq N$,
+\[
+  \frac{1}{|B(x,r_n)|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy < \frac{\varepsilon}{v_d d^{d/2}}.
+\]
+Then for all $n \geq N$,
+\begin{align*}
+  \left|\frac{1}{|Q_n|}\int_{Q_n} f(y)\,dy - f(x)\right|
+  &= \left|\frac{1}{|Q_n|}\int_{Q_n}(f(y)-f(x))\,dy\right| \\
+  &\leq \frac{1}{|Q_n|}\int_{Q_n}|f(y)-f(x)|\,dy \\
+  &\leq \frac{1}{|Q_n|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy \\
+  &= \frac{|B(x,r_n)|}{|Q_n|}\cdot\frac{1}{|B(x,r_n)|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy \\
+  &= \frac{v_d r_n^d}{2^{-nd}}\cdot\frac{1}{|B(x,r_n)|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy \\
+  &= \frac{v_d \cdot d^{d/2} \cdot 2^{-nd}}{2^{-nd}}\cdot\frac{1}{|B(x,r_n)|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy \\
+  &= v_d d^{d/2}\cdot\frac{1}{|B(x,r_n)|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy \\
+  &< v_d d^{d/2}\cdot \frac{\varepsilon}{v_d d^{d/2}} = \varepsilon.
+\end{align*}
+Since $\varepsilon > 0$ was arbitrary, $\left|\frac{1}{|Q_n|}\int_{Q_n} f(y)\,dy - f(x)\right| \to 0$ as $n\to\infty$,
+which is equivalent to $\frac{1}{|Q_n(x)|}\int_{Q_n(x)} f(y)\,dy \to f(x)$ for all $x \in \mathbb{R}^d \setminus A$.
+\end{proof}
 
 \section*{Problem 3}
 
