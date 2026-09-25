@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  24 SEP 2026 23:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  25 SEP 2026 09:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -394,12 +394,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (10.98843pt too wide) in paragraph at lines 28--31
-\OT1/cmr/m/n/12 Since the half-diagonal of the cube $\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 r=\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; r=\OT1/cmr/m/n/12 2)[]$ equals $\OML/cmm/m/it/12 r[]=\OT1/cmr/m/n/12 2$, we have $\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 r=\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; r=\OT1/cmr/m/n/12 2)[] \OMS/cmsy/m/n/12 ^^R
- []
-
-[1
+) [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (build/assignment.aux)
  ***********
@@ -410,15 +405,15 @@ Package rerunfilecheck Info: File `assignment.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11381 strings out of 474116
- 174761 string characters out of 5743683
- 1936187 words of memory out of 5000000
- 33607 multiletter control sequences out of 15000+600000
- 566525 words of font info for 69 fonts, out of 8000000 for 9000
+ 11386 strings out of 474116
+ 174807 string characters out of 5743683
+ 1946187 words of memory out of 5000000
+ 33610 multiletter control sequences out of 15000+600000
+ 567170 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,625b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,625b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on build/assignment.pdf (1 page, 100713 bytes).
+Output written on build/assignment.pdf (1 page, 99697 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream

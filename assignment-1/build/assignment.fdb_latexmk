@@ -1,12 +1,14 @@
 # Fdb version 4
-["pdflatex"] 1790283696.92637 "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATP32/assignment-1/assignment.tex" "build/assignment.pdf" "assignment" 1790283697.5116 0
-  "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATP32/assignment-1/assignment.tex" 1790283696.7272 1200 cf45d29299ec7844989cae48a22f0c59 ""
+["pdflatex"] 1790320030.34409 "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATP32/assignment-1/assignment.tex" "build/assignment.pdf" "assignment" 1790320030.95944 0
+  "/Users/simongustafsson/Desktop/Bachelors in Mathematics/MATP32/assignment-1/assignment.tex" 1790320030.10983 1519 a8a83b70124e0b775434ab15029872b3 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
@@ -91,9 +93,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1725786739.30054 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1725786567 8221431 0e3ed4c0ce3a607b82f78dc061b52468 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "assignment.tex" 1790283696.7272 1200 cf45d29299ec7844989cae48a22f0c59 ""
-  "build/assignment.aux" 1790283697.45949 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
-  "build/assignment.out" 1790283697.30698 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "assignment.tex" 1790320030.10983 1519 a8a83b70124e0b775434ab15029872b3 ""
+  "build/assignment.aux" 1790320030.90326 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
+  "build/assignment.out" 1790320030.72488 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "build/assignment.aux"
   "build/assignment.log"
