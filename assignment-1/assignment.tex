@@ -70,14 +70,20 @@ Let $A_q$ be the set where it fails, then $|A_q| = 0$ and the limit holds for al
 \begin{proof}
 Let $A := \bigcup_{q\in\mathbb{Q}} A_q$, where each $A_q$ is as in previous part.
 Since $\mathbb{Q}$ is countable, $|A| = 0$, and for every $x \in \mathbb{R}^d \setminus A$,
-\eqref{eq:ldt-q} holds simultaneously for all $q \in \mathbb{Q}$. Fix $x \in \mathbb{R}^d \setminus A$ and $\varepsilon > 0$.
-Since $f$ is real-valued and $\mathbb{Q}$ is dense in $\mathbb{R}$, choose $q \in \mathbb{Q}$ such that $|f(x)-q| < \varepsilon/2$.
+\eqref{eq:ldt-q} holds simultaneously for all $q \in \mathbb{Q}$.
+
+Fix $x \in \mathbb{R}^d \setminus A$ and $\varepsilon > 0$. Since $\mathbb{Q}$ is dense in $\mathbb{R}$, choose
+$q \in \mathbb{Q}$ such that $|f(x)-q| < \varepsilon/3$. Because of \eqref{eq:ldt-q}, there exists $r_0 > 0$
+such that for all $0 < r < r_0$,
+\[
+  \frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-q|\,dy < \frac{2\varepsilon}{3}.
+\]
+Then for all $0 < r < r_0$,
 \begin{align*}
-  &\limsup_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}\!|f(y)-f(x)|\,dy \\
-  &\leq \limsup_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}\!\bigl(|f(y)-q|+|f(x)-q|\bigr)\,dy\\
-  &= \limsup_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}\!|f(y)-q|\,dy + |f(x)-q|
-    &&\text{($|f(x)-q|$ const.\ in $y$)}\\
-  &= |f(x)-q| + |f(x)-q| = 2|f(x)-q| < \varepsilon
+  \frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-f(x)|\,dy
+  &\leq \frac{1}{|B(x,r)|}\int_{B(x,r)}(|f(y)-q| + |f(x)-q|)dy \\
+  &= \frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-q|\,dy + |f(x)-q| \\
+  &< \frac{2\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
 \end{align*}
 Since $\varepsilon > 0$ was arbitrary,
 \begin{equation}\label{eq:ldt-b}
@@ -88,16 +94,16 @@ Since $\varepsilon > 0$ was arbitrary,
 \subsection*{(c)}
 
 \begin{proof}
-Let $A$ be the null set from part (b) and let $r_n := \sqrt{d}\cdot 2^{-n}$, so $Q_n(x) \subseteq B(x,r_n)$.
+Let $A$ be the set from previous part and let $r_n := \sqrt{d}\cdot 2^{-n}$, so $Q_n(x) \subseteq B(x,r_n)$,
+with $|Q_n| = 2^{-nd}$ and $|B(x,r_n)| = v_d r_n^d = v_d d^{d/2} \cdot 2^{-nd}$.
 
-Fix $x \in \mathbb{R}^d \setminus A$ and $\varepsilon > 0$, by \eqref{eq:ldt-b}, $\exists N \in \mathbb{N}$ such that $\forall n \geq N$,
+Fix $x \in \mathbb{R}^d \setminus A$ and $\varepsilon > 0$; by \eqref{eq:ldt-b}, $\exists N \in \mathbb{N}$ such that $\forall n \geq N$,
 \[
   \frac{1}{|B(x,r_n)|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy < \frac{\varepsilon}{v_d d^{d/2}}.
 \]
 Then for all $n \geq N$,
 \begin{align*}
   \left|\frac{1}{|Q_n|}\int_{Q_n} f(y)\,dy - f(x)\right|
-  &= \left|\frac{1}{|Q_n|}\int_{Q_n}(f(y)-f(x))\,dy\right| \\
   &\leq \frac{1}{|Q_n|}\int_{Q_n}|f(y)-f(x)|\,dy \\
   &\leq \frac{1}{|Q_n|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy \\
   &= \frac{|B(x,r_n)|}{|Q_n|}\cdot\frac{1}{|B(x,r_n)|}\int_{B(x,r_n)}|f(y)-f(x)|\,dy \\
@@ -107,7 +113,7 @@ Then for all $n \geq N$,
   &< v_d d^{d/2}\cdot \frac{\varepsilon}{v_d d^{d/2}} = \varepsilon.
 \end{align*}
 Since $\varepsilon > 0$ was arbitrary, $\left|\frac{1}{|Q_n|}\int_{Q_n} f(y)\,dy - f(x)\right| \to 0$ as $n\to\infty$,
-which is equivalent to $\frac{1}{|Q_n(x)|}\int_{Q_n(x)} f(y)\,dy \to f(x)$ for all $x \in \mathbb{R}^d \setminus A$.
+which is equivalent to $\frac{1}{|Q_n(x)|}\int_{Q_n(x)} f(y)\,dy \to f(x)$, $\forall x \in \mathbb{R}^d \setminus A$.
 \end{proof}
 
 \section*{Problem 3}
