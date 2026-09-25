@@ -54,12 +54,26 @@
 \subsection*{(a)}
 
 Since clearly $g_q(x) := |f(x)-q| \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, the Lebesgue Differentiation Theorem gives
-\[
+\begin{equation}\label{eq:ldt-q}
   \lim_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-q|\,dy = |f(x)-q| \quad \text{for a.e. } x \in \mathbb{R}^d.
-\]
+\end{equation}
 Let $A_q$ be the null set where this fails. Then $|A_q| = 0$ and the limit holds for all $x \in \mathbb{R}^d \setminus A_q$.
 
 \subsection*{(b)}
+
+Let $A := \bigcup_{q\in\mathbb{Q}} A_q$, where each $A_q$ is as in previous part.
+Since $\mathbb{Q}$ is countable, $|A| = 0$, and for every $x \in \mathbb{R}^d \setminus A$,
+\eqref{eq:ldt-q} holds simultaneously for all $q \in \mathbb{Q}$. Fix $x \in \mathbb{R}^d \setminus A$ and $\varepsilon > 0$.
+Since $f$ is real-valued and $\mathbb{Q}$ is dense in $\mathbb{R}$, choose $q \in \mathbb{Q}$ such that $|f(x)-q| < \varepsilon/2$.
+\begin{align*}
+  &\limsup_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}\!|f(y)-f(x)|\,dy \\
+  &\leq \limsup_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}\!\bigl(|f(y)-q|+|f(x)-q|\bigr)\,dy
+    &&\\
+  &= \limsup_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}\!|f(y)-q|\,dy + |f(x)-q|
+    &&\text{($|f(x)-q|$ constant\ in $y$)}\\
+  &= |f(x)-q| + |f(x)-q| = 2|f(x)-q| < \varepsilon.
+\end{align*}
+Since $\varepsilon > 0$ was arbitrary we are done.
 
 \subsection*{(c)}
 
