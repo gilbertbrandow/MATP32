@@ -120,6 +120,23 @@ which is equivalent to $\frac{1}{|Q_n(x)|}\int_{Q_n(x)} f(y)\,dy \to f(x)$, $\fo
 
 \subsection*{(a)}
 
+\begin{proof}
+For $\delta\in(0,1)$, set $f_\delta(x_1,x_2):=\delta^{-2}\chi_{(-\delta,\delta)}(x_1)\chi_{(-\delta,\delta)}(x_2)$. Then
+\[
+  \|f_\delta\|_{L^1} = \delta^{-2}\cdot|(-\delta,\delta)^2| = \delta^{-2}\cdot(2\delta)^2 = 4.
+\]
+
+Suppose for contradiction there exists $C>0$ such that $|\{M_S(f)>\alpha\}|\leq\frac{C}{\alpha}\|f\|_{L^1}$
+for all $f\in L^1(\mathbb{R}^2)$ and $\alpha>0$. Fix $\alpha>0$ and choose $\delta_0$ with
+$\delta_0<\frac{1}{4\alpha}$ and $\ln\frac{1}{2\delta_0}>2C$. Then:
+\begin{align*}
+  |\{M_S(f_{\delta_0})>\alpha\}|
+  &\geq \cdots \\
+  &> \frac{4C}{\alpha},
+\end{align*}
+contradicting $|\{M_S(f_{\delta_0})>\alpha\}|\leq\frac{C}{\alpha}\|f_{\delta_0}\|_{L^1}=\frac{4C}{\alpha}$. Hence $M_S$ is not of weak-type $(1,1)$.
+\end{proof}
+
 \subsection*{(b)}
 
 \end{document}
