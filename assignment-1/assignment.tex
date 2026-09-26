@@ -122,7 +122,7 @@ which is equivalent to $\frac{1}{|Q_n(x)|}\int_{Q_n(x)} f(y)\,dy \to f(x)$, $\fo
 
 \begin{proof}
 For $\delta>0$, let $f_\delta(x_1,x_2):=\delta^{-2}\chi_{(-\delta,\delta)}(x_1)\chi_{(-\delta,\delta)}(x_2)$. Then $\|f_\delta\|_{L^1} = \delta^{-2}\cdot|(-\delta,\delta)^2| = \delta^{-2}\cdot(2\delta)^2 = 4.$
-For $x=(x_1,x_2)$ with $x_1,x_2>\delta$, define the axis-parallel rectangle $R_x^\delta := [-\delta,\,x_1]\times[-\delta,\,x_2] \in \mathcal{R},$
+For $x=(x_1,x_2)$ with $x_1,x_2>\delta$, define the rectangle $R_x^\delta := [-\delta,\,x_1]\times[-\delta,\,x_2] \in \mathcal{R},$
 with $|R_x^\delta| = (x_1+\delta)(x_2+\delta)$.
 
 Suppose for contradiction there exists $C>0$ such that $|\{M_S(f)>\alpha\}|\leq\frac{C}{\alpha}\|f\|_{L^1}$
@@ -132,7 +132,7 @@ for all $f\in L^1(\mathbb{R}^2)$ and $\alpha>0$. Fix $\alpha>0$ and choose $\del
   &= 4\,|\{x_1,x_2>0 : M_S(f_{\delta_0})(x_1,x_2)>\alpha\}|
   &&\text{(symmetry, 4 quadrants)} \\
   &\geq 4\,|\{x_1,x_2>\delta_0 : M_S(f_{\delta_0})(x_1,x_2)>\alpha\}| \\
-  &\geq 4\,|\{x_1,x_2>\delta_0 : \frac{1}{|R_x|}\int_{R_x} f_{\delta_0}>\alpha\}| \\
+  &\geq 4\,|\{x_1,x_2>\delta_0 : \frac{1}{|R_x^{\delta_0}|}\int_{R_x^{\delta_0}} f_{\delta_0}>\alpha\}| \\
   &= 4\,\Bigl|\Bigl\{x_1,x_2>\delta_0 : \frac{4}{(x_1+\delta_0)(x_2+\delta_0)}>\alpha\Bigr\}\Bigr| \\
     &= 4\,|\{u,v>2\delta_0:uv<\tfrac{4}{\alpha}\}|
     &&\text{($u=x_1+\delta_0$, $v=x_2+\delta_0$)} \\
@@ -145,5 +145,20 @@ contradicting $|\{M_S(f_{\delta_0})>\alpha\}|\leq\frac{C}{\alpha}\|f_{\delta_0}\
 \end{proof}
 
 \subsection*{(b)}
+
+\begin{proof}
+Since $M$ is weak-type $(1,1)$ and bounded on $L^\infty(\mathbb{R})$, Marcinkiewicz gives
+$\|M(g)\|_{L^p(\mathbb{R})}\leq C_p\|g\|_{L^p(\mathbb{R})}$ for $1<p<\infty$.
+Write $f_{x_1}(s):=f(x_1,s)$. By Fubini, $M$ in either variable direction is bounded on $L^p(\mathbb{R}^2)$ with constant $C_p$.
+\begin{align*}
+  \|M_S(f)\|_{L^p}
+  &= \left\|\sup_{I_1\times I_2\ni x}\frac{1}{|I_1\times I_2|}\int_{I_1\times I_2}|f|\right\|_{L^p} \\
+  &= \left\|\sup_{I_1\times I_2\ni x}\frac{1}{|I_1|}\int_{I_1}\!\frac{1}{|I_2|}\int_{I_2}\!|f_t(s)|\,ds\,dt\right\|_{L^p} \\
+  &\leq \left\|\sup_{I_1\ni x_1}\frac{1}{|I_1|}\int_{I_1}M(f_t)(x_2)\,dt\right\|_{L^p} \\
+  &= \left\|M\bigl(M(f_{x_1})(x_2)\bigr)(x_1)\right\|_{L^p} \\
+  &\leq C_p\|M(f_{x_1})(x_2)\|_{L^p} \\
+  &\leq C_p^2\|f\|_{L^p}. \qedhere
+\end{align*}
+\end{proof}
 
 \end{document}
