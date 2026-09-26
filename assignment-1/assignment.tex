@@ -58,7 +58,7 @@
 \subsection*{(a)}
 
 \begin{proof}
-Since clearly $g_q(x) := |f(x)-q| \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, by Lebesgue Differentiation Theorem
+Since clearly $|f(x)-q| \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, by Lebesgue Differentiation Theorem
 \begin{equation}\label{eq:ldt-q}
   \lim_{r\to 0^+}\frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-q|\,dy = |f(x)-q| \quad \text{for a.e. } x \in \mathbb{R}^d.
 \end{equation}
@@ -73,17 +73,17 @@ Since $\mathbb{Q}$ is countable, $|A| = 0$, and for every $x \in \mathbb{R}^d \s
 \eqref{eq:ldt-q} holds simultaneously for all $q \in \mathbb{Q}$.
 
 Fix $x \in \mathbb{R}^d \setminus A$ and $\varepsilon > 0$. Since $\mathbb{Q}$ is dense in $\mathbb{R}$, choose
-$q \in \mathbb{Q}$ such that $|f(x)-q| < \varepsilon/3$. Because of \eqref{eq:ldt-q}, there exists $r_0 > 0$
-such that for all $0 < r < r_0$,
+$q \in \mathbb{Q}$ such that $|f(x)-q| < \varepsilon/2$. Because of \eqref{eq:ldt-q}, there exists $r_0 > 0$
+such that for all $r \in (0, r_0)$,
 \[
-  \frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-q|\,dy < \frac{2\varepsilon}{3}.
+  \frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-q|\,dy < \frac{\varepsilon}{2}.
 \]
-Then for all $0 < r < r_0$,
+Then for all $r \in (0, r_0)$,
 \begin{align*}
   \frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-f(x)|\,dy
   &\leq \frac{1}{|B(x,r)|}\int_{B(x,r)}(|f(y)-q| + |f(x)-q|)dy \\
   &= \frac{1}{|B(x,r)|}\int_{B(x,r)}|f(y)-q|\,dy + |f(x)-q| \\
-  &< \frac{2\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
+  &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 \end{align*}
 Since $\varepsilon > 0$ was arbitrary,
 \begin{equation}\label{eq:ldt-b}
@@ -117,5 +117,9 @@ which is equivalent to $\frac{1}{|Q_n(x)|}\int_{Q_n(x)} f(y)\,dy \to f(x)$, $\fo
 \end{proof}
 
 \section*{Problem 3}
+
+\subsection*{(a)}
+
+\subsection*{(b)}
 
 \end{document}
