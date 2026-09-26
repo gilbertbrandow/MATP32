@@ -149,7 +149,7 @@ contradicting $|\{M_S(f_{\delta_0})>\alpha\}|\leq\frac{C}{\alpha}\|f_{\delta_0}\
 \begin{proof}
 For $g\in L^1_{\mathrm{loc}}(\mathbb{R})$, let
 \[
-  M(g)(x) := \sup_{\substack{I\ni x \\ I \text{ open interval}}} \frac{1}{|I|}\int_I |g(t)|\,dt.
+  M(g)(x) := \sup_{\substack{\delta > 0 \\ |x-y| < \delta}} \frac{1}{|B(y, \delta)|}\int_{B(y, \delta)} |g(t)|\,dt.
 \]
 Since $M$ is weak-type $(1,1)$ and bounded on $L^\infty(\mathbb{R})$, Marcinkiewicz gives
 $\|M(g)\|_{L^p(\mathbb{R})}\leq C_p\|g\|_{L^p(\mathbb{R})}$ for $1<p<\infty$; at $p=\infty$ this holds trivially, with constant $1$, directly from the definition. So
