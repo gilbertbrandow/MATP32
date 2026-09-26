@@ -147,16 +147,22 @@ contradicting $|\{M_S(f_{\delta_0})>\alpha\}|\leq\frac{C}{\alpha}\|f_{\delta_0}\
 \subsection*{(b)}
 
 \begin{proof}
+For $g\in L^1_{\mathrm{loc}}(\mathbb{R})$, let
+\[
+  M(g)(x) := \sup_{\substack{I\ni x \\ I \text{ open interval}}} \frac{1}{|I|}\int_I |g(t)|\,dt.
+\]
 Since $M$ is weak-type $(1,1)$ and bounded on $L^\infty(\mathbb{R})$, Marcinkiewicz gives
-$\|M(g)\|_{L^p(\mathbb{R})}\leq C_p\|g\|_{L^p(\mathbb{R})}$ for $1<p<\infty$.
-Write $f_{x_1}(s):=f(x_1,s)$. By Fubini, $M$ in either variable direction is bounded on $L^p(\mathbb{R}^2)$ with constant $C_p$.
+$\|M(g)\|_{L^p(\mathbb{R})}\leq C_p\|g\|_{L^p(\mathbb{R})}$ for $1<p<\infty$; at $p=\infty$ this holds trivially, with constant $1$, directly from the definition. So
+$\|M(g)\|_{L^p(\mathbb{R})}\leq C_p\|g\|_{L^p(\mathbb{R})}$ for all $1<p\leq\infty$.
+
+For $t\in\mathbb{R}$, write $f_t(s):=f(t,s)$. By Fubini, $M$ applied in either coordinate direction is bounded on $L^p(\mathbb{R}^2)$ with the same constant $C_p$, for $1<p\le\infty$.
 \begin{align*}
   \|M_S(f)\|_{L^p}
   &= \left\|\sup_{I_1\times I_2\ni x}\frac{1}{|I_1\times I_2|}\int_{I_1\times I_2}|f|\right\|_{L^p} \\
   &= \left\|\sup_{I_1\times I_2\ni x}\frac{1}{|I_1|}\int_{I_1}\!\frac{1}{|I_2|}\int_{I_2}\!|f_t(s)|\,ds\,dt\right\|_{L^p} \\
   &\leq \left\|\sup_{I_1\ni x_1}\frac{1}{|I_1|}\int_{I_1}M(f_t)(x_2)\,dt\right\|_{L^p} \\
-  &= \left\|M\bigl(M(f_{x_1})(x_2)\bigr)(x_1)\right\|_{L^p} \\
-  &\leq C_p\|M(f_{x_1})(x_2)\|_{L^p} \\
+  &= \left\|M(M(f_t)(x_2))(x_1)\right\|_{L^p} \\
+  &\leq C_p\|M(f_t)(x_2)\|_{L^p} \\
   &\leq C_p^2\|f\|_{L^p}. \qedhere
 \end{align*}
 \end{proof}

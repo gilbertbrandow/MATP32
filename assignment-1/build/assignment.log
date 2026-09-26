@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  26 SEP 2026 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  26 SEP 2026 22:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -401,11 +401,6 @@ Overfull \hbox (4.37473pt too wide) in paragraph at lines 124--127
 []\OT1/cmr/m/n/12 For $\OML/cmm/m/it/12 ^^N > \OT1/cmr/m/n/12 0$, let $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/12 ) := \OML/cmm/m/it/12 ^^N[]^^_[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^_[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )$. Then $\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 f[]\OMS/cmsy/m/n/12 k[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^N[] \OMS/cmsy/m/n/12 ^^A j\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ^^N; ^^N\OT1/cmr/m/n/12 )[]\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 =
  []
 
-
-Overfull \hbox (25.0754pt too wide) in paragraph at lines 150--153
-[]\OT1/cmr/m/n/12 Since $\OML/cmm/m/it/12 M$ \OT1/cmr/m/n/12 is weak-type $(1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1)$ and bounded on $\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\U/msb/m/n/12 R\OT1/cmr/m/n/12 )$, Marcinkiewicz gives $\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 k[] ^^T
- []
-
 [3] [4] (build/assignment.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -421,9 +416,9 @@ Here is how much of TeX's memory you used:
  33619 multiletter control sequences out of 15000+600000
  567517 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,625b,523s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,625b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/assignment.pdf (4 pages, 151378 bytes).
+Output written on build/assignment.pdf (4 pages, 152620 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
