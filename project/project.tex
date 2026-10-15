@@ -27,20 +27,36 @@
 A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$. For a measurable set $E \subseteq \mathbb{R}^d$ we write $w(E) := \int_E w(x)\,dx$.
 \end{definition}
 
-\begin{definition}[Muckenhoupt $A_p$ weights]
-Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of $w$ is
-\begin{equation}\label{eq:Ap}
-  [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w(x)\,dx \right) \left( \frac{1}{|Q|} \int_Q w(x)^{-\frac{1}{p-1}}\,dx \right)^{p-1},
-\end{equation}
-where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes. We say that $w \in A_p$ if $[w]_{A_p} < \infty$.
+\begin{definition}[Weighted $L^p$ spaces]
+Let $w$ be a weight and let $1 < p < \infty$. We define
+\[
+  L^p_w(\mathbb{R}^d) := \left\{ f : \mathbb{R}^d \to \mathbb{R} \text{ measurable} : \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx < \infty \right\},
+\]
+with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \right)^{1/p}$.
 \end{definition}
 
-\begin{definition}[Hardy-Littlewood maximal operator with respect to $w$]
-Let $w$ be a weight. For a measurable function $f$ and $x \in \mathbb{R}^d$,
+\begin{definition}[Hardy--Littlewood maximal operator]
+For $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ and $x \in \mathbb{R}^d$,
 \begin{equation}\label{eq:M}
-  M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
+  Mf(x) := \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy,
 \end{equation}
-where the supremum is taken over all cubes $Q$ containing $x$. If the supremum is taken only over cubes $Q$ centred at $x$, we denote the corresponding operator by $M^c_w$. When $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
+where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over cubes $Q$ centred at $x$, we write $M^c$.
 \end{definition}
+
+It is well known that $M$ is of weak type $(1,1)$ and bounded on $L^p(\mathbb{R}^d)$ for $1 < p \le \infty$. 
+A natural question is therefore, for fixed $1 < p < \infty$, for which weights $w$ is the operator $M$ bounded on $L^p_w(\mathbb{R}^d)$? In other words, for which $w$ is there a constant $C$ such that for all $f \in L^p_w(\mathbb{R}^d)$
+\[
+  \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dx \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dx \right)^{1/p} = C\, \|f\|_{L^p_w}.
+\]
+
+\begin{definition}[Muckenhoupt $A_p$ weights]
+Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of $w$ is
+\begin{equation}\label{eq:lower}
+  [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w(x)\,dx \right) \left( \frac{1}{|Q|} \int_Q w(x)^{-\frac{1}{p-1}}\,dx \right)^{p-1},
+\end{equation}
+where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. We say that $w \in A_p$ if $[w]_{A_p} < \infty$.
+\end{definition}
+\bibliographystyle{amsplain}
+\bibliography{references}
 
 \end{document}
