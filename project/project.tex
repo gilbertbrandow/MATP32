@@ -49,8 +49,12 @@ A natural question is therefore, for fixed $1 < p < \infty$, for which weights $
   \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dx \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dx \right)^{1/p} = C\, \|f\|_{L^p_w}.
 \end{equation}
 
+\begin{remark}[The zero weight]
+If $w = 0$ almost everywhere, then $\|f\|_{L^p_w} = 0$ for every $f$, so $L^p_w(\mathbb{R}^d)$ is trivial and $M$ is trivially bounded.
+\end{remark}
+
 \begin{remark}[The endpoint $p = \infty$]
-For $p = \infty$, with the essential supremum taken with respect to $w(x)\,dx$, the answer is trivial: $M$ is bounded if and only if $w > 0$ almost everywhere. If $w > 0$ a.e., then $w(x)\,dx$ and $dx$ have the same null sets, so $\|Mf\|_{L^\infty} \le \|f\|_{L^\infty}$ applies. If $w = 0$ on a set $Z$ with $|Z| > 0$, then $f = \chi_Z$ has weighted supremum $0$, while $Mf > 0$ everywhere. We therefore restrict to $1 < p < \infty$.
+For $p = \infty$, with the essential supremum taken with respect to $w(x)\,dx$, the answer is trivial: $M$ is bounded if and only if $w > 0$ almost everywhere. If $w > 0$ a.e., then $w(x)\,dx$ and $dx$ have the same null sets, so $\|Mf\|_{L^\infty} \le \|f\|_{L^\infty}$ applies. If $w = 0$ on a set $Z$ with $|Z| > 0$, then $f = \chi_Z$ has weighted supremum $0$, while $Mf > 0$ everywhere. Hence we restrict to $1 < p < \infty$.
 \end{remark}
 
 \begin{lemma}\label{lem:positive}
