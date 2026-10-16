@@ -107,12 +107,24 @@ Theorem~\ref{thm:muckenhoupt} is the original result of~\cite{Muckenhoupt1972}, 
 
 \section{Preliminaries}
 
+\begin{lemma}\label{lem:cubes}
+Let $Q$ be a cube with side length $\ell(Q)$, let $y \in Q$, and let $Q_y$ be the cube centred at $y$ with side length $2\ell(Q)$. Then $Q \subseteq Q_y \subseteq 3Q$, where $3Q$ denotes the cube with the same centre as $Q$ and side length $3\ell(Q)$.
+\end{lemma}
+
+\begin{proof}
+Every $z \in Q$ satisfies $|z_i - y_i| \le \ell(Q)$ for $i = 1, \dots, d$, since both $z$ and $y$ lie in $Q$. Hence $Q \subseteq Q_y$. Let $c$ be the centre of $Q$. Then $|y_i - c_i| \le \frac{1}{2}\ell(Q)$ for $i = 1, \dots, d$, so every $z \in Q_y$ satisfies
+\[
+  |z_i - c_i| \le |z_i - y_i| + |y_i - c_i| \le \ell(Q) + \tfrac{1}{2}\ell(Q) = \tfrac{3}{2}\ell(Q)
+\]
+for $i = 1, \dots, d$, that is, $z \in 3Q$.
+\end{proof}
+
 \begin{lemma}\label{lem:centred}
 Let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then $Mf(x) \le 2^d M^c f(x)$ for every $x \in \mathbb{R}^d$.
 \end{lemma}
 
 \begin{proof}
-Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, with side length $\ell(Q)$, let $Q_x$ be the cube centred at $x$ with side length $2\ell(Q)$. Every $z \in Q$ satisfies $|z_i - x_i| \le \ell(Q)$ for $i = 1, \dots, d$, since both $z$ and $x$ lie in $Q$. Hence $Q \subseteq Q_x$, and since $|Q_x| = 2^d |Q|$ we obtain
+Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, let $Q_x$ be the cube centred at $x$ with side length $2\ell(Q)$. By Lemma~\ref{lem:cubes}, $Q \subseteq Q_x$, and since $|Q_x| = 2^d |Q|$ we obtain
 \[
   Mf(x) = \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \le \sup_{Q \ni x} \frac{2^d}{|Q_x|} \int_{Q_x} |f(y)|\,dy \le 2^d M^c f(x),
 \]
