@@ -105,6 +105,20 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 
 Theorem~\ref{thm:muckenhoupt} is the original result of~\cite{Muckenhoupt1972}, published in 1972. His proof, as well as Buckley's proof of Theorem~\ref{thm:main}, relies on the fact that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$, which is a consequence of the reverse H\"older inequality for $A_p$ weights. Buckley's proof moreover uses interpolation. We present neither of these proofs. For the upper bound in Theorem~\ref{thm:main} we instead present the elementary proof of Lerner \cite{Lerner2008}, which avoids the $A_{p-\varepsilon}$ property, and as noted above Theorem~\ref{thm:muckenhoupt} then needs no separate proof since it follows immidiatly from Corollary~\ref{cor:necessity} and Theorem~\ref{thm:main}. We complement Lerner's argument with a proof of Proposition~\ref{prop:necessity} and an example showing that the exponent in Theorem~\ref{thm:main} cannot be improved.
 
+\section{Preliminaries}
+
+\begin{lemma}\label{lem:centred}
+Let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then $Mf(x) \le 2^d M^c f(x)$ for every $x \in \mathbb{R}^d$.
+\end{lemma}
+
+\begin{proof}
+Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, with side length $\ell(Q)$, let $Q_x$ be the cube centred at $x$ with side length $2\ell(Q)$. Every $z \in Q$ satisfies $|z_i - x_i| \le \ell(Q)$ for $i = 1, \dots, d$, since both $z$ and $x$ lie in $Q$. Hence $Q \subseteq Q_x$, and since $|Q_x| = 2^d |Q|$ we obtain
+\[
+  Mf(x) = \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \le \sup_{Q \ni x} \frac{2^d}{|Q_x|} \int_{Q_x} |f(y)|\,dy \le 2^d M^c f(x),
+\]
+where the last inequality holds because each $Q_x$ is a cube centred at $x$.
+\end{proof}
+
 \bibliographystyle{amsplain}
 \bibliography{references}
 
