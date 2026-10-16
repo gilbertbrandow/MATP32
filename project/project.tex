@@ -36,12 +36,14 @@ Let $w$ be a weight and let $1 < p < \infty$. We define
 with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \right)^{1/p}$.
 \end{definition}
 
-\begin{definition}[Hardy-Littlewood maximal operator]
-For $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ and $x \in \mathbb{R}^d$,
+The central object of this report is the Hardy--Littlewood maximal operator $M$, which assigns to each point the largest average of $|f|$ over cubes containing that point. In the proof of our main result we will also need the analogous operator in which these averages are taken with respect to the measure $w(x)\,dx$ instead of Lebesgue measure.
+
+\begin{definition}[Hardy--Littlewood maximal operator]
+Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable function $f$ and $x \in \mathbb{R}^d$,
 \begin{equation}\label{eq:M}
-  Mf(x) := \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy,
+  M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
 \end{equation}
-where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over cubes $Q$ centred at $x$, we write $M^c$.
+where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over cubes $Q$ centred at $x$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
 \end{definition}
 
 It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ on $L^p(\mathbb{R}^d)$ for $1 < p \le \infty$ \cite{GrafakosClassical}.
