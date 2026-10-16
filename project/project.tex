@@ -87,9 +87,7 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 \end{equation}
 \end{corollary}
 
-\begin{theorem}[Muckenhoupt]\label{thm:muckenhoupt}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
-\end{theorem}
+Corollary~\ref{cor:necessity} shows that $w \in A_p$ is a necessary condition for \eqref{eq:question} to hold. It is natural to ask whether it is also sufficient, that is, whether for every $w \in A_p$ there is a constant $C$ such that \eqref{eq:question} holds. Since Corollary~\ref{cor:necessity} moreover shows that any such $C$ must satisfy $C \ge [w]_{A_p}^{1/p}$, we may ask more precisely how large $C$ has to be in terms of $[w]_{A_p}$. The following theorem, due to Buckley \cite{Buckley1993}, answers both questions.
 
 \begin{theorem}[Buckley; Theorem~C in~\cite{Lerner2008}]\label{thm:main}
 Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
@@ -97,6 +95,10 @@ Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $
   \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
 \]
 Moreover, the exponent $\frac{1}{p-1}$ is best possible: for every $\alpha < \frac{1}{p-1}$ there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha} \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+\end{theorem}
+
+\begin{theorem}[Muckenhoupt]\label{thm:muckenhoupt}
+Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
 \end{theorem}
 \bibliographystyle{amsplain}
 \bibliography{references}
