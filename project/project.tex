@@ -13,6 +13,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 \newtheorem{definition}{Definition}
 \newtheorem{remark}{Remark}
@@ -35,7 +36,7 @@ Let $w$ be a weight and let $1 < p < \infty$. We define
 with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \right)^{1/p}$.
 \end{definition}
 
-\begin{definition}[Hardy--Littlewood maximal operator]
+\begin{definition}[Hardy-Littlewood maximal operator]
 For $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ and $x \in \mathbb{R}^d$,
 \begin{equation}\label{eq:M}
   Mf(x) := \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy,
@@ -43,8 +44,8 @@ For $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ and $x \in \mathbb{R}^d$,
 where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over cubes $Q$ centred at $x$, we write $M^c$.
 \end{definition}
 
-It is well known that $M$ is of weak type $(1,1)$ and bounded on $L^p(\mathbb{R}^d)$ for $1 < p \le \infty$. 
-A natural question is therefore, for fixed $1 < p < \infty$, for which weights $w$ is the operator $M$ bounded on $L^p_w(\mathbb{R}^d)$? In other words, for which $w$ is there a constant $C$ such that for all $f \in L^p_w(\mathbb{R}^d)$
+It is well known that $M$ is of weak type $(1,1)$ and bounded on $L^p(\mathbb{R}^d)$ for $1 < p \le \infty$ \cite{GrafakosClassical}.
+A natural question then arises, for fixed $1 < p < \infty$, for which weights $w$ is the sublinear operator $M$ bounded on $L^p_w(\mathbb{R}^d)$? In other words, for which $w$ is there a constant $C$ such that for all $f \in L^p_w(\mathbb{R}^d)$
 \begin{equation}\label{eq:question}
   \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dx \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dx \right)^{1/p} = C\, \|f\|_{L^p_w}.
 \end{equation}
@@ -57,21 +58,17 @@ If $w = 0$ almost everywhere, then $\|f\|_{L^p_w} = 0$ for every $f$, so $L^p_w(
 For $p = \infty$, with the essential supremum taken with respect to $w(x)\,dx$, the answer is trivial: $M$ is bounded if and only if $w > 0$ almost everywhere. If $w > 0$ a.e., then $w(x)\,dx$ and $dx$ have the same null sets, so $\|Mf\|_{L^\infty} \le \|f\|_{L^\infty}$ applies. If $w = 0$ on a set $Z$ with $|Z| > 0$, then $f = \chi_Z$ has weighted supremum $0$, while $Mf > 0$ everywhere. Hence we restrict to $1 < p < \infty$.
 \end{remark}
 
-\begin{lemma}\label{lem:positive}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w > 0$ almost everywhere.
-\end{lemma}
+Suppose that \eqref{eq:question} holds for a weight $w$. A first observation is that $w$ cannot vanish on a set of positive measure. The indicator function of a bounded part of such a set has norm zero in $L^p_w$, while its maximal function is positive everywhere, which contradicts \eqref{eq:question}. More generally, $w$ cannot be much smaller on part of a cube than on the rest of it. A function concentrated where $w$ is small has a small norm in $L^p_w$, while its maximal function is large on the whole cube, where $w$ is large. Making this precise leads to the following necessary condition.
 
-\begin{proof}
-Suppose, for contradiction, that $w = 0$ on a measurable set $E$ with $|E| > 0$. Since $|E| = \lim_{R \to \infty} |E \cap [-R,R]^d|$, there is a bounded measurable set $E' \subseteq E$ with $|E'| > 0$. Let $f := \chi_{E'}$. Then $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and since $w = 0$ on $E'$,
-\[
-  \|f\|_{L^p_w}^p = \int_{E'} w(x)\,dx = 0 .
-\]
-On the other hand, let $x \in \mathbb{R}^d$. Since $E'$ is bounded, there is a cube $Q$ containing both $x$ and $E'$, and then
-\[
-  Mf(x) \ge \frac{1}{|Q|} \int_Q \chi_{E'}(y)\,dy = \frac{|E'|}{|Q|} > 0 .
-\]
-Hence $Mf > 0$ everywhere. Since $w$ is not almost everywhere zero, the set $\{w > 0\}$ has positive measure, and $(Mf)^p w > 0$ on it. Therefore $\|Mf\|_{L^p_w} > 0 = C\,\|f\|_{L^p_w}$, which contradicts \eqref{eq:question}.
-\end{proof}
+\begin{proposition}\label{prop:necessity}
+Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then for every cube $Q$ we have $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
+\begin{equation}\label{eq:Apcube}
+  \left( \frac{1}{|Q|} \int_Q w\,dx \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dx \right)^{p-1} \le C^p .
+\end{equation}
+In particular, $w > 0$ almost everywhere.
+\end{proposition}
+
+Thus, if \eqref{eq:question} holds for a weight $w$, then by Proposition~\ref{prop:necessity}, $w$ satisfies \eqref{eq:Apcube} for every cube $Q$, with the same constant $C$.This gives rise to the next definition by Muckenhoupt~\cite{Muckenhoupt1972}.
 
 \begin{definition}[Muckenhoupt $A_p$ weights]
 Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of $w$ is
@@ -80,6 +77,27 @@ Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of
 \end{equation}
 where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. We say that $w \in A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
+
+Taking the supremum over all cubes in Proposition~\ref{prop:necessity} gives the following.
+
+\begin{corollary}\label{cor:necessity}
+Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then $w \in A_p$ and
+\begin{equation}\label{eq:lower}
+  [w]_{A_p} \le C^p .
+\end{equation}
+\end{corollary}
+
+\begin{theorem}[Muckenhoupt]\label{thm:muckenhoupt}
+Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
+\end{theorem}
+
+\begin{theorem}[Buckley; Theorem~C in~\cite{Lerner2008}]\label{thm:main}
+Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
+\[
+  \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
+\]
+Moreover, the exponent $\frac{1}{p-1}$ is best possible: for every $\alpha < \frac{1}{p-1}$ there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha} \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+\end{theorem}
 \bibliographystyle{amsplain}
 \bibliography{references}
 
