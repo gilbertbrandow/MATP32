@@ -133,6 +133,18 @@ Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, let $Q_x$ be the cube c
 where the last inequality holds because each $Q_x$ is a cube centred at $x$.
 \end{proof}
 
+\begin{lemma}\label{lem:sigma}
+Let $1 < p < \infty$ and let $w \in A_p$ be a weight that is not almost everywhere zero. Then $w > 0$ almost everywhere, and $\sigma := w^{-\frac{1}{p-1}}$ is a weight. Moreover $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$.
+\end{lemma}
+
+\begin{proof}
+Suppose that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, there is also a set $F$ with $|F| > 0$ on which $w > 0$. Choose bounded subsets $E' \subseteq E$ and $F' \subseteq F$ of positive measure, and a cube $Q$ containing both. Then $w(Q) \ge w(F') > 0$, while $\sigma = \infty$ on $E'$, so $\sigma(Q) = \infty$. Hence the quantity in \eqref{eq:Ap} is infinite for this cube, which contradicts $w \in A_p$. Thus $w > 0$ almost everywhere, and in particular $w(Q) > 0$ for every cube $Q$. Since $w$ is locally integrable, $w < \infty$ almost everywhere, so $\sigma > 0$ almost everywhere and $\sigma(Q) > 0$ for every cube $Q$. Finally, by the definition of $[w]_{A_p}$,
+\[
+  \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1} \le [w]_{A_p} \frac{|Q|}{w(Q)} < \infty
+\]
+for every cube $Q$. Since every compact set is contained in a cube, $\sigma$ is locally integrable.
+\end{proof}
+
 \bibliographystyle{amsplain}
 \bibliography{references}
 
