@@ -164,6 +164,27 @@ Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $f$ be a measura
 for every $\lambda > 0$, where $N_d$ is the constant in Lemma~\ref{lem:besicovitch}.
 \end{lemma}
 
+\begin{proof}
+Fix $\lambda > 0$, and call a cube $Q(x,r)$ \emph{good} if
+\begin{equation}\label{eq:good}
+  \int_{Q(x,r)} |f(y)|\, v(y)\,dy > \lambda\, v(Q(x,r)).
+\end{equation}
+By the definition of $M^c_v$, we have $M^c_v f(x) > \lambda$ if and only if $Q(x,r)$ is good for some $r > 0$. For fixed $r > 0$, both sides of \eqref{eq:good} are continuous functions of $x$. Indeed, if $x' \to x$, then $\chi_{Q(x',r)} \to \chi_{Q(x,r)}$ outside the boundary of $Q(x,r)$, which has measure zero, and $\chi_{Q(x',r)} \le \chi_{Q(x,r+2)}$ whenever $|x' - x| \le 1$, so the claim follows by dominated convergence since $|f|\,v$ and $v$ are integrable on $Q(x,r+2)$. Hence the set $U_r$ of all $x$ for which $Q(x,r)$ is good is open, and so is
+\[
+  E_k := \{x : |x| < k\} \cap \bigcup_{0 < r \le k} U_r
+\]
+for every positive integer $k$. We have $E_1 \subseteq E_2 \subseteq \cdots$, every point of $E_k$ has a good cube, and if $Q(x,r)$ is good, then $x \in E_k$ for every integer $k$ with $k > |x|$ and $k \ge r$. Hence $\{M^c_v f > \lambda\} = \bigcup_k E_k$. In particular this set is open, and since $\lambda > 0$ was arbitrary and $M^c_v f \ge 0$, the function $M^c_v f$ is measurable.
+
+For each $x \in E_k$ we choose $r_x \in (0,k]$ such that $Q(x,r_x)$ is good. Since $E_k$ is bounded and $r_x \le k$ for every $x \in E_k$, Lemma~\ref{lem:besicovitch} gives points $x_1, x_2, \ldots \in E_k$ such that the cubes $Q(x_j, r_{x_j})$ cover $E_k$ and satisfy $\sum_j \chi_{Q(x_j, r_{x_j})} \le N_d$. Using \eqref{eq:good} for each $Q(x_j, r_{x_j})$ and monotone convergence to interchange sum and integral, we obtain
+\[
+\begin{aligned}
+  v(E_k) &\le \sum_j v\big(Q(x_j, r_{x_j})\big) \le \frac{1}{\lambda} \sum_j \int_{Q(x_j, r_{x_j})} |f|\, v\,dy \\
+  &= \frac{1}{\lambda} \int_{\mathbb{R}^d} \Big( \sum_j \chi_{Q(x_j, r_{x_j})} \Big) |f|\, v\,dy \le \frac{N_d}{\lambda}\, \|f\|_{L^1_v}.
+\end{aligned}
+\]
+Since $E_1 \subseteq E_2 \subseteq \cdots$ and $\bigcup_k E_k = \{M^c_v f > \lambda\}$, continuity of the measure $v(x)\,dx$ from below gives the claim.
+\end{proof}
+
 \begin{lemma}\label{lem:key}
 Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$. Then there is a constant $C_{q,d}$, depending only on $q$ and $d$, such that
 \[
