@@ -43,7 +43,7 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 \[
   M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
 \]
-where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over cubes $Q$ centred at $x$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
+where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over the cubes $Q(x,r)$, $r > 0$, where $Q(x,r)$ denotes the cube centred at $x$ with side length $r$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
 \end{definition}
 
 It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ on $L^p(\mathbb{R}^d)$ for $1 < p \le \infty$ \cite{GrafakosClassical}.
@@ -117,11 +117,11 @@ Theorem~\ref{thm:muckenhoupt} is the original result of~\cite{Muckenhoupt1972}, 
 \subsection{Preliminaries}
 
 \begin{lemma}\label{lem:cubes}
-Let $Q$ be a cube with side length $\ell(Q)$, let $y \in Q$, and let $Q_y$ be the cube centred at $y$ with side length $2\ell(Q)$. Then $Q \subseteq Q_y \subseteq 3Q$, where $3Q$ denotes the cube with the same centre as $Q$ and side length $3\ell(Q)$.
+Let $Q$ be a cube with side length $\ell(Q)$ and let $y \in Q$. Then $Q \subseteq Q(y, 2\ell(Q)) \subseteq 3Q$, where $3Q$ denotes the cube with the same centre as $Q$ and side length $3\ell(Q)$.
 \end{lemma}
 
 \begin{proof}
-Every $z \in Q$ satisfies $|z_i - y_i| \le \ell(Q)$ for $i = 1, \dots, d$, since both $z$ and $y$ lie in $Q$. Hence $Q \subseteq Q_y$. Let $c$ be the centre of $Q$. Then $|y_i - c_i| \le \frac{1}{2}\ell(Q)$ for $i = 1, \dots, d$, so every $z \in Q_y$ satisfies
+Every $z \in Q$ satisfies $|z_i - y_i| \le \ell(Q)$ for $i = 1, \dots, d$, since both $z$ and $y$ lie in $Q$. Hence $Q \subseteq Q(y, 2\ell(Q))$. Let $c$ be the centre of $Q$. Then $|y_i - c_i| \le \frac{1}{2}\ell(Q)$ for $i = 1, \dots, d$, so every $z \in Q(y, 2\ell(Q))$ satisfies
 \[
   |z_i - c_i| \le |z_i - y_i| + |y_i - c_i| \le \ell(Q) + \tfrac{1}{2}\ell(Q) = \tfrac{3}{2}\ell(Q)
 \]
@@ -133,11 +133,11 @@ Let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then $Mf(x) \le 2^d M^c f(x)$ for 
 \end{lemma}
 
 \begin{proof}
-Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, let $Q_x$ be the cube centred at $x$ with side length $2\ell(Q)$. By Lemma~\ref{lem:cubes}, $Q \subseteq Q_x$, and since $|Q_x| = 2^d |Q|$ we obtain
+Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, Lemma~\ref{lem:cubes} gives $Q \subseteq Q(x, 2\ell(Q))$, and since $|Q(x, 2\ell(Q))| = 2^d |Q|$ we obtain
 \[
-  Mf(x) = \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \le \sup_{Q \ni x} \frac{2^d}{|Q_x|} \int_{Q_x} |f(y)|\,dy \le 2^d M^c f(x),
+  Mf(x) = \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \le \sup_{Q \ni x} \frac{2^d}{|Q(x, 2\ell(Q))|} \int_{Q(x, 2\ell(Q))} |f(y)|\,dy \le 2^d M^c f(x),
 \]
-where the last inequality holds because each $Q_x$ is a cube centred at $x$.
+where the last inequality holds because each $Q(x, 2\ell(Q))$ is one of the cubes in the definition of $M^c f(x)$.
 \end{proof}
 
 \begin{lemma}\label{lem:sigma}
@@ -153,7 +153,7 @@ for every cube $Q$. Since every compact set is contained in a cube, $\sigma$ is 
 \end{proof}
 
 \begin{lemma}[{Besicovitch covering lemma \cite[Lemma A.5]{Duoandikoetxea2013}}]\label{lem:besicovitch}
-There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $Q_x$ be a cube centred at $x$, such that $\sup_{x \in E} \ell(Q_x) < \infty$. Then there is a countable subfamily $\{Q_{x_j}\}_j$ which covers $E$ and satisfies $\sum_j \chi_{Q_{x_j}} \le N_d$.
+There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $r_x > 0$, such that $\sup_{x \in E} r_x < \infty$. Then there are points $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and satisfy $\sum_j \chi_{Q(x_j, r_{x_j})} \le N_d$.
 \end{lemma}
 
 \begin{lemma}\label{lem:weak}
@@ -185,7 +185,7 @@ We prove Theorem~\ref{thm:main} following the argument of Lerner \cite{Lerner200
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
 Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. If $w = 0$ almost everywhere, both sides of the inequality vanish, so we may assume that $w$ is not almost everywhere zero. By Lemma~\ref{lem:sigma}, $w > 0$ almost everywhere and $\sigma := w^{-\frac{1}{p-1}}$ is a weight with $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$. In particular, the operators $M^c_w$ and $M^c_\sigma$ are defined.
 
-We first prove a pointwise estimate for $Mf$. Fix $x \in \mathbb{R}^d$ and a cube $Q$ centred at $x$, and let $3Q$ be as in Lemma~\ref{lem:cubes}. Multiplying and dividing by $w(Q)\,\sigma(3Q)^{p-1}$, we obtain
+We first prove a pointwise estimate for $Mf$. Fix $x \in \mathbb{R}^d$ and $r > 0$, let $Q := Q(x,r)$, and let $3Q$ be as in Lemma~\ref{lem:cubes}. Multiplying and dividing by $w(Q)\,\sigma(3Q)^{p-1}$, we obtain
 \begin{equation}\label{eq:identity}
 \begin{aligned}
   \left( \frac{1}{|Q|} \int_Q |f(y)|\,dy \right)^{p-1}
@@ -198,12 +198,12 @@ Since $w(Q) \le w(3Q)$ and $|3Q| = 3^d |Q|$, the first factor on the right-hand 
 \[
   \frac{w(Q)\,\sigma(3Q)^{p-1}}{|Q|^p} \le 3^{dp} \left( \frac{1}{|3Q|} \int_{3Q} w(y)\,dy \right) \left( \frac{1}{|3Q|} \int_{3Q} \sigma(y)\,dy \right)^{p-1} \le 3^{dp}\, [w]_{A_p}.
 \]
-For the second factor, let $y \in Q$ and let $Q_y$ be the cube centred at $y$ with side length $2\ell(Q)$. By Lemma~\ref{lem:cubes}, $Q \subseteq Q_y \subseteq 3Q$, so
+For the second factor, let $y \in Q$. By Lemma~\ref{lem:cubes}, $Q \subseteq Q(y, 2\ell(Q)) \subseteq 3Q$, so
 \[
 \begin{aligned}
   \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,dz
   &= \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,\sigma(z)^{-1}\,\sigma(z)\,dz \\
-  &\le \frac{1}{\sigma(Q_y)} \int_{Q_y} |f(z)|\,\sigma(z)^{-1}\,\sigma(z)\,dz \le M^c_\sigma\big(|f|\sigma^{-1}\big)(y).
+  &\le \frac{1}{\sigma(Q(y, 2\ell(Q)))} \int_{Q(y, 2\ell(Q))} |f(z)|\,\sigma(z)^{-1}\,\sigma(z)\,dz \le M^c_\sigma\big(|f|\sigma^{-1}\big)(y).
 \end{aligned}
 \]
 This holds for every $y \in Q$, and therefore
@@ -215,7 +215,7 @@ This holds for every $y \in Q$, and therefore
   &\le M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x),
 \end{aligned}
 \]
-where the last inequality holds because $Q$ is centred at $x$. Inserting both bounds into \eqref{eq:identity}, taking the supremum over all cubes $Q$ centred at $x$ and applying Lemma~\ref{lem:centred}, we arrive at
+where the last inequality holds because $Q = Q(x,r)$. Inserting both bounds into \eqref{eq:identity}, taking the supremum over $r > 0$ and applying Lemma~\ref{lem:centred}, we arrive at
 \begin{equation}\label{eq:pointwise}
   Mf(x) \le 2^d\, 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
 \end{equation}
@@ -266,7 +266,7 @@ We first show that $w_\delta \in A_p$ with
 \begin{equation}\label{eq:wdelta}
   [w_\delta]_{A_p} \le C\, \delta^{1-p},
 \end{equation}
-where $C$ depends only on $p$ and $d$. The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Write $a := (d-\delta)(p-1) \ge 0$, and let $Q$ be a cube with centre $c$ and side length $\ell$. Every $y \in Q$ satisfies $|y - c| \le \frac{\sqrt{d}}{2}\,\ell$.
+where $C$ depends only on $p$ and $d$. The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Write $a := (d-\delta)(p-1) \ge 0$, and let $Q := Q(c,\ell)$ be a cube. Every $y \in Q$ satisfies $|y - c| \le \frac{\sqrt{d}}{2}\,\ell$.
 
 Suppose first that $|c| \le \sqrt{d}\,\ell$. Then every $y \in Q$ satisfies $|y| \le R\ell$ with $R := \frac{3\sqrt{d}}{2}$. Since $a \ge 0$, this gives $w_\delta \le (R\ell)^a$ on $Q$, and by \eqref{eq:polar},
 \[
@@ -283,15 +283,15 @@ Suppose instead that $|c| > \sqrt{d}\,\ell$. Then $|y - c| < \frac{1}{2}|c|$, so
 \]
 Taking the supremum over all cubes proves \eqref{eq:wdelta} with $C := \max\{R^{d(p-1)}\omega_d^{\,p-1},\, 3^{d(p-1)}\}$.
 
-Next we construct a function for which $M$ is large in $L^p_{w_\delta}$. Let $Q_0 := [-1,1]^d$ and $f_\delta(x) := |x|^{\delta-d}\chi_{Q_0}(x)$. Then $f_\delta \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and since $Q_0 \subseteq \{|y| < 2\sqrt{d}\}$, \eqref{eq:polar} gives
+Next we construct a function for which $M$ is large in $L^p_{w_\delta}$. Let $f_\delta(x) := |x|^{\delta-d}\chi_{Q(0,2)}(x)$. Then $f_\delta \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and since $Q(0,2) \subseteq \{|y| < 2\sqrt{d}\}$, \eqref{eq:polar} gives
 \[
-  \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q_0} |y|^{(\delta-d)p}\, |y|^{(d-\delta)(p-1)}\,dy = \int_{Q_0} |y|^{\delta-d}\,dy \le \omega_d\, \frac{(2\sqrt{d})^\delta}{\delta} < \infty .
+  \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q(0,2)} |y|^{(\delta-d)p}\, |y|^{(d-\delta)(p-1)}\,dy = \int_{Q(0,2)} |y|^{\delta-d}\,dy \le \omega_d\, \frac{(2\sqrt{d})^\delta}{\delta} < \infty .
 \]
-Moreover $\|f_\delta\|_{L^p_{w_\delta}} > 0$, so $f_\delta \in L^p_{w_\delta}(\mathbb{R}^d)$ is not the zero element. Let $x \in Q_0$ with $x \neq 0$, and put $r := \max_{1 \le i \le d} |x_i|$, so that $0 < r \le |x|$. The cube $[-r,r]^d$ contains $x$, is contained in $Q_0$, and contains the ball $\{|y| < r\}$. By the definition of $M$ and \eqref{eq:polar},
+Moreover $\|f_\delta\|_{L^p_{w_\delta}} > 0$, so $f_\delta \in L^p_{w_\delta}(\mathbb{R}^d)$ is not the zero element. Let $x \in Q(0,2)$ with $x \neq 0$, and put $r := \max_{1 \le i \le d} |x_i|$, so that $0 < r \le |x|$. The cube $Q(0,2r)$ contains $x$, is contained in $Q(0,2)$, and contains the ball $\{|y| < r\}$. By the definition of $M$ and \eqref{eq:polar},
 \[
-  Mf_\delta(x) \ge \frac{1}{(2r)^d} \int_{[-r,r]^d} |y|^{\delta-d}\,dy \ge \frac{1}{(2r)^d} \int_{\{|y| < r\}} |y|^{\delta-d}\,dy = \frac{\omega_d}{2^d\delta}\, r^{\delta-d} \ge \frac{\omega_d}{2^d\delta}\, |x|^{\delta-d},
+  Mf_\delta(x) \ge \frac{1}{(2r)^d} \int_{Q(0,2r)} |y|^{\delta-d}\,dy \ge \frac{1}{(2r)^d} \int_{\{|y| < r\}} |y|^{\delta-d}\,dy = \frac{\omega_d}{2^d\delta}\, r^{\delta-d} \ge \frac{\omega_d}{2^d\delta}\, |x|^{\delta-d},
 \]
-where the last inequality holds because $\delta - d < 0$ and $r \le |x|$. Thus $Mf_\delta \ge \frac{\omega_d}{2^d\delta} f_\delta$ almost everywhere on $Q_0$, and this also holds outside $Q_0$, where $f_\delta = 0$. Consequently
+where the last inequality holds because $\delta - d < 0$ and $r \le |x|$. Thus $Mf_\delta \ge \frac{\omega_d}{2^d\delta} f_\delta$ almost everywhere on $Q(0,2)$, and this also holds outside $Q(0,2)$, where $f_\delta = 0$. Consequently
 \begin{equation}\label{eq:Mfdelta}
   \|Mf_\delta\|_{L^p_{w_\delta}} \ge \frac{\omega_d}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} .
 \end{equation}
