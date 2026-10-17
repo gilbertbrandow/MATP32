@@ -96,8 +96,13 @@ Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $
 \[
   \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
 \]
-Moreover, the exponent $\frac{1}{p-1}$ is best possible: for every $\alpha < \frac{1}{p-1}$ there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha} \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{theorem}
+
+The exponent in Theorem~\ref{thm:main} cannot be improved.
+
+\begin{proposition}[Buckley \cite{Buckley1993}]\label{prop:sharp}
+Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+\end{proposition}
 
 In particular, Theorem~\ref{thm:main} shows that $w \in A_p$ is also a sufficient condition, since if $[w]_{A_p} < \infty$, then \eqref{eq:question} holds with $C = c_{p,d}[w]_{A_p}^{1/(p-1)}$. Together with Corollary~\ref{cor:necessity}, this answers the question posed at the beginning completely and implies the following result.
 
@@ -105,7 +110,7 @@ In particular, Theorem~\ref{thm:main} shows that $w \in A_p$ is also a sufficien
 Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
 \end{theorem}
 
-Theorem~\ref{thm:muckenhoupt} is the original result of~\cite{Muckenhoupt1972}, published in 1972. His proof, as well as Buckley's proof of Theorem~\ref{thm:main}, relies on the fact that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$, which is a consequence of the reverse H\"older inequality for $A_p$ weights. Buckley's proof moreover uses interpolation. We present neither of these proofs. For the upper bound in Theorem~\ref{thm:main} we instead present the elementary proof of Lerner \cite{Lerner2008}, which avoids the $A_{p-\varepsilon}$ property, and as noted above Theorem~\ref{thm:muckenhoupt} then needs no separate proof since it follows immidiatly from Corollary~\ref{cor:necessity} and Theorem~\ref{thm:main}. We complement Lerner's argument with a proof of Proposition~\ref{prop:necessity} and an example showing that the exponent in Theorem~\ref{thm:main} cannot be improved.
+Theorem~\ref{thm:muckenhoupt} is the original result of~\cite{Muckenhoupt1972}, published in 1972. His proof, as well as Buckley's proof of Theorem~\ref{thm:main}, relies on the fact that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$, which is a consequence of the reverse H\"older inequality for $A_p$ weights. Buckley's proof moreover uses interpolation. We present neither of these proofs. For the upper bound in Theorem~\ref{thm:main} we instead present the elementary proof of Lerner \cite{Lerner2008}, which avoids the $A_{p-\varepsilon}$ property, and as noted above Theorem~\ref{thm:muckenhoupt} then needs no separate proof since it follows immidiatly from Corollary~\ref{cor:necessity} and Theorem~\ref{thm:main}. We complement Lerner's argument with proofs of Propositions~\ref{prop:necessity} and~\ref{prop:sharp}.
 
 \section{Preliminaries}
 
@@ -143,6 +148,83 @@ Suppose that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everyw
   \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1} \le [w]_{A_p} \frac{|Q|}{w(Q)} < \infty
 \]
 for every cube $Q$. Since every compact set is contained in a cube, $\sigma$ is locally integrable.
+\end{proof}
+
+\begin{lemma}[{\cite[Lemma A.5]{Duoandikoetxea2013}}]\label{lem:besicovitch}
+There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $Q_x$ be a cube centred at $x$, such that $\sup_{x \in E} \ell(Q_x) < \infty$. Then there is a countable subfamily $\{Q_{x_j}\}_j$ which covers $E$ and satisfies $\sum_j \chi_{Q_{x_j}} \le N_d$.
+\end{lemma}
+
+\begin{lemma}\label{lem:key}
+Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$. Then there is a constant $C_{q,d}$, depending only on $q$ and $d$, such that
+\[
+  \|M^c_v f\|_{L^q_v} \le C_{q,d}\, \|f\|_{L^q_v}
+\]
+for all $f \in L^q_v(\mathbb{R}^d)$.
+\end{lemma}
+
+\section{Proof of Theorem~\ref{thm:main}}
+
+In this section we prove Theorem~\ref{thm:main}, following the argument of Lerner \cite{Lerner2008}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. If $w = 0$ almost everywhere, both sides of the inequality vanish, so we may assume that $w$ is not almost everywhere zero. By Lemma~\ref{lem:sigma}, $w > 0$ almost everywhere and $\sigma := w^{-\frac{1}{p-1}}$ is a weight with $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$. In particular, the operators $M^c_w$ and $M^c_\sigma$ are defined.
+
+We first prove a pointwise estimate for $Mf$. Fix $x \in \mathbb{R}^d$ and a cube $Q$ centred at $x$, and let $3Q$ be as in Lemma~\ref{lem:cubes}. Multiplying and dividing by $w(Q)\,\sigma(3Q)^{p-1}$, we obtain
+\begin{equation}\label{eq:identity}
+\begin{aligned}
+  \left( \frac{1}{|Q|} \int_Q |f(y)|\,dy \right)^{p-1}
+  &= \frac{1}{|Q|^{p-1}} \left( \int_Q |f(y)|\,dy \right)^{p-1} \\
+  &= \frac{w(Q)\,\sigma(3Q)^{p-1}}{|Q|^p} \cdot \frac{|Q|}{w(Q)} \cdot \frac{1}{\sigma(3Q)^{p-1}} \left( \int_Q |f(y)|\,dy \right)^{p-1} \\
+  &= \frac{w(Q)\,\sigma(3Q)^{p-1}}{|Q|^p} \cdot \frac{|Q|}{w(Q)} \left( \frac{1}{\sigma(3Q)} \int_Q |f(y)|\,dy \right)^{p-1}.
+\end{aligned}
+\end{equation}
+Since $w(Q) \le w(3Q)$ and $|3Q| = 3^d |Q|$, the first factor on the right-hand side satisfies
+\[
+  \frac{w(Q)\,\sigma(3Q)^{p-1}}{|Q|^p} \le 3^{dp} \left( \frac{1}{|3Q|} \int_{3Q} w(y)\,dy \right) \left( \frac{1}{|3Q|} \int_{3Q} \sigma(y)\,dy \right)^{p-1} \le 3^{dp}\, [w]_{A_p}.
+\]
+For the second factor, let $y \in Q$ and let $Q_y$ be the cube centred at $y$ with side length $2\ell(Q)$. By Lemma~\ref{lem:cubes}, $Q \subseteq Q_y \subseteq 3Q$, so
+\[
+\begin{aligned}
+  \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,dz
+  &= \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,\sigma(z)^{-1}\,\sigma(z)\,dz \\
+  &\le \frac{1}{\sigma(Q_y)} \int_{Q_y} |f(z)|\,\sigma(z)^{-1}\,\sigma(z)\,dz \le M^c_\sigma\big(|f|\sigma^{-1}\big)(y).
+\end{aligned}
+\]
+This holds for every $y \in Q$, and therefore
+\[
+\begin{aligned}
+  \frac{|Q|}{w(Q)} \left( \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,dz \right)^{p-1}
+  &= \frac{1}{w(Q)} \int_Q \left( \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,dz \right)^{p-1} dy \\
+  &\le \frac{1}{w(Q)} \int_Q \Big( M^c_\sigma\big(|f|\sigma^{-1}\big)(y) \Big)^{p-1} w(y)^{-1}\,w(y)\,dy \\
+  &\le M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x),
+\end{aligned}
+\]
+where the last inequality holds because $Q$ is centred at $x$. Inserting both bounds into \eqref{eq:identity}, taking the supremum over all cubes $Q$ centred at $x$ and applying Lemma~\ref{lem:centred}, we arrive at
+\begin{equation}\label{eq:pointwise}
+  Mf(x) \le 2^d\, 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
+\end{equation}
+
+We now take norms. Since $1 - \frac{p}{p-1} = -\frac{1}{p-1}$, we have $w^{1 - \frac{p}{p-1}} = \sigma$, and similarly $\sigma^{1-p} = w$. The second identity gives
+\[
+  \big\| |f|\sigma^{-1} \big\|_{L^p_\sigma}^p = \int_{\mathbb{R}^d} |f(x)|^p\, \sigma(x)^{-p}\, \sigma(x)\,dx = \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx = \|f\|_{L^p_w}^p ,
+\]
+so $|f|\sigma^{-1} \in L^p_\sigma(\mathbb{R}^d)$. Using the first identity and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, we obtain
+\[
+\begin{aligned}
+  \int_{\mathbb{R}^d} \Big( \big(M^c_\sigma(|f|\sigma^{-1})(x)\big)^{p-1} w(x)^{-1} \Big)^{\frac{p}{p-1}} w(x)\,dx
+  &= \int_{\mathbb{R}^d} \big(M^c_\sigma(|f|\sigma^{-1})(x)\big)^{p}\, \sigma(x)\,dx \\
+  &\le C_{p,d}^p\, \|f\|_{L^p_w}^p ,
+\end{aligned}
+\]
+so the function $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1}$ lies in $L^{p/(p-1)}_w(\mathbb{R}^d)$. Finally, we raise \eqref{eq:pointwise} to the power $p$, integrate against $w$, and apply Lemma~\ref{lem:key} with $v = w$ and $q = \frac{p}{p-1}$. Together with the previous estimate this gives
+\[
+  \|Mf\|_{L^p_w}^p \le \Big( 2^d\, 3^{\frac{dp}{p-1}} \Big)^p\, [w]_{A_p}^{\frac{p}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{p}{p-1}}\, C_{p,d}^p\, \|f\|_{L^p_w}^p .
+\]
+Taking $p$-th roots, we conclude that
+\[
+  \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w}, \qquad c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d},
+\]
+and $c_{p,d}$ depends only on $p$ and $d$.
 \end{proof}
 
 \bibliographystyle{amsplain}
