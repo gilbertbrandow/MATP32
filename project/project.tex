@@ -40,9 +40,9 @@ The central object of this report is the Hardy--Littlewood maximal operator $M$,
 
 \begin{definition}[Hardy--Littlewood maximal operator]
 Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable function $f$ and $x \in \mathbb{R}^d$,
-\begin{equation}\label{eq:M}
+\[
   M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
-\end{equation}
+\]
 where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over cubes $Q$ centred at $x$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
 \end{definition}
 
@@ -112,7 +112,9 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 
 Theorem~\ref{thm:muckenhoupt} is the original result of~\cite{Muckenhoupt1972}, published in 1972. His proof, as well as Buckley's proof of Theorem~\ref{thm:main}, relies on the fact that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$, which is a consequence of the reverse H\"older inequality for $A_p$ weights. Buckley's proof moreover uses interpolation. We present neither of these proofs. For the upper bound in Theorem~\ref{thm:main} we instead present the elementary proof of Lerner \cite{Lerner2008}, which avoids the $A_{p-\varepsilon}$ property, and as noted above Theorem~\ref{thm:muckenhoupt} then needs no separate proof since it follows immidiatly from Corollary~\ref{cor:necessity} and Theorem~\ref{thm:main}. We complement Lerner's argument with proofs of Propositions~\ref{prop:necessity} and~\ref{prop:sharp}.
 
-\section{Preliminaries}
+\section{Proofs}
+
+\subsection{Preliminaries}
 
 \begin{lemma}\label{lem:cubes}
 Let $Q$ be a cube with side length $\ell(Q)$, let $y \in Q$, and let $Q_y$ be the cube centred at $y$ with side length $2\ell(Q)$. Then $Q \subseteq Q_y \subseteq 3Q$, where $3Q$ denotes the cube with the same centre as $Q$ and side length $3\ell(Q)$.
@@ -150,7 +152,7 @@ Suppose that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everyw
 for every cube $Q$. Since every compact set is contained in a cube, $\sigma$ is locally integrable.
 \end{proof}
 
-\begin{lemma}[{\cite[Lemma A.5]{Duoandikoetxea2013}}]\label{lem:besicovitch}
+\begin{lemma}[{Besicovitch covering lemma \cite[Lemma A.5]{Duoandikoetxea2013}}]\label{lem:besicovitch}
 There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $Q_x$ be a cube centred at $x$, such that $\sup_{x \in E} \ell(Q_x) < \infty$. Then there is a countable subfamily $\{Q_{x_j}\}_j$ which covers $E$ and satisfies $\sum_j \chi_{Q_{x_j}} \le N_d$.
 \end{lemma}
 
@@ -162,9 +164,9 @@ Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$
 for all $f \in L^q_v(\mathbb{R}^d)$.
 \end{lemma}
 
-\section{Proof of Theorem~\ref{thm:main}}
+\subsection{Proof of Theorem~\ref{thm:main}}
 
-In this section we prove Theorem~\ref{thm:main}, following the argument of Lerner \cite{Lerner2008}.
+We prove Theorem~\ref{thm:main} following the argument of Lerner \cite{Lerner2008}.
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
 Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. If $w = 0$ almost everywhere, both sides of the inequality vanish, so we may assume that $w$ is not almost everywhere zero. By Lemma~\ref{lem:sigma}, $w > 0$ almost everywhere and $\sigma := w^{-\frac{1}{p-1}}$ is a weight with $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$. In particular, the operators $M^c_w$ and $M^c_\sigma$ are defined.
@@ -225,6 +227,70 @@ Taking $p$-th roots, we conclude that
   \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w}, \qquad c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d},
 \]
 and $c_{p,d}$ depends only on $p$ and $d$.
+\end{proof}
+
+\subsection{Sharpness of the exponent}
+
+\begin{proof}[Proof of Proposition~\ref{prop:sharp}]
+Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
+\begin{equation}\label{eq:contra}
+  \|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}
+\end{equation}
+for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. For every weight $w$ that is not almost everywhere zero and every cube $Q$, H\"older's inequality with exponents $p$ and $\frac{p}{p-1}$ gives
+\[
+  1 = \frac{1}{|Q|} \int_Q w^{\frac{1}{p}}\, w^{-\frac{1}{p}}\,dy \le \left( \frac{1}{|Q|} \int_Q w\,dy \right)^{\frac{1}{p}} \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{\frac{p-1}{p}},
+\]
+so $[w]_{A_p} \ge 1$. Hence \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, and we may assume that $0 \le \alpha < \frac{1}{p-1}$.
+
+For $0 < \delta < 1$ we consider the weight $w_\delta(x) := |x|^{(d-\delta)(p-1)}$, for which $w_\delta^{-\frac{1}{p-1}}(x) = |x|^{\delta-d}$. By polar coordinates,
+\begin{equation}\label{eq:polar}
+  \int_{\{|y| < r\}} |y|^{\delta - d}\,dy = \omega_d\, \frac{r^\delta}{\delta} \qquad \text{for every } r > 0,
+\end{equation}
+where $\omega_d$ denotes the surface measure of the unit sphere in $\mathbb{R}^d$.
+
+We first show that $w_\delta \in A_p$ with
+\begin{equation}\label{eq:wdelta}
+  [w_\delta]_{A_p} \le C\, \delta^{1-p},
+\end{equation}
+where $C$ depends only on $p$ and $d$. The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Write $a := (d-\delta)(p-1) \ge 0$, and let $Q$ be a cube with centre $c$ and side length $\ell$. Every $y \in Q$ satisfies $|y - c| \le \frac{\sqrt{d}}{2}\,\ell$.
+
+Suppose first that $|c| \le \sqrt{d}\,\ell$. Then every $y \in Q$ satisfies $|y| \le R\ell$ with $R := \frac{3\sqrt{d}}{2}$. Since $a \ge 0$, this gives $w_\delta \le (R\ell)^a$ on $Q$, and by \eqref{eq:polar},
+\[
+  \frac{1}{|Q|} \int_Q |y|^{\delta-d}\,dy \le \frac{1}{\ell^d} \int_{\{|y| < R\ell\}} |y|^{\delta-d}\,dy = \frac{\omega_d\, R^\delta\, \ell^{\delta-d}}{\delta}.
+\]
+Since $a + (\delta - d)(p-1) = 0$, we obtain
+\[
+  \left( \frac{1}{|Q|} \int_Q w_\delta\,dy \right) \left( \frac{1}{|Q|} \int_Q |y|^{\delta-d}\,dy \right)^{p-1} \le (R\ell)^a \left( \frac{\omega_d\, R^\delta\, \ell^{\delta-d}}{\delta} \right)^{p-1} = R^{d(p-1)}\, \omega_d^{\,p-1}\, \delta^{1-p}.
+\]
+
+Suppose instead that $|c| > \sqrt{d}\,\ell$. Then $|y - c| < \frac{1}{2}|c|$, so $\frac{1}{2}|c| \le |y| \le \frac{3}{2}|c|$ for every $y \in Q$. Hence $w_\delta \le \big(\tfrac{3}{2}|c|\big)^a$ and $|y|^{\delta-d} \le \big(\tfrac{1}{2}|c|\big)^{\delta-d}$ on $Q$, and
+\[
+  \left( \frac{1}{|Q|} \int_Q w_\delta\,dy \right) \left( \frac{1}{|Q|} \int_Q |y|^{\delta-d}\,dy \right)^{p-1} \le \Big( \tfrac{3}{2} \Big)^a\, 2^{(d-\delta)(p-1)} = 3^a \le 3^{d(p-1)} \le 3^{d(p-1)}\, \delta^{1-p}.
+\]
+Taking the supremum over all cubes proves \eqref{eq:wdelta} with $C := \max\{R^{d(p-1)}\omega_d^{\,p-1},\, 3^{d(p-1)}\}$.
+
+Next we construct a function for which $M$ is large in $L^p_{w_\delta}$. Let $Q_0 := [-1,1]^d$ and $f_\delta(x) := |x|^{\delta-d}\chi_{Q_0}(x)$. Then $f_\delta \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and since $Q_0 \subseteq \{|y| < 2\sqrt{d}\}$, \eqref{eq:polar} gives
+\[
+  \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q_0} |y|^{(\delta-d)p}\, |y|^{(d-\delta)(p-1)}\,dy = \int_{Q_0} |y|^{\delta-d}\,dy \le \omega_d\, \frac{(2\sqrt{d})^\delta}{\delta} < \infty .
+\]
+Moreover $\|f_\delta\|_{L^p_{w_\delta}} > 0$, so $f_\delta \in L^p_{w_\delta}(\mathbb{R}^d)$ is not the zero element. Let $x \in Q_0$ with $x \neq 0$, and put $r := \max_{1 \le i \le d} |x_i|$, so that $0 < r \le |x|$. The cube $[-r,r]^d$ contains $x$, is contained in $Q_0$, and contains the ball $\{|y| < r\}$. By the definition of $M$ and \eqref{eq:polar},
+\[
+  Mf_\delta(x) \ge \frac{1}{(2r)^d} \int_{[-r,r]^d} |y|^{\delta-d}\,dy \ge \frac{1}{(2r)^d} \int_{\{|y| < r\}} |y|^{\delta-d}\,dy = \frac{\omega_d}{2^d\delta}\, r^{\delta-d} \ge \frac{\omega_d}{2^d\delta}\, |x|^{\delta-d},
+\]
+where the last inequality holds because $\delta - d < 0$ and $r \le |x|$. Thus $Mf_\delta \ge \frac{\omega_d}{2^d\delta} f_\delta$ almost everywhere on $Q_0$, and this also holds outside $Q_0$, where $f_\delta = 0$. Consequently
+\begin{equation}\label{eq:Mfdelta}
+  \|Mf_\delta\|_{L^p_{w_\delta}} \ge \frac{\omega_d}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} .
+\end{equation}
+
+Finally we combine these estimates. Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and using \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$, we obtain
+\[
+  \frac{\omega_d}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} \le \|Mf_\delta\|_{L^p_{w_\delta}} \le c\, [w_\delta]_{A_p}^{\alpha}\, \|f_\delta\|_{L^p_{w_\delta}} \le c\, C^\alpha\, \delta^{\alpha(1-p)}\, \|f_\delta\|_{L^p_{w_\delta}} .
+\]
+Dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$ and multiplying by $\delta$ gives
+\[
+  \frac{\omega_d}{2^d} \le c\, C^\alpha\, \delta^{1 - \alpha(p-1)} \qquad \text{for every } 0 < \delta < 1 .
+\]
+Since $\alpha < \frac{1}{p-1}$, the exponent $1 - \alpha(p-1)$ is positive, so the right-hand side tends to $0$ as $\delta \to 0$, while the left-hand side is a positive constant independent of $\delta$. This is a contradiction, and the proof is complete.
 \end{proof}
 
 \bibliographystyle{amsplain}
