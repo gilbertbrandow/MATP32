@@ -57,7 +57,7 @@ If $w = 0$ almost everywhere, then $\|f\|_{L^p_w} = 0$ for every $f$, so $L^p_w(
 \end{remark}
 
 \begin{remark}[The endpoint $p = \infty$]
-For $p = \infty$, with the essential supremum taken with respect to $w(x)\,dx$, the answer is trivial: $M$ is bounded if and only if $w > 0$ almost everywhere. If $w > 0$ a.e., then $w(x)\,dx$ and $dx$ have the same null sets, so $\|Mf\|_{L^\infty} \le \|f\|_{L^\infty}$ applies. If $w = 0$ on a set $Z$ with $|Z| > 0$, then $f = \chi_Z$ has weighted supremum $0$, while $Mf > 0$ everywhere. Hence we restrict to $1 < p < \infty$.
+For $p = \infty$ the weight plays essentially no role. If $w > 0$ almost everywhere, then $w(E) = 0$ if and only if $|E| = 0$, so $L^\infty_w(\mathbb{R}^d) = L^\infty(\mathbb{R}^d)$ with equal norms, and $M$ is bounded by the unweighted result. If $w$ is not almost everywhere zero but vanishes on a set $Z$ with $|Z| > 0$, then $\|\chi_Z\|_{L^\infty_w} = 0$ while $M\chi_Z > 0$ everywhere, so $M$ is not bounded. This is why the question \eqref{eq:question} is posed only for $1 < p < \infty$.
 \end{remark}
 
 Suppose that \eqref{eq:question} holds for a weight $w$. A first observation is that $w$ cannot vanish on a set of positive measure. The indicator function of a bounded part of such a set has norm zero in $L^p_w$, while its maximal function is positive everywhere, which contradicts \eqref{eq:question}. More generally, $w$ cannot be much smaller on part of a cube than on the rest of it. A function concentrated where $w$ is small has a small norm in $L^p_w$, while its maximal function is large on the whole cube, where $w$ is large. Making this precise leads to the following necessary condition.
