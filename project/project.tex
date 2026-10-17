@@ -29,11 +29,11 @@ A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]
-Let $w$ be a weight and let $1 < p < \infty$. We define
+Let $w$ be a weight and let $1 \le p < \infty$. We define
 \[
   L^p_w(\mathbb{R}^d) := \left\{ f : \mathbb{R}^d \to \mathbb{R} \text{ measurable} : \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx < \infty \right\},
 \]
-with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \right)^{1/p}$.
+with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \right)^{1/p}$. Moreover, $L^\infty_w(\mathbb{R}^d)$ is the space of measurable functions $f$ with $\|f\|_{L^\infty_w} := \inf\{ t \ge 0 : w(\{|f| > t\}) = 0 \} < \infty$.
 \end{definition}
 
 The central object of this report is the Hardy--Littlewood maximal operator $M$, which assigns to each point the largest average of $|f|$ over cubes containing that point. In the proof of our main result we will also need the analogous operator in which these averages are taken with respect to the measure $w(x)\,dx$ instead of Lebesgue measure.
@@ -156,6 +156,14 @@ for every cube $Q$. Since every compact set is contained in a cube, $\sigma$ is 
 There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $Q_x$ be a cube centred at $x$, such that $\sup_{x \in E} \ell(Q_x) < \infty$. Then there is a countable subfamily $\{Q_{x_j}\}_j$ which covers $E$ and satisfies $\sum_j \chi_{Q_{x_j}} \le N_d$.
 \end{lemma}
 
+\begin{lemma}\label{lem:weak}
+Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $f$ be a measurable function such that $|f|\,v$ is locally integrable. Then $M^c_v f$ is measurable, and
+\[
+  v\big(\{x \in \mathbb{R}^d : M^c_v f(x) > \lambda\}\big) \le \frac{N_d}{\lambda}\, \|f\|_{L^1_v}
+\]
+for every $\lambda > 0$, where $N_d$ is the constant in Lemma~\ref{lem:besicovitch}.
+\end{lemma}
+
 \begin{lemma}\label{lem:key}
 Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$. Then there is a constant $C_{q,d}$, depending only on $q$ and $d$, such that
 \[
@@ -163,6 +171,12 @@ Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$
 \]
 for all $f \in L^q_v(\mathbb{R}^d)$.
 \end{lemma}
+
+\begin{proof}
+If $f = f_1 + f_2$ with $f_1 \in L^1_v(\mathbb{R}^d)$ and $f_2 \in L^\infty_v(\mathbb{R}^d)$, then $\int_Q |f|\, v\,dy \le \|f_1\|_{L^1_v} + \|f_2\|_{L^\infty_v}\, v(Q) < \infty$ for every cube $Q$. Hence $M^c_v$ is defined on $L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$, and $M^c_v f$ is measurable by Lemma~\ref{lem:weak}. Since $|f + h| \le |f| + |h|$, the operator $M^c_v$ is sublinear.
+
+By Lemma~\ref{lem:weak}, $v(\{M^c_v f > \lambda\}) \le \frac{N_d}{\lambda} \|f\|_{L^1_v}$ for every $f \in L^1_v(\mathbb{R}^d)$ and $\lambda > 0$. Moreover, if $f \in L^\infty_v(\mathbb{R}^d)$, then $|f| \le \|f\|_{L^\infty_v}$ outside a set of $v$-measure zero, so every average in the definition of $M^c_v f$ is at most $\|f\|_{L^\infty_v}$, and $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$. The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, applied on the measure space $(\mathbb{R}^d, v(x)\,dx)$ with exponents $1$ and $\infty$, now gives the claim with a constant depending only on $q$, $N_d$ and $1$, and hence only on $q$ and $d$.
+\end{proof}
 
 \subsection{Proof of Theorem~\ref{thm:main}}
 
