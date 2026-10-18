@@ -1,6 +1,8 @@
 % Literature for Project 3. PDFs in project/literature/.
 
 % Main paper: we present Theorem C (pp. 2831-2832).
+% Local copy: literature/lerner_andrei.pdf (relative to the project folder). Theorems A and C stated p. 2830,
+% proof of Theorem C (upper bound only) p. 2832. Cites Muckenhoupt as [8], Buckley as [1], de Guzman pp. 6-7 as [5].
 @article{Lerner2008,
   author  = {Lerner, Andrei K.},
   title   = {An elementary approach to several results on the
@@ -25,6 +27,10 @@
   doi       = {10.1007/978-1-4939-1194-3},
 }
 
+% Duoandikoetxea, survey. Local copy: literature/duoandikoetxea-muckenhoupt.pdf (relative to the project folder).
+% Uses its own numbering. Cited results: Theorem 1.1 (weak (1,1) and L^p bounds for M), Theorem 4.5 (A_p implies
+% A_{p-eps}, via the reverse Hoelder inequality Theorem 4.1), Lemma A.4 (Vitali-type covering lemma for cubes, 3Q),
+% Theorem A.6 (Marcinkiewicz interpolation). Also: Thm 1.7 (necessity), Thm 1.10 (centred M_mu), Lemma A.5 (Besicovitch).
 % History for the intro; Thm 1.10 (uniform bounds for centred M_mu),
 % Thm 1.12 (Lerner's proof in detail), sharpness exercise, Lemma A.5.
 @incollection{Duoandikoetxea2013,
@@ -76,6 +82,16 @@
 }
 
 % Original characterisation of the weights for which M is bounded.
+% Muckenhoupt. Local copy: literature/muckenhoupt-weighted-maximal-operator.pdf (relative to the project folder).
+% Scan of the journal version, 20 pages. Journal page = PDF page + 206 (PDF p. 1 = p. 207).
+% Main text is on an interval J of R (one dimension). Key results:
+%   (1.3) = the A_p condition on intervals; Definition of 'condition A_p': p. 214 (PDF p. 8).
+%   Lemma 5: A_p implies A_r for some r < p (the A_{p-eps} property): p. 214 (PDF p. 8).
+%   Theorem 2: M bounded on L^p(U) iff (1.3), proof via Lemma 5 + Marcinkiewicz: p. 215 (PDF p. 9).
+%   Theorem 3: the case p = infinity (bounded iff V > 0 a.e. or U = 0 a.e.): p. 216-217.
+%   Section 7 (from p. 220, PDF p. 14): R^n with centred cubes. Theorem 9 = R^n version of Theorem 2,
+%   condition (7.10) = A_p on cubes: p. 222 (PDF p. 16). This is what we cite for Theorem A.
+% MR0293384 (from Lerner's and Duoandikoetxea's reference lists). DOI follows the AMS pattern, not checked online.
 @article{Muckenhoupt1972,
   author  = {Muckenhoupt, Benjamin},
   title   = {Weighted norm inequalities for the {H}ardy maximal function},
@@ -83,6 +99,8 @@
   volume  = {165},
   year    = {1972},
   pages   = {207--226},
+  mrnumber = {0293384},
+  doi     = {10.1090/S0002-9947-1972-0293384-6},
 }
 
 % Sharp dependence of ||M|| on [w]_{A_p} (Theorem C in Lerner).
