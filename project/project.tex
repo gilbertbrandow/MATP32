@@ -367,30 +367,34 @@ Since $\alpha < \frac{1}{p-1}$, the exponent $1 - \alpha(p-1)$ is positive, so t
 
 \section{Proof of Proposition~\ref{prop:necessity}}\label{app:necessity}
 
-\begin{proof}
-Let $Q$ be a cube. We first show that $w(Q) > 0$. Since $w$ is not almost everywhere zero, the set $F := \{w > 0\}$ has positive measure, so $w(F) > 0$. Every $x \in \mathbb{R}^d$ lies in a cube $Q'$ containing $Q$, so $M\chi_Q(x) \ge \frac{|Q|}{|Q'|} > 0$ for every $x$, and hence
-\[
-  \|M\chi_Q\|_{L^p_w}^p \ge \int_F (M\chi_Q)^p\, w\,dx > 0.
-\]
-If $w(Q) = 0$, then $\|\chi_Q\|_{L^p_w} = w(Q)^{1/p} = 0$, which contradicts \eqref{eq:question}. Thus $w(Q) > 0$.
+We follow the proof of \cite[Theorem~1.7]{Duoandikoetxea2013}.
 
-Now let $\sigma$ be as in Remark~\ref{rem:dual}, let $N > 0$, and let $f := \min\{\sigma, N\}\, \chi_Q$. Where $w > 0$ we have $\sigma^{p-1} w = 1$, so $(\min\{\sigma, N\})^p\, w \le \min\{\sigma, N\}\, \sigma^{p-1} w = \min\{\sigma, N\}$, and where $w = 0$ we have $(\min\{\sigma, N\})^p\, w = 0 \le \min\{\sigma, N\}$. Hence
+\begin{proof}
+We first show that $w > 0$ almost everywhere. Let $Q$ be a cube and let $S \subseteq Q$ be a measurable set. For $x \in Q$ we have $M\chi_S(x) \ge |S|/|Q|$, so \eqref{eq:question} applied to $f = \chi_S$ gives
 \[
-  \|f\|_{L^p_w}^p = \int_Q (\min\{\sigma, N\})^p\, w\,dx \le \int_Q \min\{\sigma, N\}\,dx \le N |Q| < \infty,
+  \left( \frac{|S|}{|Q|} \right)^p w(Q) \le C^p\, w(S).
 \]
-so $f \in L^p_w(\mathbb{R}^d)$. Moreover, $Q$ is a cube containing every $x \in Q$, so $Mf(x) \ge \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy$ for $x \in Q$, and therefore
+Since $w$ is not almost everywhere zero, every bounded set $S$ is contained in a cube $Q$ with $w(Q) > 0$, so $w(S) = 0$ implies $|S| = 0$. Applying this to the sets $\{w = 0\} \cap \{|x| < k\}$, $k = 1, 2, \ldots$, shows that $w > 0$ almost everywhere. In particular $w(Q) > 0$ for every cube $Q$.
+
+Now let $Q$ be a cube, let $\varepsilon > 0$ and let $f := (w + \varepsilon)^{-\frac{1}{p-1}}\, \chi_Q$. Since $w \le w + \varepsilon$,
 \[
-  \|Mf\|_{L^p_w}^p \ge \int_Q \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w\,dx = \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w(Q).
+  (w + \varepsilon)^{-\frac{p}{p-1}}\, w \le (w + \varepsilon)^{-\frac{p}{p-1}}\, (w + \varepsilon) = (w + \varepsilon)^{-\frac{1}{p-1}} \le \varepsilon^{-\frac{1}{p-1}},
 \]
-Combining these two estimates with \eqref{eq:question} gives
+so $f \in L^p_w(\mathbb{R}^d)$. Moreover, $Q$ is a cube containing every $x \in Q$, so $Mf(x) \ge \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy$ for $x \in Q$, and therefore
+\begin{align*}
+  \left( \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^p w(Q)
+  &= \int_Q \left( \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^p w(x)\,dx \\
+  &\le \int_Q (Mf)^p\, w\,dx \\
+  &\le \|Mf\|_{L^p_w}^p \\
+  &\le C^p\, \|f\|_{L^p_w}^p \\
+  &= C^p \int_Q (w + \varepsilon)^{-\frac{p}{p-1}}\, w\,dx \\
+  &\le C^p \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dx .
+\end{align*}
+Since $w$ is locally integrable, $w < \infty$ almost everywhere, so $(w + \varepsilon)^{-\frac{1}{p-1}} > 0$ almost everywhere and the integral on the right-hand side is positive. Dividing by it we obtain
 \[
-  \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w(Q) \le C^p \int_Q \min\{\sigma, N\}\,dy .
+  \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^{p-1} \le C^p .
 \]
-Since $w$ is locally integrable, $w < \infty$ almost everywhere, so $\min\{\sigma, N\} > 0$ almost everywhere and $\int_Q \min\{\sigma, N\}\,dy > 0$. Dividing by $\int_Q \min\{\sigma, N\}\,dy$ we obtain
-\[
-  \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^{p-1} \le C^p .
-\]
-As $N \to \infty$, $\min\{\sigma, N\}$ increases to $\sigma$, so by monotone convergence $\int_Q \min\{\sigma, N\}\,dy \to \sigma(Q)$, and \eqref{eq:Apcube} follows. Since $w(Q) > 0$, this also shows that $\sigma(Q) < \infty$. Finally, $\sigma = \infty$ on $\{w = 0\}$, so $\sigma(Q) < \infty$ implies $|\{w = 0\} \cap Q| = 0$. As this holds for every cube $Q$, we conclude that $w > 0$ almost everywhere.
+As $\varepsilon \to 0$, $(w + \varepsilon)^{-\frac{1}{p-1}}$ increases to $w^{-\frac{1}{p-1}}$, so by monotone convergence $\int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \to \int_Q w^{-\frac{1}{p-1}}\,dy$, and \eqref{eq:Apcube} follows. Since $w(Q) > 0$, this also shows that $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$.
 \end{proof}
 
 \bibliographystyle{amsplain}
