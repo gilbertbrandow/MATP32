@@ -12,6 +12,8 @@
 \date{13 October 2026}
 
 \newtheorem{theorem}{Theorem}
+\newtheorem{theoremA}{Theorem}
+\renewcommand{\thetheoremA}{A}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
@@ -36,7 +38,7 @@ Let $w$ be a weight and let $1 \le p < \infty$. We define
 with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \right)^{1/p}$. Moreover, $L^\infty_w(\mathbb{R}^d)$ is the space of measurable functions $f$ with $\|f\|_{L^\infty_w} := \inf\{ t \ge 0 : w(\{|f| > t\}) = 0 \} < \infty$.
 \end{definition}
 
-The central object of this report is the Hardy--Littlewood maximal operator $M$, which assigns to each point the largest average of $|f|$ over cubes containing that point. In the proof of our main result we will also need the analogous operator in which these averages are taken with respect to the measure $w(x)\,dx$ instead of Lebesgue measure.
+The central object of this report is the Hardy--Littlewood maximal operator $M$. Our proofs also use its analogue with respect to the measure $w(x)\,dx$.
 
 \begin{definition}[Hardy--Littlewood maximal operator]
 Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable function $f$ and $x \in \mathbb{R}^d$,
@@ -46,21 +48,21 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r)$, $r > 0$, where $Q(x,r)$ denotes the cube centred at $x$ with side length $r$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
 \end{definition}
 
-It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ on $L^p(\mathbb{R}^d)$ for $1 < p \le \infty$ \cite{GrafakosClassical}.
-In the light of our $L^p_w(\mathbb{R}^d)$ definition a natural question arises, for fixed $1 < p < \infty$, for which weights $w$ is the sublinear operator $M$ bounded on $L^p_w(\mathbb{R}^d)$? In other words, for which $w$ is there a constant $C$ such that for all $f \in L^p_w(\mathbb{R}^d)$
+It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Theorem~1.1]{Duoandikoetxea2013}. For $1 < p < \infty$ and a weight $w$ we say that $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that
 \begin{equation}\label{eq:question}
-  \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dx \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dx \right)^{1/p} = C\, \|f\|_{L^p_w}.
+  \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dx \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dx \right)^{1/p} = C\, \|f\|_{L^p_w}
 \end{equation}
+for all $f \in L^p_w(\mathbb{R}^d)$.
 
 \begin{remark}[The zero weight]
 If $w = 0$ almost everywhere, then $\|f\|_{L^p_w} = 0$ for every $f$, so $L^p_w(\mathbb{R}^d)$ is trivial and $M$ is trivially bounded.
 \end{remark}
 
 \begin{remark}[The endpoint $p = \infty$]
-For $p = \infty$ the weight plays essentially no role. If $w > 0$ almost everywhere, then $w(E) = 0$ if and only if $|E| = 0$, so $L^\infty_w(\mathbb{R}^d) = L^\infty(\mathbb{R}^d)$ with equal norms, and $M$ is bounded by the unweighted result. If $w$ is not almost everywhere zero but vanishes on a set $Z$ with $|Z| > 0$, then $\|\chi_Z\|_{L^\infty_w} = 0$ while $M\chi_Z > 0$ everywhere, so $M$ is not bounded. This is why the question \eqref{eq:question} is posed only for $1 < p < \infty$.
+For $p = \infty$, the operator $M$ is bounded on $L^\infty_w(\mathbb{R}^d)$ if and only if $w > 0$ almost everywhere or $w = 0$ almost everywhere. Muckenhoupt \cite[Theorem~3]{Muckenhoupt1972} proves this on an interval, and the same argument works in $\mathbb{R}^d$. This is why we only consider $1 < p < \infty$.
 \end{remark}
 
-Suppose that \eqref{eq:question} holds for a weight $w$. A first observation is that $w$ cannot vanish on a set of positive measure. The indicator function of a bounded part of such a set has norm zero in $L^p_w$, while its maximal function is positive everywhere, which contradicts \eqref{eq:question}. More generally, $w$ cannot be much smaller on part of a cube than on the rest of it. A function concentrated where $w$ is small has a small norm in $L^p_w$, while its maximal function is large on the whole cube, where $w$ is large. Making this precise leads to the following necessary condition.
+If \eqref{eq:question} holds for some weight $w$, then $w$ cannot be much smaller on one part of a cube than on the rest of it. The following proposition makes this precise, and we prove it in Appendix~\ref{app:necessity}.
 
 \begin{proposition}\label{prop:necessity}
 Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then for every cube $Q$ we have $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
@@ -70,7 +72,7 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 In particular, $w > 0$ almost everywhere.
 \end{proposition}
 
-Thus, if \eqref{eq:question} holds for a weight $w$, then by Proposition~\ref{prop:necessity}, $w$ satisfies \eqref{eq:Apcube} for every cube $Q$, with the same constant $C$.This gives rise to the next definition by Muckenhoupt~\cite{Muckenhoupt1972}.
+This motivates the following definition \cite[(7.10)]{Muckenhoupt1972}.
 
 \begin{definition}[Muckenhoupt $A_p$ weights]
 Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of $w$ is
@@ -96,58 +98,32 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 \end{equation}
 \end{corollary}
 
-Corollary~\ref{cor:necessity} shows that $w \in A_p$ is a necessary condition for \eqref{eq:question} to hold. It is natural to ask whether it is also sufficient, that is, whether for every $w \in A_p$ there is a constant $C$ such that \eqref{eq:question} holds. Since Corollary~\ref{cor:necessity} moreover shows that any such $C$ must satisfy $C \ge [w]_{A_p}^{1/p}$, we may ask more precisely how large $C$ has to be in terms of $[w]_{A_p}$. The following theorem, due to Buckley \cite[Theorem~2.5]{Buckley1993}, answers both questions.
+Muckenhoupt proved that the condition $w \in A_p$ is also sufficient.
 
-\begin{theorem}[Buckley; Theorem~C in~\cite{Lerner2008}]\label{thm:main}
+\begin{theoremA}[{Muckenhoupt \cite[Theorem~9]{Muckenhoupt1972}}]\label{thm:muckenhoupt}
+Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
+\end{theoremA}
+
+Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$, and which power is the smallest possible. This was answered by Buckley \cite[Theorem~2.5]{Buckley1993}.
+
+\begin{theorem}[Buckley]\label{thm:main}
 Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
 \[
   \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
 \]
 \end{theorem}
 
-The exponent in Theorem~\ref{thm:main} cannot be improved.
-
-\begin{proposition}[{Buckley \cite[Theorem~2.5]{Buckley1993}}]\label{prop:sharp}
+\begin{proposition}[Buckley]\label{prop:sharp}
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{proposition}
 
-In particular, Theorem~\ref{thm:main} shows that $w \in A_p$ is also a sufficient condition, since if $[w]_{A_p} < \infty$, then \eqref{eq:question} holds with $C = c_{p,d}[w]_{A_p}^{1/(p-1)}$. Together with Corollary~\ref{cor:necessity}, this answers the question posed at the beginning completely and implies the following result.
+Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and Theorem~2]{Muckenhoupt1972}, relies on the fact that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$, which is a consequence of the reverse H\"older inequality for $A_p$ weights \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main} which avoids this property, and in this report we present his argument in detail. We complete it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993}, which we carry out in $\mathbb{R}^d$.
 
-\begin{theorem}[Muckenhoupt]\label{thm:muckenhoupt}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
-\end{theorem}
+\begin{remark}[A proof of Theorem~\ref{thm:muckenhoupt}]
+By Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}, the condition $w \in A_p$ is necessary for $M$ to be bounded on $L^p_w(\mathbb{R}^d)$, and by Theorem~\ref{thm:main} it is sufficient. Hence the proofs in this report also give a proof of Theorem~\ref{thm:muckenhoupt}.
+\end{remark}
 
-Theorem~\ref{thm:muckenhoupt} is the original result of~\cite{Muckenhoupt1972}, published in 1972. His proof, as well as Buckley's proof of Theorem~\ref{thm:main}, relies on the fact that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$, which is a consequence of the reverse H\"older inequality for $A_p$ weights. Buckley's proof moreover uses interpolation. We present neither of these proofs. For the upper bound in Theorem~\ref{thm:main} we instead present the elementary proof of Lerner \cite{Lerner2008}, which avoids the $A_{p-\varepsilon}$ property, and as noted above Theorem~\ref{thm:muckenhoupt} then needs no separate proof since it follows immidiatly from Corollary~\ref{cor:necessity} and Theorem~\ref{thm:main}. We complement Lerner's argument with proofs of Propositions~\ref{prop:necessity} and~\ref{prop:sharp}.
-
-\section{Proofs}
-
-\subsection{Proof of Proposition~\ref{prop:necessity}}
-
-\begin{proof}
-Let $Q$ be a cube. We first show that $w(Q) > 0$. Since $w$ is not almost everywhere zero, the set $F := \{w > 0\}$ has positive measure, so $w(F) > 0$. Every $x \in \mathbb{R}^d$ lies in a cube $Q'$ containing $Q$, so $M\chi_Q(x) \ge \frac{|Q|}{|Q'|} > 0$ for every $x$, and hence
-\[
-  \|M\chi_Q\|_{L^p_w}^p \ge \int_F (M\chi_Q)^p\, w\,dx > 0.
-\]
-If $w(Q) = 0$, then $\|\chi_Q\|_{L^p_w} = w(Q)^{1/p} = 0$, which contradicts \eqref{eq:question}. Thus $w(Q) > 0$.
-
-Now let $\sigma$ be as in Remark~\ref{rem:dual}, let $N > 0$, and let $f := \min\{\sigma, N\}\, \chi_Q$. Where $w > 0$ we have $\sigma^{p-1} w = 1$, so $(\min\{\sigma, N\})^p\, w \le \min\{\sigma, N\}\, \sigma^{p-1} w = \min\{\sigma, N\}$, and where $w = 0$ we have $(\min\{\sigma, N\})^p\, w = 0 \le \min\{\sigma, N\}$. Hence
-\[
-  \|f\|_{L^p_w}^p = \int_Q (\min\{\sigma, N\})^p\, w\,dx \le \int_Q \min\{\sigma, N\}\,dx \le N |Q| < \infty,
-\]
-so $f \in L^p_w(\mathbb{R}^d)$. Moreover, $Q$ is a cube containing every $x \in Q$, so $Mf(x) \ge \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy$ for $x \in Q$, and therefore
-\[
-  \|Mf\|_{L^p_w}^p \ge \int_Q \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w\,dx = \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w(Q).
-\]
-Combining these two estimates with \eqref{eq:question} gives
-\[
-  \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w(Q) \le C^p \int_Q \min\{\sigma, N\}\,dy .
-\]
-Since $w$ is locally integrable, $w < \infty$ almost everywhere, so $\min\{\sigma, N\} > 0$ almost everywhere and $\int_Q \min\{\sigma, N\}\,dy > 0$. Dividing by $\int_Q \min\{\sigma, N\}\,dy$ we obtain
-\[
-  \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^{p-1} \le C^p .
-\]
-As $N \to \infty$, $\min\{\sigma, N\}$ increases to $\sigma$, so by monotone convergence $\int_Q \min\{\sigma, N\}\,dy \to \sigma(Q)$, and \eqref{eq:Apcube} follows. Since $w(Q) > 0$, this also shows that $\sigma(Q) < \infty$. Finally, $\sigma = \infty$ on $\{w = 0\}$, so $\sigma(Q) < \infty$ implies $|\{w = 0\} \cap Q| = 0$. As this holds for every cube $Q$, we conclude that $w > 0$ almost everywhere.
-\end{proof}
+\section{Proofs}\label{sec:proofs}
 
 \subsection{Preliminaries}
 
@@ -186,6 +162,10 @@ Suppose that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everyw
 \]
 for every cube $Q$. Since every compact set is contained in a cube, $\sigma$ is locally integrable.
 \end{proof}
+
+\begin{remark}[The Vitali covering lemma]
+The classical proof of the weak type $(1,1)$ estimate for $M$ uses the Vitali covering lemma \cite[Lemma~A.4]{Duoandikoetxea2013}, which selects disjoint cubes $Q$ whose enlargements $3Q$ cover the given family. For the measure $v(x)\,dx$ this enlargement costs the factor $v(3Q)/v(Q)$, which is not bounded uniformly in the weight $v$. The following lemma avoids any enlargement.
+\end{remark}
 
 \begin{lemma}[{Besicovitch covering lemma \cite[Theorem~1.1]{Guzman1975}}]\label{lem:besicovitch}
 There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $r_x > 0$. Then there are points $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and satisfy $\sum_j \chi_{Q(x_j, r_{x_j})} \le N_d$.
@@ -379,6 +359,36 @@ Dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$ and multiplying by $\
   \frac{\omega_d}{2^d} \le c\, C^\alpha\, \delta^{1 - \alpha(p-1)} \qquad \text{for every } 0 < \delta < 1 .
 \]
 Since $\alpha < \frac{1}{p-1}$, the exponent $1 - \alpha(p-1)$ is positive, so the right-hand side tends to $0$ as $\delta \to 0$, while the left-hand side is a positive constant independent of $\delta$. This is a contradiction, and the proof is complete.
+\end{proof}
+
+\appendix
+
+\section{Proof of Proposition~\ref{prop:necessity}}\label{app:necessity}
+
+\begin{proof}
+Let $Q$ be a cube. We first show that $w(Q) > 0$. Since $w$ is not almost everywhere zero, the set $F := \{w > 0\}$ has positive measure, so $w(F) > 0$. Every $x \in \mathbb{R}^d$ lies in a cube $Q'$ containing $Q$, so $M\chi_Q(x) \ge \frac{|Q|}{|Q'|} > 0$ for every $x$, and hence
+\[
+  \|M\chi_Q\|_{L^p_w}^p \ge \int_F (M\chi_Q)^p\, w\,dx > 0.
+\]
+If $w(Q) = 0$, then $\|\chi_Q\|_{L^p_w} = w(Q)^{1/p} = 0$, which contradicts \eqref{eq:question}. Thus $w(Q) > 0$.
+
+Now let $\sigma$ be as in Remark~\ref{rem:dual}, let $N > 0$, and let $f := \min\{\sigma, N\}\, \chi_Q$. Where $w > 0$ we have $\sigma^{p-1} w = 1$, so $(\min\{\sigma, N\})^p\, w \le \min\{\sigma, N\}\, \sigma^{p-1} w = \min\{\sigma, N\}$, and where $w = 0$ we have $(\min\{\sigma, N\})^p\, w = 0 \le \min\{\sigma, N\}$. Hence
+\[
+  \|f\|_{L^p_w}^p = \int_Q (\min\{\sigma, N\})^p\, w\,dx \le \int_Q \min\{\sigma, N\}\,dx \le N |Q| < \infty,
+\]
+so $f \in L^p_w(\mathbb{R}^d)$. Moreover, $Q$ is a cube containing every $x \in Q$, so $Mf(x) \ge \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy$ for $x \in Q$, and therefore
+\[
+  \|Mf\|_{L^p_w}^p \ge \int_Q \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w\,dx = \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w(Q).
+\]
+Combining these two estimates with \eqref{eq:question} gives
+\[
+  \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^p w(Q) \le C^p \int_Q \min\{\sigma, N\}\,dy .
+\]
+Since $w$ is locally integrable, $w < \infty$ almost everywhere, so $\min\{\sigma, N\} > 0$ almost everywhere and $\int_Q \min\{\sigma, N\}\,dy > 0$. Dividing by $\int_Q \min\{\sigma, N\}\,dy$ we obtain
+\[
+  \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q \min\{\sigma, N\}\,dy \right)^{p-1} \le C^p .
+\]
+As $N \to \infty$, $\min\{\sigma, N\}$ increases to $\sigma$, so by monotone convergence $\int_Q \min\{\sigma, N\}\,dy \to \sigma(Q)$, and \eqref{eq:Apcube} follows. Since $w(Q) > 0$, this also shows that $\sigma(Q) < \infty$. Finally, $\sigma = \infty$ on $\{w = 0\}$, so $\sigma(Q) < \infty$ implies $|\{w = 0\} \cap Q| = 0$. As this holds for every cube $Q$, we conclude that $w > 0$ almost everywhere.
 \end{proof}
 
 \bibliographystyle{amsplain}
