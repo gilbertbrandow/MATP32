@@ -43,7 +43,7 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 \[
   M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
 \]
-where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. If the supremum is taken only over the cubes $Q(x,r)$, $r > 0$, where $Q(x,r)$ denotes the cube centred at $x$ with side length $r$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
+where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r)$, $r > 0$, where $Q(x,r)$ denotes the cube centred at $x$ with side length $r$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
 \end{definition}
 
 It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ on $L^p(\mathbb{R}^d)$ for $1 < p \le \infty$ \cite{GrafakosClassical}.
@@ -96,7 +96,7 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 \end{equation}
 \end{corollary}
 
-Corollary~\ref{cor:necessity} shows that $w \in A_p$ is a necessary condition for \eqref{eq:question} to hold. It is natural to ask whether it is also sufficient, that is, whether for every $w \in A_p$ there is a constant $C$ such that \eqref{eq:question} holds. Since Corollary~\ref{cor:necessity} moreover shows that any such $C$ must satisfy $C \ge [w]_{A_p}^{1/p}$, we may ask more precisely how large $C$ has to be in terms of $[w]_{A_p}$. The following theorem, due to Buckley \cite{Buckley1993}, answers both questions.
+Corollary~\ref{cor:necessity} shows that $w \in A_p$ is a necessary condition for \eqref{eq:question} to hold. It is natural to ask whether it is also sufficient, that is, whether for every $w \in A_p$ there is a constant $C$ such that \eqref{eq:question} holds. Since Corollary~\ref{cor:necessity} moreover shows that any such $C$ must satisfy $C \ge [w]_{A_p}^{1/p}$, we may ask more precisely how large $C$ has to be in terms of $[w]_{A_p}$. The following theorem, due to Buckley \cite[Theorem~2.5]{Buckley1993}, answers both questions.
 
 \begin{theorem}[Buckley; Theorem~C in~\cite{Lerner2008}]\label{thm:main}
 Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
@@ -107,7 +107,7 @@ Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $
 
 The exponent in Theorem~\ref{thm:main} cannot be improved.
 
-\begin{proposition}[Buckley \cite{Buckley1993}]\label{prop:sharp}
+\begin{proposition}[{Buckley \cite[Theorem~2.5]{Buckley1993}}]\label{prop:sharp}
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{proposition}
 
@@ -187,11 +187,34 @@ Suppose that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everyw
 for every cube $Q$. Since every compact set is contained in a cube, $\sigma$ is locally integrable.
 \end{proof}
 
-\begin{lemma}[{Besicovitch covering lemma \cite[Lemma A.5]{Duoandikoetxea2013}}]\label{lem:besicovitch}
+\begin{lemma}[{Besicovitch covering lemma \cite[Theorem~1.1]{Guzman1975}}]\label{lem:besicovitch}
 There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $r_x > 0$. Then there are points $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and satisfy $\sum_j \chi_{Q(x_j, r_{x_j})} \le N_d$.
 \end{lemma}
 
-We use Lemma~\ref{lem:besicovitch} without proof. A proof can be found in \cite[Theorem~1.1]{Guzman1975}.
+\begin{proof}
+For $y \in \mathbb{R}^d$ we write $|y|_\infty := \max_{1 \le i \le d} |y_i|$, so that $y \in Q(x,r)$ if and only if $|y - x|_\infty \le r/2$. We may assume that $E$ is nonempty, and we let $D := \sup_{x,y \in E} |x - y|_\infty < \infty$. If $r_x \ge 2D$ for some $x \in E$, then $E \subseteq Q(x, r_x)$, and the single point $x_1 := x$ has the required properties. Hence we may assume that $r_x < 2D$ for every $x \in E$.
+
+We choose points $x_1, x_2, \ldots \in E$ inductively. Let $m \ge 0$ and suppose that $x_1, \ldots, x_m$ have been chosen. If $E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ is empty, we stop. Otherwise we let $s_m := \sup\{ r_x : x \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j}) \}$ and choose $x_{m+1} \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ with $r_{x_{m+1}} > s_m/2$. If $j < i$, then $x_i \notin Q(x_j, r_{x_j})$, and $x_i$ was also a possible choice when $x_j$ was chosen, so
+\begin{equation}\label{eq:besA}
+  |x_i - x_j|_\infty > \frac{r_{x_j}}{2} \qquad \text{and} \qquad r_{x_i} \le s_{j-1} < 2 r_{x_j} .
+\end{equation}
+
+We show that the cubes $Q(x_j, r_{x_j})$ cover $E$. This is clear if the selection stops, so suppose that it does not. If $j < i$, then by \eqref{eq:besA}
+\[
+  \frac{r_{x_i}}{8} + \frac{r_{x_j}}{8} < \frac{3 r_{x_j}}{8} < |x_i - x_j|_\infty ,
+\]
+so the cubes $Q(x_j, r_{x_j}/4)$ are pairwise disjoint. Since $r_{x_j} < 2D$ and $x_j \in E$, they are all contained in $Q(x_1, 4D)$, and therefore $\sum_j (r_{x_j}/4)^d \le (4D)^d$. In particular $r_{x_j} \to 0$ as $j \to \infty$. If some $x \in E$ were not covered, then $x$ would be a possible choice at every step, so $r_x \le s_{j-1} < 2 r_{x_j}$ for every $j$, which contradicts $r_{x_j} \to 0$.
+
+It remains to bound the overlap. Fix $z \in \mathbb{R}^d$. The space $\mathbb{R}^d$ is the union of the $2^d$ closed orthants with vertex $z$, that is, the sets $\{ y : \varepsilon_i (y_i - z_i) \ge 0 \text{ for } i = 1, \ldots, d \}$ with $\varepsilon \in \{-1, 1\}^d$. If $y$ and $y'$ lie in the same orthant, then $y_i - z_i$ and $y'_i - z_i$ have the same sign for every $i$, and hence
+\begin{equation}\label{eq:orthant}
+  |y - y'|_\infty \le \max\{ |y - z|_\infty,\ |y' - z|_\infty \} .
+\end{equation}
+Fix one orthant and let $J$ be the set of indices $i$ such that $x_i$ lies in this orthant and $z \in Q(x_i, r_{x_i})$. Suppose that $J$ is nonempty and let $j$ be its smallest element. Let $i \in J$ with $i > j$. Since $|x_j - z|_\infty \le r_{x_j}/2$, \eqref{eq:besA} and \eqref{eq:orthant} give
+\[
+  \frac{r_{x_j}}{2} < |x_i - x_j|_\infty \le \max\{ |x_i - z|_\infty,\ |x_j - z|_\infty \} = |x_i - z|_\infty \le \frac{r_{x_i}}{2} ,
+\]
+so $r_{x_i} > r_{x_j}$, and by \eqref{eq:besA} also $|x_i - z|_\infty \le r_{x_i}/2 < r_{x_j}$. Moreover, if $i, i' \in J$ with $i > i' > j$, then \eqref{eq:besA} gives $|x_i - x_{i'}|_\infty > r_{x_{i'}}/2 > r_{x_j}/2$. Hence the cubes $Q(x_i, r_{x_j}/2)$ with $i \in J$ and $i > j$ are pairwise disjoint, and they are contained in $Q(z, 5 r_{x_j}/2)$. Comparing volumes, there are at most $5^d$ such indices $i$, so $J$ has at most $1 + 5^d$ elements. Summing over the $2^d$ orthants, $z$ lies in at most $2^d (1 + 5^d)$ of the cubes $Q(x_j, r_{x_j})$, and the lemma holds with $N_d := 2^d (1 + 5^d)$.
+\end{proof}
 
 \begin{lemma}\label{lem:weak}
 Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $f$ be a measurable function such that $|f|\,v$ is locally integrable. Then $M^c_v f$ is measurable, and
