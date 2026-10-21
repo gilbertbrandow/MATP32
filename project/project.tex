@@ -36,7 +36,7 @@ In 1972, B.~Muckenhoupt \cite{Muckenhoupt1972} proved that the Hardy--Littlewood
 A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$. For a measurable set $E \subseteq \mathbb{R}^d$ we write $w(E) := \int_E w(x)\,dx$.
 \end{definition}
 
-\begin{definition}[Weighted $L^p$ spaces]
+\begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
 Let $w$ be a weight and let $1 \le p < \infty$. We define
 \[
   L^p_w(\mathbb{R}^d) := \left\{ f : \mathbb{R}^d \to \mathbb{R} \text{ measurable} : \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx < \infty \right\},
@@ -68,7 +68,11 @@ If $w = 0$ almost everywhere, then $\|f\|_{L^p_w} = 0$ for every $f$, so $L^p_w(
 For $p = \infty$, the operator $M$ is bounded on $L^\infty_w(\mathbb{R}^d)$ if and only if $w > 0$ almost everywhere or $w = 0$ almost everywhere. Muckenhoupt \cite[Theorem~3]{Muckenhoupt1972} proves this on an interval, and the same argument works in $\mathbb{R}^d$. This is why we only consider $1 < p < \infty$.
 \end{remark}
 
-If \eqref{eq:question} holds for some weight $w$, then $w$ cannot be much smaller on one part of a cube than on the rest of it. The following proposition makes this precise, and we prove it in Appendix~\ref{app:necessity}.
+Suppose that \eqref{eq:question} holds and let $Q$ be a cube. Since $Mf(x)$ is at least the average of $|f|$ over $Q$ for $x \in Q$, writing out the norms in \eqref{eq:question} by Definition~\ref{def:Lp} gives
+\[
+  \left( \frac{1}{|Q|} \int_Q |f|\,dx \right)^p w(Q) \le \int_Q (Mf)^p\, w\,dx \le C^p \int_{\mathbb{R}^d} |f|^p\, w\,dx
+\]
+for every $f \in L^p_w(\mathbb{R}^d)$. Each choice of $f$ thus gives a condition on $w$, and the choice $f = w^{-\frac{1}{p-1}}\chi_Q$ makes this condition as strong as possible. The following proposition makes this precise, and we prove it in Appendix~\ref{app:necessity}.
 
 \begin{proposition}\label{prop:necessity}
 Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then for every cube $Q$ we have $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
@@ -123,10 +127,10 @@ Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{proposition}
 
-Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and Theorem~2]{Muckenhoupt1972}, relies on the fact that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$, which is a consequence of the reverse H\"older inequality for $A_p$ weights \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main} which avoids this property, and in this report we present his argument in detail. We complete it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993}, which we carry out in $\mathbb{R}^d$.
+Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and Theorem~2]{Muckenhoupt1972}, relies on a deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. We present his argument in detail and complete it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993}, which we extend to $\mathbb{R}^d$.
 
-\begin{remark}[A proof of Theorem~\ref{thm:muckenhoupt}]
-By Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}, the condition $w \in A_p$ is necessary for $M$ to be bounded on $L^p_w(\mathbb{R}^d)$, and by Theorem~\ref{thm:main} it is sufficient. Hence the proofs in this report also give a proof of Theorem~\ref{thm:muckenhoupt}.
+\begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
+If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Thus, these two results give Theorem~\ref{thm:muckenhoupt}.
 \end{remark}
 
 \section{Proofs}\label{sec:proofs}
