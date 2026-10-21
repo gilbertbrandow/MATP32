@@ -363,6 +363,7 @@ Dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$ and multiplying by $\
 Since $\alpha < \frac{1}{p-1}$, the exponent $1 - \alpha(p-1)$ is positive, so the right-hand side tends to $0$ as $\delta \to 0$, while the left-hand side is a positive constant independent of $\delta$. This is a contradiction, and the proof is complete.
 \end{proof}
 
+\clearpage
 \appendix
 
 \section{Proof of Proposition~\ref{prop:necessity}}\label{app:necessity}
@@ -370,17 +371,17 @@ Since $\alpha < \frac{1}{p-1}$, the exponent $1 - \alpha(p-1)$ is positive, so t
 We follow the proof of \cite[Theorem~1.7]{Duoandikoetxea2013}.
 
 \begin{proof}
-We first show that $w > 0$ almost everywhere. Let $Q$ be a cube and let $S \subseteq Q$ be a measurable set. For $x \in Q$ we have $M\chi_S(x) \ge |S|/|Q|$, so \eqref{eq:question} applied to $f = \chi_S$ gives
+We first show that $w > 0$ almost everywhere. Fix a cube $Q$ and a measurable set $S \subseteq Q$. For $x \in Q$ the cube $Q$ is one of the cubes in the supremum defining $M\chi_S(x)$, so $M\chi_S(x) \ge |S|/|Q|$. Hence \eqref{eq:question} applied to $f = \chi_S$ gives
 \[
   \left( \frac{|S|}{|Q|} \right)^p w(Q) \le C^p\, w(S).
 \]
 Since $w$ is not almost everywhere zero, every bounded set $S$ is contained in a cube $Q$ with $w(Q) > 0$, so $w(S) = 0$ implies $|S| = 0$. Applying this to the sets $\{w = 0\} \cap \{|x| < k\}$, $k = 1, 2, \ldots$, shows that $w > 0$ almost everywhere. In particular $w(Q) > 0$ for every cube $Q$.
 
-Now let $Q$ be a cube, let $\varepsilon > 0$ and let $f := (w + \varepsilon)^{-\frac{1}{p-1}}\, \chi_Q$. Since $w \le w + \varepsilon$,
+Now fix a cube $Q$ and $\varepsilon > 0$, and let $f := (w + \varepsilon)^{-\frac{1}{p-1}}\, \chi_Q$. Since $w \le w + \varepsilon$,
 \[
   (w + \varepsilon)^{-\frac{p}{p-1}}\, w \le (w + \varepsilon)^{-\frac{p}{p-1}}\, (w + \varepsilon) = (w + \varepsilon)^{-\frac{1}{p-1}} \le \varepsilon^{-\frac{1}{p-1}},
 \]
-so $f \in L^p_w(\mathbb{R}^d)$. Moreover, $Q$ is a cube containing every $x \in Q$, so $Mf(x) \ge \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy$ for $x \in Q$, and therefore
+so $f \in L^p_w(\mathbb{R}^d)$. Moreover, for $x \in Q$ the cube $Q$ is one of the cubes in the supremum defining $Mf(x)$, so $Mf(x) \ge \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy$, and therefore
 \begin{align*}
   \left( \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^p w(Q)
   &= \int_Q \left( \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^p w(x)\,dx \\
@@ -394,9 +395,17 @@ Since $w$ is locally integrable, $w < \infty$ almost everywhere, so $(w + \varep
 \[
   \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^{p-1} \le C^p .
 \]
-As $\varepsilon \to 0$, $(w + \varepsilon)^{-\frac{1}{p-1}}$ increases to $w^{-\frac{1}{p-1}}$, so by monotone convergence $\int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \to \int_Q w^{-\frac{1}{p-1}}\,dy$, and \eqref{eq:Apcube} follows. Since $w(Q) > 0$, this also shows that $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$.
+As $\varepsilon \to 0$, $(w + \varepsilon)^{-\frac{1}{p-1}}$ increases to $w^{-\frac{1}{p-1}}$. Hence
+\begin{align*}
+  \MoveEqLeft \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1} \\
+  &= \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q \lim_{\varepsilon \to 0} (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^{p-1} \\
+  &= \lim_{\varepsilon \to 0}\, \frac{w(Q)}{|Q|} \left( \frac{1}{|Q|} \int_Q (w + \varepsilon)^{-\frac{1}{p-1}}\,dy \right)^{p-1} \qquad \text{(monotone convergence)} \\
+  &\le C^p ,
+\end{align*}
+which is \eqref{eq:Apcube}. Since $w(Q) > 0$, this also shows that $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$.
 \end{proof}
 
+\clearpage
 \bibliographystyle{amsplain}
 \bibliography{references}
 
