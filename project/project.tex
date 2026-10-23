@@ -130,7 +130,7 @@ Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$
 Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and Theorem~2]{Muckenhoupt1972}, relies on a deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. We present his argument in detail and complete it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993}, which we extend to $\mathbb{R}^d$.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
-If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Thus, these two results give Theorem~\ref{thm:muckenhoupt}.
+If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Thus, combined these results imply Theorem~\ref{thm:muckenhoupt}.
 \end{remark}
 
 \section{Proofs}\label{sec:proofs}
@@ -155,10 +155,12 @@ Let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then $Mf(x) \le 2^d M^c f(x)$ for 
 
 \begin{proof}
 Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, Lemma~\ref{lem:cubes} gives $Q \subseteq Q(x, 2\ell(Q))$, and since $|Q(x, 2\ell(Q))| = 2^d |Q|$ we obtain
-\[
-  Mf(x) = \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \le \sup_{Q \ni x} \frac{2^d}{|Q(x, 2\ell(Q))|} \int_{Q(x, 2\ell(Q))} |f(y)|\,dy \le 2^d M^c f(x),
-\]
-where the last inequality holds because each $Q(x, 2\ell(Q))$ is one of the cubes in the definition of $M^c f(x)$.
+\begin{align*}
+  Mf(x) &= \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \\
+  &\le \sup_{Q \ni x} \frac{2^d}{|Q(x, 2\ell(Q))|} \int_{Q(x, 2\ell(Q))} |f(y)|\,dy \\
+  &\le 2^d \sup_{r > 0} \frac{1}{|Q(x, r)|} \int_{Q(x, r)} |f(y)|\,dy \\
+  &= 2^d M^c f(x).
+\end{align*}
 \end{proof}
 
 \begin{lemma}\label{lem:sigma}
