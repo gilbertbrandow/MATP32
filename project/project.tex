@@ -92,12 +92,14 @@ Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of
 where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. We say that $w \in A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
 
-\begin{remark}[The dual weight]\label{rem:dual}
-For a weight $w$ and $1 < p < \infty$ we write $\sigma := w^{-\frac{1}{p-1}}$, with $\sigma = \infty$ where $w = 0$, and $\sigma(E) := \int_E \sigma\,dx$ for measurable sets $E$. With this notation \eqref{eq:Ap} takes the more compact form
+\begin{definition}[Dual weight]\label{def:dual}
+Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$, with $\sigma = \infty$ where $w = 0$ \cite[Section~1]{Buckley1993}. For measurable sets $E$ we write $\sigma(E) := \int_E \sigma\,dx$.
+\end{definition}
+
+With this notation \eqref{eq:Ap} takes the more compact form
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
 \]
-\end{remark}
 
 Taking the supremum over all cubes in Proposition~\ref{prop:necessity} gives the following.
 
@@ -130,7 +132,7 @@ Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$
 Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and Theorem~2]{Muckenhoupt1972}, relies on a deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. We present his argument in detail and complete it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993}, which we extend to $\mathbb{R}^d$.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
-If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Thus, combined these results imply Theorem~\ref{thm:muckenhoupt}.
+If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
 \end{remark}
 
 \section{Proofs}\label{sec:proofs}
