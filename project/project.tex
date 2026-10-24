@@ -182,7 +182,11 @@ Since $w(Q) < \infty$ for every cube $Q$, we have $w < \infty$ almost everywhere
 \end{proof}
 
 \begin{remark}[The Vitali covering lemma]
-The classical proof of the weak type $(1,1)$ estimate for $M$ uses the Vitali covering lemma \cite[Lemma~A.4]{Duoandikoetxea2013}, which selects disjoint cubes $Q$ whose enlargements $3Q$ cover the given family. For the measure $v(x)\,dx$ this enlargement costs the factor $v(3Q)/v(Q)$, which is not bounded uniformly in the weight $v$. The following lemma avoids any enlargement.
+In the proof of the weak type $(1,1)$ estimate for $M$ \cite[Theorem~1.1]{Duoandikoetxea2013}, a compact set $K \subseteq \{Mf > \lambda\}$ is covered by finitely many cubes $Q$ with $\frac{1}{|Q|}\int_Q |f|\,dx > \lambda$. The Vitali covering lemma \cite[Lemma~A.4]{Duoandikoetxea2013}, which holds for balls as well as cubes, selects disjoint cubes $Q_1, \ldots, Q_N$ among them with $K \subseteq \bigcup_j 3Q_j$. Since $|3Q_j| = 3^d |Q_j|$, this gives
+\[
+  |K| \le \sum_{j=1}^N |3Q_j| = 3^d \sum_{j=1}^N |Q_j| \le \frac{3^d}{\lambda} \int_{\mathbb{R}^d} |f|\,dx.
+\]
+For the measure $v(x)\,dx$, the equality $|3Q_j| = 3^d|Q_j|$ would have to be replaced by an inequality $v(3Q_j) \le C\,v(Q_j)$, and no constant $C$ works for all weights $v$. For example, if $v = \varepsilon$ on $Q_j$ and $v = 1$ on the rest of $3Q_j$, then $v(3Q_j)/v(Q_j) \ge (3^d - 1)/\varepsilon$, which is arbitrarily large. The Besicovitch covering lemma covers $K$ by the selected cubes themselves, without enlarging them, and therefore gives a constant independent of $v$.
 \end{remark}
 
 \begin{lemma}[{Besicovitch covering lemma \cite[Theorem~1.1]{Guzman1975}}]\label{lem:besicovitch}
