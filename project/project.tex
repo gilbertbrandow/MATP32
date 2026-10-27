@@ -190,9 +190,13 @@ Let $E \subset \mathbb{R}^d$ be a bounded set, and suppose that for each $x \in 
 \end{lemma}
 
 \begin{proof}
-We may assume that $E$ is nonempty, and we let $D := \sup_{x,y \in E} |x - y|_\infty < \infty$. If $r_x \ge 2D$ for some $x \in E$, then $E \subseteq Q(x, r_x)$ and this single cube suffices. Hence we may assume that $r_x < 2D$ for every $x \in E$.
+Assume that $E$ is nonempty and let $D := \sup_{x,y \in E} |x - y|_\infty < \infty$. If $r_x \ge 2D$ for some $x \in E$, then $E \subseteq Q(x, r_x)$ and this single cube suffices. Hence assume that $r_x < 2D$ for every $x \in E$.
 
-We choose points $x_1, x_2, \ldots \in E$ inductively. Let $m \ge 0$ and suppose that $x_1, \ldots, x_m$ have been chosen. If $E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ is empty, we stop. Otherwise we let $s_m := \sup\{ r_x : x \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j}) \}$ and choose $x_{m+1} \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ with $r_{x_{m+1}} > s_m/2$. If $j < i$, then $x_i \notin Q(x_j, r_{x_j})$, and $x_i$ was also a possible choice when $x_j$ was chosen, so
+Let $s_0 := \sup_{x \in E} r_x$ and choose $x_1 \in E$ with $r_{x_1} > s_0/2$. Given $x_1, \ldots, x_m$, let
+\[
+  s_m := \sup\Big\{ r_x : x \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j}) \Big\}
+\]
+and choose $x_{m+1} \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ with $r_{x_{m+1}} > s_m/2$. The selection stops if this set is empty. If $j < i$, then $x_i$ lies outside $Q(x_j, r_{x_j})$, and $x_i$ was a possible choice when $x_j$ was chosen. Hence
 \begin{equation}\label{eq:besA}
   |x_i - x_j|_\infty > \frac{r_{x_j}}{2} \qquad \text{and} \qquad r_{x_i} \le s_{j-1} < 2 r_{x_j} .
 \end{equation}
