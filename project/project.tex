@@ -51,7 +51,7 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 \[
   M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
 \]
-where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r)$, $r > 0$, where $Q(x,r)$ denotes the cube centred at $x$ with side length $r$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
+where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, $r > 0$, where $|y|_\infty := \max_{1 \le i \le d} |y_i|$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
 \end{definition}
 
 It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Theorem~1.1]{Duoandikoetxea2013}. For $1 < p < \infty$ and a weight $w$ we say that $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that
@@ -144,11 +144,7 @@ Let $Q$ be a cube with side length $\ell(Q)$ and let $y \in Q$. Then $Q \subsete
 \end{lemma}
 
 \begin{proof}
-Every $z \in Q$ satisfies $|z_i - y_i| \le \ell(Q)$ for $i = 1, \dots, d$, since both $z$ and $y$ lie in $Q$. Hence $Q \subseteq Q(y, 2\ell(Q))$. Let $c$ be the centre of $Q$. Then $|y_i - c_i| \le \frac{1}{2}\ell(Q)$ for $i = 1, \dots, d$, so every $z \in Q(y, 2\ell(Q))$ satisfies
-\[
-  |z_i - c_i| \le |z_i - y_i| + |y_i - c_i| \le \ell(Q) + \tfrac{1}{2}\ell(Q) = \tfrac{3}{2}\ell(Q)
-\]
-for $i = 1, \dots, d$, that is, $z \in 3Q$.
+Every $z \in Q$ satisfies $|z - y|_\infty \le \ell(Q)$, since both $z$ and $y$ lie in $Q$. Hence $Q \subseteq Q(y, 2\ell(Q))$. If $c$ is the centre of $Q$, then $|y - c|_\infty \le \frac{1}{2}\ell(Q)$, so every $z \in Q(y, 2\ell(Q))$ satisfies $|z - c|_\infty \le |z - y|_\infty + |y - c|_\infty \le \frac{3}{2}\ell(Q)$, that is, $z \in 3Q$.
 \end{proof}
 
 \begin{lemma}\label{lem:centred}
@@ -190,11 +186,11 @@ For the measure $v(x)\,dx$, the equality $|3Q_j| = 3^d|Q_j|$ would have to be re
 \end{remark}
 
 \begin{lemma}[{Besicovitch covering lemma \cite[Theorem~1.1]{Guzman1975}}]\label{lem:besicovitch}
-There is a constant $N_d$, depending only on $d$, with the following property. Let $E \subset \mathbb{R}^d$ be a bounded set and, for each $x \in E$, let $r_x > 0$. Then there are points $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and satisfy $\sum_j \chi_{Q(x_j, r_{x_j})} \le N_d$.
+Let $E \subset \mathbb{R}^d$ be a bounded set, and suppose that for each $x \in E$ a cube $Q(x, r_x)$ centred at $x$ is given. Then there are points $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and every point of $\mathbb{R}^d$ lies in at most $N_d$ of them, where $N_d$ depends only on $d$.
 \end{lemma}
 
 \begin{proof}
-For $y \in \mathbb{R}^d$ we write $|y|_\infty := \max_{1 \le i \le d} |y_i|$, so that $y \in Q(x,r)$ if and only if $|y - x|_\infty \le r/2$. We may assume that $E$ is nonempty, and we let $D := \sup_{x,y \in E} |x - y|_\infty < \infty$. If $r_x \ge 2D$ for some $x \in E$, then $E \subseteq Q(x, r_x)$, and the single point $x_1 := x$ has the required properties. Hence we may assume that $r_x < 2D$ for every $x \in E$.
+We may assume that $E$ is nonempty, and we let $D := \sup_{x,y \in E} |x - y|_\infty < \infty$. If $r_x \ge 2D$ for some $x \in E$, then $E \subseteq Q(x, r_x)$ and this single cube suffices. Hence we may assume that $r_x < 2D$ for every $x \in E$.
 
 We choose points $x_1, x_2, \ldots \in E$ inductively. Let $m \ge 0$ and suppose that $x_1, \ldots, x_m$ have been chosen. If $E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ is empty, we stop. Otherwise we let $s_m := \sup\{ r_x : x \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j}) \}$ and choose $x_{m+1} \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ with $r_{x_{m+1}} > s_m/2$. If $j < i$, then $x_i \notin Q(x_j, r_{x_j})$, and $x_i$ was also a possible choice when $x_j$ was chosen, so
 \begin{equation}\label{eq:besA}
