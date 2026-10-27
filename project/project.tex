@@ -197,11 +197,15 @@ We choose points $x_1, x_2, \ldots \in E$ inductively. Let $m \ge 0$ and suppose
   |x_i - x_j|_\infty > \frac{r_{x_j}}{2} \qquad \text{and} \qquad r_{x_i} \le s_{j-1} < 2 r_{x_j} .
 \end{equation}
 
-We show that the cubes $Q(x_j, r_{x_j})$ cover $E$. This is clear if the selection stops, so suppose that it does not. If $j < i$, then by \eqref{eq:besA}
+If the selection stops, the cubes $Q(x_j, r_{x_j})$ cover $E$ by construction. Assume that it does not stop, and suppose, for contradiction, that some $x \in E$ is not covered. Then $x$ is a possible choice at every step, so $r_x \le s_{j-1} < 2r_{x_j}$ for every $j$. If $j < i$, then by \eqref{eq:besA}
 \[
   \frac{r_{x_i}}{8} + \frac{r_{x_j}}{8} < \frac{3 r_{x_j}}{8} < |x_i - x_j|_\infty ,
 \]
-so the cubes $Q(x_j, r_{x_j}/4)$ are pairwise disjoint. Since $r_{x_j} < 2D$ and $x_j \in E$, they are all contained in $Q(x_1, 4D)$, and therefore $\sum_j (r_{x_j}/4)^d \le (4D)^d$. In particular $r_{x_j} \to 0$ as $j \to \infty$. If some $x \in E$ were not covered, then $x$ would be a possible choice at every step, so $r_x \le s_{j-1} < 2 r_{x_j}$ for every $j$, which contradicts $r_{x_j} \to 0$.
+so the cubes $Q(x_j, r_{x_j}/4)$ are pairwise disjoint. Since $x_j \in E$ and $r_{x_j} < 2D$, they are all contained in $Q(x_1, 4D)$. Comparing volumes, for every $N$,
+\[
+  N \left( \frac{r_x}{8} \right)^d < \sum_{j=1}^N \left( \frac{r_{x_j}}{4} \right)^d \le (4D)^d ,
+\]
+which is false for large $N$. Hence every $x \in E$ is covered.
 
 It remains to bound the overlap. Fix $z \in \mathbb{R}^d$. The space $\mathbb{R}^d$ is the union of the $2^d$ closed orthants with vertex $z$, that is, the sets $\{ y : \varepsilon_i (y_i - z_i) \ge 0 \text{ for } i = 1, \ldots, d \}$ with $\varepsilon \in \{-1, 1\}^d$. If $y$ and $y'$ lie in the same orthant, then $y_i - z_i$ and $y'_i - z_i$ have the same sign for every $i$, and hence
 \begin{equation}\label{eq:orthant}
