@@ -51,7 +51,7 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 \[
   M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
 \]
-where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, $r > 0$, where $|y|_\infty := \max_{1 \le i \le d} |y_i|$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
+where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, $r > 0$, where $|y|_\infty := \max_{1 \le k \le d} |y_k|$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
 \end{definition}
 
 It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Theorem~1.1]{Duoandikoetxea2013}. For $1 < p < \infty$ and a weight $w$ we say that $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that
@@ -211,15 +211,36 @@ so the cubes $Q(x_j, r_{x_j}/4)$ are pairwise disjoint. Since $x_j \in E$ and $r
 \]
 which is false for large $N$. Hence every $x \in E$ is covered.
 
-It remains to bound the overlap. Fix $z \in \mathbb{R}^d$. The space $\mathbb{R}^d$ is the union of the $2^d$ closed orthants with vertex $z$, that is, the sets $\{ y : \varepsilon_i (y_i - z_i) \ge 0 \text{ for } i = 1, \ldots, d \}$ with $\varepsilon \in \{-1, 1\}^d$. If $y$ and $y'$ lie in the same orthant, then $y_i - z_i$ and $y'_i - z_i$ have the same sign for every $i$, and hence
+Fix $z \in \mathbb{R}^d$. For $\varepsilon \in \{-1, 1\}^d$ let
+\[
+  O_\varepsilon := \{ y \in \mathbb{R}^d : \varepsilon_k (y_k - z_k) \ge 0 \text{ for } k = 1, \ldots, d \}.
+\]
+Every $y \in \mathbb{R}^d$ lies in $O_\varepsilon$ with $\varepsilon_k := 1$ if $y_k \ge z_k$ and $\varepsilon_k := -1$ otherwise, so these $2^d$ orthants cover $\mathbb{R}^d$. If $y, y' \in O_\varepsilon$, then $y_k - z_k$ and $y'_k - z_k$ have the same sign for every $k$, and hence
 \begin{equation}\label{eq:orthant}
   |y - y'|_\infty \le \max\{ |y - z|_\infty,\ |y' - z|_\infty \} .
 \end{equation}
-Fix one orthant and let $J$ be the set of indices $i$ such that $x_i$ lies in this orthant and $z \in Q(x_i, r_{x_i})$. Suppose that $J$ is nonempty and let $j$ be its smallest element. Let $i \in J$ with $i > j$. Since $|x_j - z|_\infty \le r_{x_j}/2$, \eqref{eq:besA} and \eqref{eq:orthant} give
+
+For each $\varepsilon$ let
 \[
-  \frac{r_{x_j}}{2} < |x_i - x_j|_\infty \le \max\{ |x_i - z|_\infty,\ |x_j - z|_\infty \} = |x_i - z|_\infty \le \frac{r_{x_i}}{2} ,
+  J_\varepsilon := \{ x_i : x_i \in O_\varepsilon \text{ and } z \in Q(x_i, r_{x_i}) \}.
 \]
-so $r_{x_i} > r_{x_j}$, and by \eqref{eq:besA} also $|x_i - z|_\infty \le r_{x_i}/2 < r_{x_j}$. Moreover, if $i, i' \in J$ with $i > i' > j$, then \eqref{eq:besA} gives $|x_i - x_{i'}|_\infty > r_{x_{i'}}/2 > r_{x_j}/2$. Hence the cubes $Q(x_i, r_{x_j}/2)$ with $i \in J$ and $i > j$ are pairwise disjoint, and they are contained in $Q(z, 5 r_{x_j}/2)$. Comparing volumes, there are at most $5^d$ such indices $i$, so $J$ has at most $1 + 5^d$ elements. Summing over the $2^d$ orthants, $z$ lies in at most $2^d (1 + 5^d)$ of the cubes $Q(x_j, r_{x_j})$, and the lemma holds with $N_d := 2^d (1 + 5^d)$.
+Every cube $Q(x_i, r_{x_i})$ containing $z$ has its centre in some $O_\varepsilon$, so the number of such cubes is at most the total number of points in the sets $J_\varepsilon$.
+
+Fix $\varepsilon$ with $J_\varepsilon$ nonempty and let $j := \min\{ i : x_i \in J_\varepsilon \}$, so that $x_j$ is the point of $J_\varepsilon$ that was chosen first. Let $n$ be the number of points in $J_\varepsilon \setminus \{x_j\}$, so that $J_\varepsilon$ has $1 + n$ points. Let $x_i \in J_\varepsilon \setminus \{x_j\}$, so that $i > j$. Since $z$ lies in both $Q(x_i, r_{x_i})$ and $Q(x_j, r_{x_j})$, \eqref{eq:besA} and \eqref{eq:orthant} give
+\[
+  \frac{r_{x_j}}{2} < |x_i - x_j|_\infty \le \max\{ |x_i - z|_\infty,\ |x_j - z|_\infty \} \le \max\Big\{ \frac{r_{x_i}}{2},\ \frac{r_{x_j}}{2} \Big\}.
+\]
+Hence $r_{x_i} > r_{x_j}$, and by \eqref{eq:besA} also $|x_i - z|_\infty \le r_{x_i}/2 < r_{x_j}$.
+
+For each $x_i \in J_\varepsilon \setminus \{x_j\}$ consider the cube $Q(x_i, r_{x_j}/2)$. It has the same centre as $Q(x_i, r_{x_i})$, but the fixed side $r_{x_j}/2$. If $x_i, x_m \in J_\varepsilon \setminus \{x_j\}$ with $m < i$, then $r_{x_m} > r_{x_j}$, so \eqref{eq:besA} gives $|x_i - x_m|_\infty > r_{x_m}/2 > r_{x_j}/2$. Thus the centres of these $n$ cubes are more than their side length apart, and the cubes are pairwise disjoint. Moreover, for $x_i \in J_\varepsilon \setminus \{x_j\}$ every $y \in Q(x_i, r_{x_j}/2)$ satisfies
+\[
+  |y - z|_\infty \le |y - x_i|_\infty + |x_i - z|_\infty < \frac{r_{x_j}}{4} + r_{x_j} = \frac{5 r_{x_j}}{4},
+\]
+so all of them are contained in $Q(z, 5r_{x_j}/2)$. Since they are disjoint, their total volume is at most the volume of $Q(z, 5r_{x_j}/2)$, that is,
+\[
+  n \left( \frac{r_{x_j}}{2} \right)^d \le \left( \frac{5 r_{x_j}}{2} \right)^d = 5^d \left( \frac{r_{x_j}}{2} \right)^d .
+\]
+Hence $n \le 5^d$ and $J_\varepsilon$ has at most $1 + 5^d$ points. Summing over the $2^d$ orthants, $z$ lies in at most $2^d(1 + 5^d)$ of the cubes $Q(x_i, r_{x_i})$, and the lemma holds with $N_d := 2^d(1 + 5^d)$.
 \end{proof}
 
 \begin{lemma}\label{lem:weak}
@@ -367,7 +388,7 @@ Next we construct a function for which $M$ is large in $L^p_{w_\delta}$. Let $f_
 \[
   \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q(0,2)} |y|^{(\delta-d)p}\, |y|^{(d-\delta)(p-1)}\,dy = \int_{Q(0,2)} |y|^{\delta-d}\,dy \le \omega_d\, \frac{(2\sqrt{d})^\delta}{\delta} < \infty .
 \]
-Moreover $\|f_\delta\|_{L^p_{w_\delta}} > 0$, so $f_\delta \in L^p_{w_\delta}(\mathbb{R}^d)$ is not the zero element. Let $x \in Q(0,2)$ with $x \neq 0$, and put $r := \max_{1 \le i \le d} |x_i|$, so that $0 < r \le |x|$. The cube $Q(0,2r)$ contains $x$, is contained in $Q(0,2)$, and contains the ball $\{|y| < r\}$. By the definition of $M$ and \eqref{eq:polar},
+Moreover $\|f_\delta\|_{L^p_{w_\delta}} > 0$, so $f_\delta \in L^p_{w_\delta}(\mathbb{R}^d)$ is not the zero element. Let $x \in Q(0,2)$ with $x \neq 0$, and put $r := |x|_\infty$, so that $0 < r \le |x|$. The cube $Q(0,2r)$ contains $x$, is contained in $Q(0,2)$, and contains the ball $\{|y| < r\}$. By the definition of $M$ and \eqref{eq:polar},
 \[
   Mf_\delta(x) \ge \frac{1}{(2r)^d} \int_{Q(0,2r)} |y|^{\delta-d}\,dy \ge \frac{1}{(2r)^d} \int_{\{|y| < r\}} |y|^{\delta-d}\,dy = \frac{\omega_d}{2^d\delta}\, r^{\delta-d} \ge \frac{\omega_d}{2^d\delta}\, |x|^{\delta-d},
 \]
