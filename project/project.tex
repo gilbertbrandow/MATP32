@@ -60,12 +60,12 @@ It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1
 \end{equation}
 for all $f \in L^p_w(\mathbb{R}^d)$.
 
-\begin{remark}[The zero weight]\label{rem:zero}
-If $w = 0$ almost everywhere, then $\|f\|_{L^p_w} = 0$ for every $f$, so $L^p_w(\mathbb{R}^d)$ is trivial and $M$ is trivially bounded.
+\begin{remark}[The endpoint $p = \infty$]
+For $p = \infty$, the boundedness of $M$ has a simple characterisation. Muckenhoupt \cite[Theorem~3]{Muckenhoupt1972} shows that, on an interval, $M$ is bounded on $L^\infty_w$ if and only if $w > 0$ almost everywhere or $w = 0$ almost everywhere. This condition only concerns where $w$ vanishes.
 \end{remark}
 
-\begin{remark}[The endpoint $p = \infty$]
-For $p = \infty$, the operator $M$ is bounded on $L^\infty_w(\mathbb{R}^d)$ if and only if $w > 0$ almost everywhere or $w = 0$ almost everywhere. Muckenhoupt \cite[Theorem~3]{Muckenhoupt1972} proves this on an interval, and the same argument works in $\mathbb{R}^d$. This is why we only consider $1 < p < \infty$.
+\begin{remark}[The zero weight]\label{rem:zero}
+If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for every measurable function $f$. Applying this to $f$ and to $Mf$ gives $\|Mf\|_{L^p_w} = 0 = \|f\|_{L^p_w}$, so \eqref{eq:question} holds with any constant $C$.
 \end{remark}
 
 Suppose that \eqref{eq:question} holds and let $Q$ be a cube. Since $Mf(x)$ is at least the average of $|f|$ over $Q$ for $x \in Q$, writing out the norms in \eqref{eq:question} by Definition~\ref{def:Lp} gives
@@ -104,7 +104,7 @@ With this notation \eqref{eq:Ap} takes the more compact form
 Taking the supremum over all cubes in Proposition~\ref{prop:necessity} gives the following.
 
 \begin{corollary}\label{cor:necessity}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then $w \in A_p$ and
+Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then $w \in A_p$ with
 \begin{equation}\label{eq:lower}
   [w]_{A_p} \le C^p .
 \end{equation}
@@ -315,7 +315,7 @@ The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, 
 
 \subsection{Proof of Theorem~\ref{thm:main}}
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. For $w = 0$ almost everywhere, $\|Mf\|_{L^p_w} = \|f\|_{L^p_w} = 0$ by Remark~\ref{rem:zero}, and the inequality holds trivially. Assume therefore that $w$ is not almost everywhere zero. Then, by Lemma~\ref{lem:sigma}, $w > 0$ almost everywhere and $\sigma$ is a weight with $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$. Hence $M^c_w$ and $M^c_\sigma$ are defined, and by Lemma~\ref{lem:key} they are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$.
+Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. For $w = 0$ almost everywhere, the integrands in $\|Mf\|_{L^p_w}$ and $\|f\|_{L^p_w}$ vanish almost everywhere, so $\|Mf\|_{L^p_w} = 0 = \|f\|_{L^p_w}$ and the inequality holds trivially. Assume therefore that $w$ is not almost everywhere zero. Then, by Lemma~\ref{lem:sigma}, $w > 0$ almost everywhere and $\sigma$ is a weight with $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$. Hence $M^c_w$ and $M^c_\sigma$ are defined, and by Lemma~\ref{lem:key} they are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$.
 
 For $x \in \mathbb{R}^d$, $r > 0$ and $y \in Q(x,r)$, Lemma~\ref{lem:cubes} gives $Q(x,r) \subseteq Q(y, 2r) \subseteq Q(x, 3r)$, so
 \begin{equation}\label{eq:inner}
