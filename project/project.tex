@@ -46,7 +46,7 @@ with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \righ
 
 The central object of this report is the Hardy--Littlewood maximal operator $M$. Our proofs also use its analogue with respect to the measure $w(x)\,dx$.
 
-\begin{definition}[Hardy--Littlewood maximal operator]
+\begin{definition}[Hardy--Littlewood maximal operator]\label{def:maximal}
 Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable function $f$ and $x \in \mathbb{R}^d$,
 \[
   M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
@@ -60,7 +60,7 @@ It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1
 \end{equation}
 for all $f \in L^p_w(\mathbb{R}^d)$.
 
-\begin{remark}[The zero weight]
+\begin{remark}[The zero weight]\label{rem:zero}
 If $w = 0$ almost everywhere, then $\|f\|_{L^p_w} = 0$ for every $f$, so $L^p_w(\mathbb{R}^d)$ is trivial and $M$ is trivially bounded.
 \end{remark}
 
@@ -297,7 +297,12 @@ Let $f, h \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$, $x \in \mathbb{R}
   \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f + h|\,v\,dy &\le \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy + \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |h|\,v\,dy \\
   &\le M^c_v f(x) + M^c_v h(x).
 \end{align*}
-The right-hand side does not depend on $r$, so taking the supremum over $r > 0$ yields $M^c_v(f + h)(x) \le M^c_v f(x) + M^c_v h(x)$. For a scalar $\lambda$, the equality $|\lambda f| = |\lambda|\,|f|$ shows that every average of $|\lambda f|$ is $|\lambda|$ times the corresponding average of $|f|$. Taking the supremum over $r > 0$ yields $M^c_v(\lambda f) = |\lambda|\, M^c_v f$. Hence $M^c_v$ is sublinear.
+The right-hand side does not depend on $r$, so taking the supremum over $r > 0$ yields $M^c_v(f + h)(x) \le M^c_v f(x) + M^c_v h(x)$. For a scalar $\lambda$,
+\begin{align*}
+  M^c_v(\lambda f)(x) &= \sup_{r > 0} \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |\lambda|\,|f|\,v\,dy \\
+  &= |\lambda| \sup_{r > 0} \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy = |\lambda|\, M^c_v f(x),
+\end{align*}
+where the second equality holds since $|\lambda| \ge 0$. Hence $M^c_v$ is sublinear.
 
 By Lemma~\ref{lem:weak}, $v(\{M^c_v f > t\}) \le \frac{N_d}{t} \|f\|_{L^1_v}$ for every $f \in L^1_v(\mathbb{R}^d)$ and $t > 0$. For $f \in L^\infty_v(\mathbb{R}^d)$, \eqref{eq:Linfty} with $f_2 = f$ shows that every average in the definition of $M^c_v f(x)$ is at most $\|f\|_{L^\infty_v}$. Hence $M^c_v f(x) \le \|f\|_{L^\infty_v}$ for every $x \in \mathbb{R}^d$, and in particular $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$.
 
@@ -306,64 +311,44 @@ The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, 
 
 \subsection{Proof of Theorem~\ref{thm:main}}
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. If $w = 0$ almost everywhere, both sides of the inequality vanish, so we may assume that $w$ is not almost everywhere zero. By Lemma~\ref{lem:sigma}, $w > 0$ almost everywhere and $\sigma$ is a weight with $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$. In particular, the operators $M^c_w$ and $M^c_\sigma$ are defined.
+Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. For $w = 0$ almost everywhere, $\|Mf\|_{L^p_w} = \|f\|_{L^p_w} = 0$ by Remark~\ref{rem:zero}, and the inequality holds trivially. Assume therefore that $w$ is not almost everywhere zero. Then, by Lemma~\ref{lem:sigma}, $w > 0$ almost everywhere and $\sigma$ is a weight with $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$. Hence $M^c_w$ and $M^c_\sigma$ are defined, and by Lemma~\ref{lem:key} they are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$.
 
-We first prove a pointwise estimate for $Mf$. Fix $x \in \mathbb{R}^d$ and $r > 0$, let $Q := Q(x,r)$, and let $3Q$ be as in Lemma~\ref{lem:cubes}. Multiplying and dividing by $w(Q)\,\sigma(3Q)^{p-1}$, we obtain
-\begin{equation}\label{eq:identity}
-\begin{aligned}
-  \left( \frac{1}{|Q|} \int_Q |f(y)|\,dy \right)^{p-1}
-  &= \frac{1}{|Q|^{p-1}} \left( \int_Q |f(y)|\,dy \right)^{p-1} \\
-  &= \frac{w(Q)\,\sigma(3Q)^{p-1}}{|Q|^p} \cdot \frac{|Q|}{w(Q)} \cdot \frac{1}{\sigma(3Q)^{p-1}} \left( \int_Q |f(y)|\,dy \right)^{p-1} \\
-  &= \frac{w(Q)\,\sigma(3Q)^{p-1}}{|Q|^p} \cdot \frac{|Q|}{w(Q)} \left( \frac{1}{\sigma(3Q)} \int_Q |f(y)|\,dy \right)^{p-1}.
-\end{aligned}
+For $x \in \mathbb{R}^d$, $r > 0$ and $y \in Q(x,r)$, Lemma~\ref{lem:cubes} gives $Q(x,r) \subseteq Q(y, 2r) \subseteq Q(x, 3r)$, so
+\begin{equation}\label{eq:inner}
+  \frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,dz \le \frac{1}{\sigma(Q(y,2r))} \int_{Q(y,2r)} |f|\,\sigma^{-1}\,\sigma\,dz \le M^c_\sigma\big(|f|\sigma^{-1}\big)(y).
 \end{equation}
-Since $w(Q) \le w(3Q)$ and $|3Q| = 3^d |Q|$, the first factor on the right-hand side satisfies
-\[
-  \frac{w(Q)\,\sigma(3Q)^{p-1}}{|Q|^p} \le 3^{dp} \left( \frac{1}{|3Q|} \int_{3Q} w(y)\,dy \right) \left( \frac{1}{|3Q|} \int_{3Q} \sigma(y)\,dy \right)^{p-1} \le 3^{dp}\, [w]_{A_p}.
-\]
-For the second factor, let $y \in Q$. By Lemma~\ref{lem:cubes}, $Q \subseteq Q(y, 2\ell(Q)) \subseteq 3Q$, so
-\[
-\begin{aligned}
-  \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,dz
-  &= \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,\sigma(z)^{-1}\,\sigma(z)\,dz \\
-  &\le \frac{1}{\sigma(Q(y, 2\ell(Q)))} \int_{Q(y, 2\ell(Q))} |f(z)|\,\sigma(z)^{-1}\,\sigma(z)\,dz \le M^c_\sigma\big(|f|\sigma^{-1}\big)(y).
-\end{aligned}
-\]
-This holds for every $y \in Q$, and therefore
-\[
-\begin{aligned}
-  \frac{|Q|}{w(Q)} \left( \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,dz \right)^{p-1}
-  &= \frac{1}{w(Q)} \int_Q \left( \frac{1}{\sigma(3Q)} \int_Q |f(z)|\,dz \right)^{p-1} dy \\
-  &\le \frac{1}{w(Q)} \int_Q \Big( M^c_\sigma\big(|f|\sigma^{-1}\big)(y) \Big)^{p-1} w(y)^{-1}\,w(y)\,dy \\
-  &\le M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x),
-\end{aligned}
-\]
-where the last inequality holds because $Q = Q(x,r)$. Inserting both bounds into \eqref{eq:identity}, taking the supremum over $r > 0$ and applying Lemma~\ref{lem:centred}, we arrive at
+The inequality $w(Q(x,r)) \le w(Q(x,3r))$, the equality $|Q(x,3r)| = 3^d\,|Q(x,r)|$ and the definition of $[w]_{A_p}$ imply
+\begin{equation}\label{eq:Apfactor}
+  \frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^p} \le 3^{dp}\, \frac{w(Q(x,3r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,3r)|^p} \le 3^{dp}\, [w]_{A_p}.
+\end{equation}
+Multiplying and dividing by $w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}$, and then bounding the two marked factors by \eqref{eq:Apfactor} and \eqref{eq:inner}, gives
+\begin{align*}
+  \MoveEqLeft \left( \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dz \right)^{p-1} \\
+  &= \underbrace{\frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^p}}_{\le\, 3^{dp} [w]_{A_p} \text{ by } \eqref{eq:Apfactor}} \cdot \frac{1}{w(Q(x,r))} \int_{Q(x,r)} \Bigg( \underbrace{\frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,dz}_{\le\, M^c_\sigma(|f|\sigma^{-1})(y) \text{ by } \eqref{eq:inner}} \Bigg)^{p-1} dy \\
+  &\le 3^{dp}\, [w]_{A_p} \cdot \frac{1}{w(Q(x,r))} \int_{Q(x,r)} \Big( M^c_\sigma\big(|f|\sigma^{-1}\big)(y) \Big)^{p-1} w(y)^{-1}\, w(y)\,dy \\
+  &\le 3^{dp}\, [w]_{A_p}\, M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x).
+\end{align*}
+By the definition of $M^c f$, taking the supremum over $r > 0$ gives
 \begin{equation}\label{eq:pointwise}
-  Mf(x) \le 2^d\, 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
+\begin{aligned}
+  M^c f(x) &= \sup_{r > 0} \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dz \\
+  &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
+\end{aligned}
 \end{equation}
 
-We now take norms. Since $1 - \frac{p}{p-1} = -\frac{1}{p-1}$, we have $w^{1 - \frac{p}{p-1}} = \sigma$, and similarly $\sigma^{1-p} = w$. The second identity gives
-\[
-  \big\| |f|\sigma^{-1} \big\|_{L^p_\sigma}^p = \int_{\mathbb{R}^d} |f(x)|^p\, \sigma(x)^{-p}\, \sigma(x)\,dx = \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx = \|f\|_{L^p_w}^p ,
-\]
-so $|f|\sigma^{-1} \in L^p_\sigma(\mathbb{R}^d)$. Using the first identity and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, we obtain
-\[
-\begin{aligned}
-  \int_{\mathbb{R}^d} \Big( \big(M^c_\sigma(|f|\sigma^{-1})(x)\big)^{p-1} w(x)^{-1} \Big)^{\frac{p}{p-1}} w(x)\,dx
-  &= \int_{\mathbb{R}^d} \big(M^c_\sigma(|f|\sigma^{-1})(x)\big)^{p}\, \sigma(x)\,dx \\
-  &\le C_{p,d}^p\, \|f\|_{L^p_w}^p ,
-\end{aligned}
-\]
-so the function $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1}$ lies in $L^{p/(p-1)}_w(\mathbb{R}^d)$. Finally, we raise \eqref{eq:pointwise} to the power $p$, integrate against $w$, and apply Lemma~\ref{lem:key} with $v = w$ and $q = \frac{p}{p-1}$. Together with the previous estimate this gives
-\[
-  \|Mf\|_{L^p_w}^p \le \Big( 2^d\, 3^{\frac{dp}{p-1}} \Big)^p\, [w]_{A_p}^{\frac{p}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{p}{p-1}}\, C_{p,d}^p\, \|f\|_{L^p_w}^p .
-\]
-Taking $p$-th roots, we conclude that
-\[
-  \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w}, \qquad c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d},
-\]
-and $c_{p,d}$ depends only on $p$ and $d$.
+The identities $w^{1 - \frac{p}{p-1}} = \sigma$ and $\sigma^{1-p} = w$, together with Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
+\begin{equation}\label{eq:innernorm}
+  \Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}} = \big\| M^c_\sigma\big(|f|\sigma^{-1}\big) \big\|_{L^p_\sigma} \le C_{p,d}\, \big\| |f|\sigma^{-1} \big\|_{L^p_\sigma} = C_{p,d}\, \|f\|_{L^p_w} .
+\end{equation}
+In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}_w(\mathbb{R}^d)$. Lemma~\ref{lem:centred} gives the first inequality below, and bounding the marked factors as indicated gives
+\begin{align*}
+  \|Mf\|_{L^p_w}
+  &\le 2^d\, \Big\| \underbrace{M^c f}_{\mathclap{\text{bounded by } \eqref{eq:pointwise}}} \Big\|_{L^p_w} \\
+  &\le 2^d\, \Big\| 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big) \Big)^{\frac{1}{p-1}} \Big\|_{L^p_w} \\
+  &= 2^d\, 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big) \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by Lemma~\ref{lem:key} with } v = w,\ q = \frac{p}{p-1}} \\
+  &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
+  &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
+\end{align*}
 \end{proof}
 
 \subsection{Sharpness of the exponent}
