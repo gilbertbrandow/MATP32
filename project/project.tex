@@ -162,7 +162,7 @@ Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, Lemma~\ref{lem:cubes} g
 \end{proof}
 
 \begin{lemma}\label{lem:sigma}
-Let $1 < p < \infty$ and let $w \in A_p$ be a weight that is not almost everywhere zero. Then $w > 0$ almost everywhere and $\sigma$, as in Definition~\ref{def:dual}, is a weight. Moreover $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$.
+Let $1 < p < \infty$ and let $w \in A_p$ be a weight that is not almost everywhere zero. Then $w > 0$ almost everywhere and $\sigma$, as in Definition~\ref{def:dual}, is a weight. Moreover $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$, and $L^p_w(\mathbb{R}^d) \subseteq L^1_{\mathrm{loc}}(\mathbb{R}^d)$.
 \end{lemma}
 
 \begin{proof}
@@ -174,7 +174,11 @@ so $\sigma(Q) < \infty$ on any cube $Q$ where $w(Q) > 0$.
 
 Assume, for contradiction, that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, $w > 0$ on a set $F$ with $|F| > 0$, so we can choose a cube $Q$ with $|Q \cap E| > 0$ and $|Q \cap F| > 0$. Then $w(Q) \ge w(Q \cap F) > 0$, so $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}. But $\sigma = \infty$ on $Q \cap E$ by Definition~\ref{def:dual}, so $\sigma(Q) = \infty$, a contradiction. Therefore $w > 0$ almost everywhere. In particular $w(Q) > 0$, and hence $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}, for every cube $Q$.
 
-Since $w(Q) < \infty$ for every cube $Q$, we have $w < \infty$ almost everywhere, so $\sigma > 0$ almost everywhere and $\sigma(Q) > 0$ for every cube $Q$. As every compact set lies in a cube, $\sigma$ is locally integrable and hence a weight.
+Since $w(Q) < \infty$ for every cube $Q$, we have $w < \infty$ almost everywhere, so $\sigma > 0$ almost everywhere and $\sigma(Q) > 0$ for every cube $Q$. As every compact set lies in a cube, $\sigma$ is locally integrable and hence a weight. Finally, for $f \in L^p_w(\mathbb{R}^d)$ and every cube $Q$, applying H\"older's inequality gives
+\[
+  \int_Q |f|\,dx = \int_Q |f|\, w^{\frac{1}{p}}\, w^{-\frac{1}{p}}\,dx \le \Big( \int_Q |f|^p\, w\,dx \Big)^{\frac{1}{p}} \Big( \int_Q w^{-\frac{1}{p-1}}\,dx \Big)^{\frac{p-1}{p}} \le \|f\|_{L^p_w}\, \sigma(Q)^{\frac{p-1}{p}},
+\]
+which is finite.
 \end{proof}
 
 \begin{remark}[The Vitali covering lemma]
@@ -340,7 +344,7 @@ The identities $w^{1 - \frac{p}{p-1}} = \sigma$ and $\sigma^{1-p} = w$, together
 \begin{equation}\label{eq:innernorm}
   \Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}} = \big\| M^c_\sigma\big(|f|\sigma^{-1}\big) \big\|_{L^p_\sigma} \le C_{p,d}\, \big\| |f|\sigma^{-1} \big\|_{L^p_\sigma} = C_{p,d}\, \|f\|_{L^p_w} .
 \end{equation}
-In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}_w(\mathbb{R}^d)$. Lemma~\ref{lem:centred} gives the first inequality below, and bounding the marked factors as indicated gives
+In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, so Lemma~\ref{lem:centred} gives the first inequality below, and bounding the marked factors as indicated gives
 \begin{align*}
   \|Mf\|_{L^p_w}
   &\le 2^d\, \Big\| \underbrace{M^c f}_{\mathclap{\text{bounded by } \eqref{eq:pointwise}}} \Big\|_{L^p_w} \\
