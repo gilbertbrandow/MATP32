@@ -58,10 +58,6 @@ It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1
 \end{equation}
 for all $f \in L^p_w(\mathbb{R}^d)$.
 
-\begin{remark}[The endpoint $p = \infty$]
-For $p = \infty$, the boundedness of $M$ has a simple characterisation. Muckenhoupt \cite[Theorem~3]{Muckenhoupt1972} shows that, on an interval, $M$ is bounded on $L^\infty_w$ if and only if $w > 0$ almost everywhere. This condition only concerns where $w$ vanishes.
-\end{remark}
-
 If \eqref{eq:question} holds, then each $f \in L^p_w(\mathbb{R}^d)$ and each cube $Q$ give a condition on $w$, and Muckenhoupt showed that a suitable choice of $f$ for each cube gives the following necessary condition. It is not needed for the proof of the main result, but it motivates the definition of $A_p$ below, so its proof is included in Appendix~\ref{app:necessity}.
 
 \begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972}, \cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
@@ -115,7 +111,7 @@ Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{proposition}
 
-Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. Together, Theorem~\ref{thm:main} and Proposition~\ref{prop:sharp} form Theorem~C in \cite{Lerner2008}, whose proof there covers only the upper bound. This report presents his argument in detail and completes it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$. Sharp dependence on $[w]_{A_p}$ later became a central theme of the theory, culminating in the sharp bound for Calder\'on--Zygmund operators \cite[Introduction]{Duoandikoetxea2013}.
+Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. Together, Theorem~\ref{thm:main} and Proposition~\ref{prop:sharp} form Theorem~C in \cite{Lerner2008}, whose proof there covers only the upper bound. This report presents his argument in detail and completes it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
 If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
@@ -339,9 +335,7 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
-This proves Theorem~\ref{thm:main} with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$, which depends only on $p$ and $d$ by Lemma~\ref{lem:key}.
-\end{proof}
-
+The inequality in Theorem~\ref{thm:main} therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$, which depends only on $p$ and $d$ by Lemma~\ref{lem:key}.\end{proof}
 \subsection{Sharpness of the exponent}
 
 \begin{proof}[Proof of Proposition~\ref{prop:sharp}]
