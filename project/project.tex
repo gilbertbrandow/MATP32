@@ -66,11 +66,7 @@ For $p = \infty$, the boundedness of $M$ has a simple characterisation. Muckenho
 If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for every measurable function $f$. Applying this to $f$ and to $Mf$ gives $\|Mf\|_{L^p_w} = 0 = \|f\|_{L^p_w}$, so \eqref{eq:question} holds with any constant $C$.
 \end{remark}
 
-Suppose that \eqref{eq:question} holds and let $Q$ be a cube. Since $Mf(x)$ is at least the average of $|f|$ over $Q$ for $x \in Q$, writing out the norms in \eqref{eq:question} by Definition~\ref{def:Lp} gives
-\[
-  \left( \frac{1}{|Q|} \int_Q |f|\,dx \right)^p w(Q) \le \int_Q (Mf)^p\, w\,dx \le C^p \int_{\mathbb{R}^d} |f|^p\, w\,dx
-\]
-for every $f \in L^p_w(\mathbb{R}^d)$. Each choice of $f$ thus gives a condition on $w$, and H\"older's inequality shows that the choice $f = w^{-\frac{1}{p-1}}\chi_Q$ makes this condition as strong as possible. The following proposition, which is due to Muckenhoupt and is not needed for the main result, makes this precise.
+If \eqref{eq:question} holds, then each $f \in L^p_w(\mathbb{R}^d)$ and each cube $Q$ give a condition on $w$, and Muckenhoupt showed that a suitable choice of $f$ for each cube gives the following necessary condition. It is not needed for the proof of the main result, but it motivates the definition of $A_p$ below, so its proof is included in Appendix~\ref{app:necessity}.
 
 \begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972}, \cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
 Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then for every cube $Q$ we have $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
@@ -79,8 +75,6 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 \end{equation}
 In particular, $w > 0$ almost everywhere.
 \end{proposition}
-
-This motivates the following definition.
 
 \begin{definition}[{Muckenhoupt $A_p$ weights \cite[(7.10)]{Muckenhoupt1972}}]
 Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of $w$ is
@@ -91,13 +85,11 @@ where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. We say that
 \end{definition}
 
 \begin{definition}[{Dual weight \cite[Section~1]{Buckley1993}}]\label{def:dual}
-Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$, with $\sigma = \infty$ where $w = 0$. For measurable sets $E$ we write $\sigma(E) := \int_E \sigma\,dx$.
-\end{definition}
-
-With this notation \eqref{eq:Ap} takes the more compact form
+Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$, with $\sigma = \infty$ where $w = 0$. For measurable sets $E$ we write $\sigma(E) := \int_E \sigma\,dx$. With this notation \eqref{eq:Ap} takes the more compact form
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
 \]
+\end{definition}
 
 Taking the supremum over all cubes in Proposition~\ref{prop:necessity} gives the following.
 
@@ -114,7 +106,7 @@ Muckenhoupt proved that the condition $w \in A_p$ is also sufficient.
 Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
 \end{theorem}
 
-Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$, and which power is the smallest possible. This was answered by Buckley.
+Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$. This was answered by Buckley.
 
 \begin{theorem}[{Buckley \cite[Theorem~2.5]{Buckley1993}}]\label{thm:main}
 Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
@@ -420,6 +412,34 @@ Hence
   \delta^{\alpha(p-1)-1} \le \frac{c\, C^\alpha}{D} \qquad \text{for every } 0 < \delta < 1.
 \]
 The assumption $\alpha < \frac{1}{p-1}$ makes the exponent $\alpha(p-1) - 1$ negative, so the left-hand side tends to $\infty$ as $\delta \to 0$, while the right-hand side is a constant. This is a contradiction.
+\end{proof}
+
+\appendix
+
+\section{Proof of Proposition~\ref{prop:necessity}}\label{app:necessity}
+
+\begin{proof}
+For every cube $Q$ and $x \in Q$, $Mf(x) \ge \frac{1}{|Q|}\int_Q |f|\,dy$, so \eqref{eq:question} gives
+\begin{equation}\label{eq:testcube}
+  \Big( \frac{1}{|Q|} \int_Q |f|\,dy \Big)^p w(Q) \le \int_Q (Mf)^p\, w\,dx \le C^p \int_{\mathbb{R}^d} |f|^p\, w\,dx
+\end{equation}
+for every cube $Q$ and every $f \in L^p_w(\mathbb{R}^d)$. Now let $Q$ be a cube. Since $w$ is not almost everywhere zero, $Q$ is contained in a cube $Q_0$ with $w(Q_0) > 0$. Then \eqref{eq:testcube} with $Q_0$ in place of $Q$ and $f = \chi_Q$ gives $(|Q|/|Q_0|)^p\, w(Q_0) \le C^p\, w(Q)$, so $w(Q) > 0$.
+
+For $n \ge 1$ let $f_n := \big(w + \tfrac{1}{n}\big)^{-\frac{1}{p-1}}\chi_Q$. Since $w \le w + \frac{1}{n}$,
+\[
+  |f_n|^p\, w \le \big(w + \tfrac{1}{n}\big)^{-\frac{p}{p-1}}\big(w + \tfrac{1}{n}\big) = f_n \le n^{\frac{1}{p-1}},
+\]
+so $f_n \in L^p_w(\mathbb{R}^d)$, and $w < \infty$ almost everywhere gives $\int_Q f_n\,dy > 0$. Then \eqref{eq:testcube} with $f = f_n$, together with $|f_n|^p w \le f_n$, gives
+\[
+  \Big( \frac{1}{|Q|} \int_Q f_n\,dy \Big)^p w(Q) \le C^p \int_Q f_n\,dy .
+\]
+The functions $f_n$ increase to $w^{-\frac{1}{p-1}}\chi_Q$ as $n \to \infty$, so dividing by $\int_Q f_n\,dy$ gives
+\begin{align*}
+  C^p &\ge \lim_{n\to\infty} \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q f_n\,dy \Big)^{p-1} \\
+  &= \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q \lim_{n\to\infty} f_n\,dy \Big)^{p-1} \qquad \text{(monotone convergence)} \\
+  &= \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \Big)^{p-1}.
+\end{align*}
+Since $w(Q) > 0$, $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$. As $Q$ was arbitrary, $w > 0$ almost everywhere.
 \end{proof}
 
 \bibliographystyle{amsplain}
