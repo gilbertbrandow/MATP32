@@ -25,13 +25,13 @@
 \maketitle
 
 \begin{abstract}
-B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal operator is bounded on $L^p_w(\mathbb{R}^d)$, $1 < p < \infty$, if and only if $w \in A_p$. S.~Buckley \cite{Buckley1993} proved that its operator norm is at most a constant times $[w]_{A_p}^{1/(p-1)}$, and that this exponent is best possible. We present A.~K.~Lerner's later proof \cite{Lerner2008} of this bound in detail, together with Buckley's example showing that the exponent cannot be improved.
+B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal operator is bounded on $L^p_w(\mathbb{R}^d)$, $1 < p < \infty$, if and only if $w \in A_p$. S.~Buckley \cite{Buckley1993} proved that its operator norm is at most a constant times $[w]_{A_p}^{1/(p-1)}$, and that this exponent is best possible. This report presents A.~K.~Lerner's later proof \cite{Lerner2008} of this bound in detail, together with Buckley's example showing that the exponent cannot be improved.
 \end{abstract}
 
 \section{Introduction}
 
 \begin{definition}[Weights]\label{def:weight}
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero.\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. Following the convention used in \cite[Section~1]{Buckley1993}.} For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets. For $1 < p < \infty$, $w^{-\frac{1}{p-1}}$ is interpreted as $\infty$ where $w = 0$.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero.\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. This is the convention of \cite[Section~1]{Buckley1993}.} For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets. For $1 < p < \infty$, $w^{-\frac{1}{p-1}}$ is interpreted as $\infty$ where $w = 0$.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
@@ -42,7 +42,7 @@ Let $w$ be a weight and let $1 \le p < \infty$. The weighted $L^p$ space is
 with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx \right)^{1/p}$. Moreover, $L^\infty_w(\mathbb{R}^d)$ is the space of measurable functions $f$ with $\|f\|_{L^\infty_w} := \inf\{ t \ge 0 : w(\{|f| > t\}) = 0 \} < \infty$.
 \end{definition}
 
-The central object of this report is the Hardy--Littlewood maximal operator $M$. Our proofs also use its analogue with respect to the measure $w(x)\,dx$.
+The central object of this report is the Hardy--Littlewood maximal operator $M$. The proofs also use its analogue with respect to the measure $w(x)\,dx$.
 
 \begin{definition}[Hardy--Littlewood maximal operator]\label{def:maximal}
 Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable function $f$ and $x \in \mathbb{R}^d$,
@@ -52,7 +52,7 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, $r > 0$, where $|z|_\infty := \max_{1 \le k \le d} |z_k|$, the operator is denoted $M^c_w$. If $w \equiv 1$, the subscript is dropped, giving $M$ and $M^c$.
 \end{definition}
 
-It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Theorem~1.1]{Duoandikoetxea2013}. For $1 < p < \infty$ and a weight $w$, $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that
+It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Section~2.1]{GrafakosClassical}, \cite[Theorem~1.1]{Duoandikoetxea2013}, and Section~\ref{sec:weighted} adapts this proof to weighted maximal operators. For $1 < p < \infty$ and a weight $w$, $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that
 \begin{equation}\label{eq:question}
   \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dx \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dx \right)^{1/p} = C\, \|f\|_{L^p_w}
 \end{equation}
@@ -115,7 +115,7 @@ Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{proposition}
 
-Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on a deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. This report presents his argument in detail and completes it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
+Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. Together, Theorem~\ref{thm:main} and Proposition~\ref{prop:sharp} form Theorem~C in \cite{Lerner2008}, whose proof there covers only the upper bound. This report presents his argument in detail and completes it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$. Sharp dependence on $[w]_{A_p}$ later became a central theme of the theory, culminating in the sharp bound for Calder\'on--Zygmund operators \cite[Introduction]{Duoandikoetxea2013}.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
 If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
@@ -167,7 +167,7 @@ Every cube $Q$ has $w(Q) < \infty$, so $w < \infty$ almost everywhere. Hence $\s
 which is finite.
 \end{proof}
 
-\subsection{Weighted maximal operators}
+\subsection{Weighted maximal operators}\label{sec:weighted}
 
 The strong type $(p,p)$ estimate for $M$ follows from a weak type $(1,1)$ estimate obtained with the Vitali covering lemma, the trivial bound on $L^\infty$ and the Marcinkiewicz interpolation theorem \cite[Sections~1.3.1 and~2.1.1]{GrafakosClassical}. The Vitali covering lemma enlarges the selected cubes, so for the measure $v(x)\,dx$ the resulting constant depends on how $v(3Q)$ compares to $v(Q)$. For $v \in A_p$ this brings in further powers of $[v]_{A_p}$, which would spoil the exponent in Theorem~\ref{thm:main} \cite[Remark~1.11]{Duoandikoetxea2013}. The Besicovitch covering lemma applies only to centred cubes but does not enlarge them. With the Besicovitch covering lemma in place of the Vitali covering lemma, the same scheme gives Lemmas~\ref{lem:weak} and~\ref{lem:key} for the centred operator $M^c_v$, with constants depending only on $d$ and $q$, and not on $v$.
 
@@ -290,7 +290,7 @@ where the second equality holds since $|\lambda| \ge 0$. Hence $M^c_v$ is sublin
 
 By Lemma~\ref{lem:weak}, $v(\{M^c_v f > t\}) \le \frac{N_d}{t} \|f\|_{L^1_v}$ for every $f \in L^1_v(\mathbb{R}^d)$ and $t > 0$. For $f \in L^\infty_v(\mathbb{R}^d)$, \eqref{eq:Linfty} with $f_2 = f$ shows that every average in the definition of $M^c_v f(x)$ is at most $\|f\|_{L^\infty_v}$. Hence $M^c_v f(x) \le \|f\|_{L^\infty_v}$ for every $x \in \mathbb{R}^d$, and in particular $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$.
 
-The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, applied on the measure space $(\mathbb{R}^d, v(x)\,dx)$ with exponents $1$ and $\infty$, now gives the claim with a constant depending only on $q$ and on the constants $N_d$ and $1$ in these two estimates, and hence only on $q$ and $d$.
+Every $f \in L^q_v(\mathbb{R}^d)$ satisfies $f = f\chi_{\{|f| > 1\}} + f\chi_{\{|f| \le 1\}} \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$. The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, applied on the measure space $(\mathbb{R}^d, v(x)\,dx)$ with exponents $1$ and $\infty$, now gives the claim with a constant depending only on $q$ and on the constants $N_d$ and $1$ in these two estimates, and hence only on $q$ and $d$.
 \end{proof}
 
 \subsection{Proof of Theorem~\ref{thm:main}}
@@ -324,7 +324,7 @@ Raising both sides to the power $\frac{1}{p-1}$ and taking the supremum over $r 
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$.
+Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. The sets $\{Mf > t\}$, $t > 0$, are open \cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$ and $\sigma^{1-p} = w$, together with Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
 \begin{equation}\label{eq:innernorm}
@@ -339,6 +339,7 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
+This proves Theorem~\ref{thm:main} with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$, which depends only on $p$ and $d$ by Lemma~\ref{lem:key}.
 \end{proof}
 
 \subsection{Sharpness of the exponent}
@@ -354,7 +355,7 @@ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. Let $w \in A_p$. Then $
 \]
 so $[w]_{A_p} \ge 1$. Hence \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, so $\alpha$ may be assumed to satisfy $0 \le \alpha < \frac{1}{p-1}$. For $0 < \delta < 1$ let
 \[
-  w_\delta(x) := |x|^{(d-\delta)(p-1)} \qquad \text{and} \qquad f_\delta(x) := w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x).
+  w_\delta(x) := |x|^{(d-\delta)(p-1)} \qquad \text{and} \qquad f_\delta(x) := w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x),
 \]
 where $|x|$ denotes the Euclidean norm of $x$. With $B(0,r) := \{y \in \mathbb{R}^d : |y| < r\}$, polar coordinates give, for every $r > 0$,
 \begin{equation}\label{eq:polar}
@@ -376,7 +377,7 @@ If $|x_0| > \sqrt{d}\,\ell$, then $|y - x_0| < \frac{1}{2}|x_0|$, so $\frac{1}{2
 \]
 Taking the supremum over all cubes gives $w_\delta \in A_p$ with
 \begin{equation}\label{eq:wdelta}
-  [w_\delta]_{A_p} \le K\, \delta^{1-p}, \qquad K := \max\{(2\sqrt{d})^{d(p-1)}|S^{d-1}|^{p-1},\, 3^{d(p-1)}\}.
+  [w_\delta]_{A_p} \le K_1\, \delta^{1-p}, \qquad K_1 := \max\{(2\sqrt{d})^{d(p-1)}|S^{d-1}|^{p-1},\, 3^{d(p-1)}\}.
 \end{equation}
 
 The norm of $f_\delta$ satisfies
@@ -390,16 +391,16 @@ by $Q(0,2) \subseteq B(0, 2\sqrt{d})$ and \eqref{eq:polar}. Moreover $\|f_\delta
 \end{align*}
 Since $f_\delta = 0$ outside $Q(0,2)$, this gives $Mf_\delta \ge \frac{|S^{d-1}|}{2^d\delta}\, f_\delta$ almost everywhere, and taking norms gives
 \begin{equation}\label{eq:Mfdelta}
-  \|Mf_\delta\|_{L^p_{w_\delta}} \ge D\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}}, \qquad D := 2^{-d}\, |S^{d-1}|.
+  \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}}, \qquad K_2 := 2^{-d}\, |S^{d-1}|.
 \end{equation}
 
 Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$, gives together with \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$
 \[
-  D\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le c\, [w_\delta]_{A_p}^{\alpha} \le c\, K^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
+  K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le c\, [w_\delta]_{A_p}^{\alpha} \le c\, K_1^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
 \]
 Hence
 \[
-  \delta^{\alpha(p-1)-1} \le \frac{c\, K^\alpha}{D} \qquad \text{for every } 0 < \delta < 1.
+  \delta^{\alpha(p-1)-1} \le \frac{c\, K_1^\alpha}{K_2} \qquad \text{for every } 0 < \delta < 1.
 \]
 The assumption $\alpha < \frac{1}{p-1}$ makes the exponent $\alpha(p-1) - 1$ negative, so the left-hand side tends to $\infty$ as $\delta \to 0$, while the right-hand side is a constant. This is a contradiction.
 \end{proof}
