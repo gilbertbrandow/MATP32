@@ -137,10 +137,8 @@ Let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then $Mf(x) \le 2^d M^c f(x)$ for 
 \begin{proof}
 Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, Lemma~\ref{lem:cubes} gives $Q \subseteq Q(x, 2\ell(Q))$, and $|Q(x, 2\ell(Q))| = 2^d |Q|$ gives
 \begin{align*}
-  Mf(x) &= \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \\
-  &\le \sup_{Q \ni x} \frac{2^d}{|Q(x, 2\ell(Q))|} \int_{Q(x, 2\ell(Q))} |f(y)|\,dy \\
-  &\le 2^d \sup_{r > 0} \frac{1}{|Q(x, r)|} \int_{Q(x, r)} |f(y)|\,dy \\
-  &= 2^d M^c f(x).
+  Mf(x) &= \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \le \sup_{Q \ni x} \frac{2^d}{|Q(x, 2\ell(Q))|} \int_{Q(x, 2\ell(Q))} |f(y)|\,dy \\
+  &\le 2^d \sup_{r > 0} \frac{1}{|Q(x, r)|} \int_{Q(x, r)} |f(y)|\,dy = 2^d M^c f(x).
 \end{align*}
 \end{proof}
 
@@ -278,12 +276,11 @@ Let $f, h \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$, $x \in \mathbb{R}
   \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f + h|\,v\,dy &\le \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy + \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |h|\,v\,dy \\
   &\le M^c_v f(x) + M^c_v h(x).
 \end{align*}
-The right-hand side does not depend on $r$, so taking the supremum over $r > 0$ yields $M^c_v(f + h)(x) \le M^c_v f(x) + M^c_v h(x)$. For a scalar $\lambda$,
-\begin{align*}
-  M^c_v(\lambda f)(x) &= \sup_{r > 0} \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |\lambda|\,|f|\,v\,dy \\
-  &= |\lambda| \sup_{r > 0} \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy = |\lambda|\, M^c_v f(x),
-\end{align*}
-where the second equality holds since $|\lambda| \ge 0$. Hence $M^c_v$ is sublinear.
+The right-hand side does not depend on $r$, so taking the supremum over $r > 0$ yields $M^c_v(f + h)(x) \le M^c_v f(x) + M^c_v h(x)$. For a scalar $\lambda$, the factor $|\lambda| \ge 0$ can be taken out of the supremum, implying
+\[
+  M^c_v(\lambda f)(x) = \sup_{r > 0} \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |\lambda|\,|f|\,v\,dy = |\lambda|\, M^c_v f(x).
+\]
+Hence $M^c_v$ is sublinear.
 
 By Lemma~\ref{lem:weak}, $v(\{M^c_v f > t\}) \le \frac{N_d}{t} \|f\|_{L^1_v}$ for every $f \in L^1_v(\mathbb{R}^d)$ and $t > 0$. For $f \in L^\infty_v(\mathbb{R}^d)$, \eqref{eq:Linfty} with $f_2 = f$ shows that every average in the definition of $M^c_v f(x)$ is at most $\|f\|_{L^\infty_v}$. Hence $M^c_v f(x) \le \|f\|_{L^\infty_v}$ for every $x \in \mathbb{R}^d$, and in particular $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$.
 
@@ -419,12 +416,10 @@ so $f_n \in L^p_w(\mathbb{R}^d)$, and $w < \infty$ almost everywhere gives $\int
 \[
   \Big( \frac{1}{|Q|} \int_Q f_n\,dy \Big)^p w(Q) \le C^p \int_Q f_n\,dy .
 \]
-The functions $f_n$ increase to $w^{-\frac{1}{p-1}}\chi_Q$ as $n \to \infty$, so dividing by $\int_Q f_n\,dy$ gives
-\begin{align*}
-  C^p &\ge \lim_{n\to\infty} \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q f_n\,dy \Big)^{p-1} \\
-  &= \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q \lim_{n\to\infty} f_n\,dy \Big)^{p-1} \qquad \text{(monotone convergence)} \\
-  &= \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \Big)^{p-1}.
-\end{align*}
+The functions $f_n$ increase to $w^{-\frac{1}{p-1}}\chi_Q$ as $n \to \infty$, so dividing by $\int_Q f_n\,dy$ and applying monotone convergence gives
+\[
+  C^p \ge \lim_{n\to\infty} \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q f_n\,dy \Big)^{p-1} = \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \Big)^{p-1}.
+\]
 Since $w(Q) > 0$, $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$. As $Q$ was arbitrary, $w > 0$ almost everywhere.
 \end{proof}
 
