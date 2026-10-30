@@ -106,7 +106,7 @@ Muckenhoupt proved that the condition $w \in A_p$ is also sufficient.
 Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
 \end{theorem}
 
-Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$. This was answered by Buckley.
+Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$, and which power is the smallest possible. This was answered by Buckley.
 
 \begin{theorem}[{Buckley \cite[Theorem~2.5]{Buckley1993}}]\label{thm:main}
 Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
@@ -218,15 +218,13 @@ For each $\varepsilon$ let
 \[
   J_\varepsilon := \{ x_i : x_i \in O_\varepsilon \text{ and } z \in Q(x_i, r_{x_i}) \}.
 \]
-Every cube $Q(x_i, r_{x_i})$ containing $z$ has its centre in some $O_\varepsilon$, so the number of such cubes is at most the total number of points in the sets $J_\varepsilon$.
-
-Fix $\varepsilon$ with $J_\varepsilon$ nonempty and let $j := \min\{ i : x_i \in J_\varepsilon \}$, so that $x_j$ is the point of $J_\varepsilon$ that was chosen first. Let $x_i \in J_\varepsilon \setminus \{x_j\}$, so that $i > j$. Since $z$ lies in both $Q(x_i, r_{x_i})$ and $Q(x_j, r_{x_j})$, \eqref{eq:besA} and \eqref{eq:orthant} give
+Fix $\varepsilon_0$ with $J_{\varepsilon_0}$ nonempty and let $j := \min\{ i : x_i \in J_{\varepsilon_0} \}$, so that $x_j$ is the point of $J_{\varepsilon_0}$ that was chosen first. Let $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$, so that $i > j$. Since $z$ lies in both $Q(x_i, r_{x_i})$ and $Q(x_j, r_{x_j})$, \eqref{eq:besA} and \eqref{eq:orthant} give
 \[
   \frac{r_{x_j}}{2} < |x_i - x_j|_\infty \le \max\{ |x_i - z|_\infty,\ |x_j - z|_\infty \} \le \max\Big\{ \frac{r_{x_i}}{2},\ \frac{r_{x_j}}{2} \Big\}.
 \]
 Hence $r_{x_i} > r_{x_j}$, and by \eqref{eq:besA} also $|x_i - z|_\infty \le r_{x_i}/2 < r_{x_j}$.
 
-For each $x_i \in J_\varepsilon \setminus \{x_j\}$ consider the cube $Q(x_i, r_{x_j}/2)$. If $x_i, x_m \in J_\varepsilon \setminus \{x_j\}$ with $m < i$, then $r_{x_m} > r_{x_j}$, so \eqref{eq:besA} gives $|x_i - x_m|_\infty > r_{x_m}/2 > r_{x_j}/2$. Thus the centres of these cubes are more than their side length apart, and the cubes are pairwise disjoint. Moreover, for $x_i \in J_\varepsilon \setminus \{x_j\}$ every $y \in Q(x_i, r_{x_j}/2)$ satisfies
+For each $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$ consider the cube $Q(x_i, r_{x_j}/2)$. If $x_i, x_m \in J_{\varepsilon_0} \setminus \{x_j\}$ with $m < i$, then $r_{x_m} > r_{x_j}$, so \eqref{eq:besA} gives $|x_i - x_m|_\infty > r_{x_m}/2 > r_{x_j}/2$. Thus the centres of these cubes are more than their side length apart, and the cubes are pairwise disjoint. Moreover, for $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$ every $y \in Q(x_i, r_{x_j}/2)$ satisfies
 \[
   |y - z|_\infty \le |y - x_i|_\infty + |x_i - z|_\infty < \frac{r_{x_j}}{4} + r_{x_j} = \frac{5 r_{x_j}}{4},
 \]
@@ -234,7 +232,7 @@ so all of them are contained in $Q(z, 5r_{x_j}/2)$. If $n$ of these cubes are ch
 \[
   n \left( \frac{r_{x_j}}{2} \right)^d \le \left( \frac{5 r_{x_j}}{2} \right)^d = 5^d \left( \frac{r_{x_j}}{2} \right)^d .
 \]
-Hence $n \le 5^d$, so $J_\varepsilon \setminus \{x_j\}$ has at most $5^d$ points and $J_\varepsilon$ has at most $1 + 5^d$ points. Summing over the $2^d$ orthants, $z$ lies in at most $2^d(1 + 5^d)$ of the cubes $Q(x_i, r_{x_i})$, and the lemma holds with $N_d := 2^d(1 + 5^d)$.
+Hence $n \le 5^d$, so $J_{\varepsilon_0}$ has at most $1 + 5^d$ points. Since $\varepsilon_0$ was an arbitrary choice with $J_{\varepsilon_0}$ nonempty, every $J_\varepsilon$ has at most $1 + 5^d$ points. Every cube $Q(x_i, r_{x_i})$ containing $z$ has its centre in some $O_\varepsilon$, and hence in $J_\varepsilon$. Summing over the $2^d$ orthants, $z$ lies in at most $2^d(1 + 5^d)$ of the cubes $Q(x_i, r_{x_i})$, and the lemma holds with $N_d := 2^d(1 + 5^d)$.
 \end{proof}
 
 \begin{lemma}[{\cite[Theorem~1.10]{Duoandikoetxea2013}}]\label{lem:weak}
