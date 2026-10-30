@@ -171,13 +171,9 @@ Every cube $Q$ has $w(Q) < \infty$, so $w < \infty$ almost everywhere. Hence $\s
 which is finite.
 \end{proof}
 
-\begin{remark}[The Vitali covering lemma]
-In the proof of the weak type $(1,1)$ estimate for $M$ \cite[Theorem~1.1]{Duoandikoetxea2013}, a compact set $K \subseteq \{Mf > t\}$ is covered by finitely many cubes $Q$ with $\frac{1}{|Q|}\int_Q |f|\,dx > t$. The Vitali covering lemma \cite[Lemma~A.4]{Duoandikoetxea2013}, which holds for balls as well as cubes, selects disjoint cubes $Q_1, \ldots, Q_N$ among them with $K \subseteq \bigcup_j 3Q_j$. Since $|3Q_j| = 3^d |Q_j|$, this gives
-\[
-  |K| \le \sum_{j=1}^N |3Q_j| = 3^d \sum_{j=1}^N |Q_j| \le \frac{3^d}{t} \int_{\mathbb{R}^d} |f|\,dx.
-\]
-For the measure $v(x)\,dx$, the equality $|3Q_j| = 3^d|Q_j|$ would have to be replaced by an inequality $v(3Q_j) \le C\,v(Q_j)$, and no constant $C$ works for all weights $v$ \cite[Remark~1.11]{Duoandikoetxea2013}. For example, if $v = \varepsilon$ on $Q_j$ and $v = 1$ on the rest of $3Q_j$, then $v(3Q_j)/v(Q_j) \ge (3^d - 1)/\varepsilon$, which is arbitrarily large. The Besicovitch covering lemma covers $K$ by the selected cubes themselves, without enlarging them, and therefore gives a constant independent of $v$.
-\end{remark}
+\subsection{Weighted maximal operators}
+
+The strong type $(p,p)$ estimate for $M$ follows from a weak type $(1,1)$ estimate obtained with the Vitali covering lemma, the trivial bound on $L^\infty$ and the Marcinkiewicz interpolation theorem \cite[Sections~1.3.1 and~2.1.1]{GrafakosClassical}. The Vitali covering lemma enlarges the selected cubes, so for the measure $v(x)\,dx$ the resulting constant depends on how $v(3Q)$ compares to $v(Q)$. For $v \in A_p$ this brings in further powers of $[v]_{A_p}$, which would spoil the exponent in Theorem~\ref{thm:main} \cite[Remark~1.11]{Duoandikoetxea2013}. The Besicovitch covering lemma applies only to centred cubes but does not enlarge them. With the Besicovitch covering lemma in place of the Vitali covering lemma, the same scheme gives Lemmas~\ref{lem:weak} and~\ref{lem:key} for the centred operator $M^c_v$, with constants depending only on $d$ and $q$, and not on $v$.
 
 \begin{lemma}[{Besicovitch covering lemma \cite[Theorem~1.1]{Guzman1975}}]\label{lem:besicovitch}
 Let $E \subset \mathbb{R}^d$ be a bounded set, and suppose that for each $x \in E$ a cube $Q(x, r_x)$ centred at $x$ is given. Then there are points $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and every point of $\mathbb{R}^d$ lies in at most $N_d$ of them, where $N_d$ depends only on $d$.
