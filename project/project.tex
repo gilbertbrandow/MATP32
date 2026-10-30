@@ -366,57 +366,52 @@ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. For every weight $w$ th
 \[
   1 = \frac{1}{|Q|} \int_Q w^{\frac{1}{p}}\, w^{-\frac{1}{p}}\,dy \le \left( \frac{1}{|Q|} \int_Q w\,dy \right)^{\frac{1}{p}} \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{\frac{p-1}{p}},
 \]
-so $[w]_{A_p} \ge 1$. Hence \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, and we may assume that $0 \le \alpha < \frac{1}{p-1}$.
-
-For $0 < \delta < 1$ we consider the weight $w_\delta(x) := |x|^{(d-\delta)(p-1)}$, for which $w_\delta^{-\frac{1}{p-1}}(x) = |x|^{\delta-d}$. By polar coordinates,
+so $[w]_{A_p} \ge 1$. Hence \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, and we may assume that $0 \le \alpha < \frac{1}{p-1}$. For $0 < \delta < 1$ let
+\[
+  w_\delta(x) := |x|^{(d-\delta)(p-1)} \qquad \text{and} \qquad f_\delta(x) := w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x).
+\]
+For every $r > 0$, polar coordinates give
 \begin{equation}\label{eq:polar}
-  \int_{\{|y| < r\}} |y|^{\delta - d}\,dy = \omega_d\, \frac{r^\delta}{\delta} \qquad \text{for every } r > 0,
+  \int_{B(0,r)} w_\delta(y)^{-\frac{1}{p-1}}\,dy = \int_{B(0,r)} |y|^{\delta - d}\,dy = |S^{d-1}| \int_0^r s^{\delta-d}\, s^{d-1}\,ds = |S^{d-1}|\, \frac{r^\delta}{\delta},
 \end{equation}
-where $\omega_d$ denotes the surface measure of the unit sphere in $\mathbb{R}^d$.
+where $|S^{d-1}|$ denotes the surface measure of the unit sphere $S^{d-1} \subseteq \mathbb{R}^d$.
 
-We first show that $w_\delta \in A_p$ with
+The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Let $Q(c,\ell)$ be a cube. Every $y \in Q(c,\ell)$ satisfies $|y - c| \le \sqrt{d}\,|y - c|_\infty \le \frac{\sqrt{d}}{2}\ell$.
+
+If $|c| \le \sqrt{d}\,\ell$, then $Q(c,\ell) \subseteq B(0, 2\sqrt{d}\,\ell)$. On this ball $w_\delta \le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)}$, and \eqref{eq:polar} gives
+\begin{align*}
+  \MoveEqLeft \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
+  &\le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{1}{\ell^d} \int_{B(0,2\sqrt{d}\,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
+  &= (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{|S^{d-1}|\,(2\sqrt{d}\,\ell)^{\delta}}{\delta\,\ell^d} \right)^{p-1} = (2\sqrt{d})^{d(p-1)}\, |S^{d-1}|^{p-1}\, \delta^{1-p}.
+\end{align*}
+If $|c| > \sqrt{d}\,\ell$, then $|y - c| < \frac{1}{2}|c|$, so $\frac{1}{2}|c| \le |y| \le \frac{3}{2}|c|$ for every $y \in Q(c,\ell)$, and
+\begin{align*}
+  \MoveEqLeft \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
+  &\le \big(\tfrac{3}{2}|c|\big)^{(d-\delta)(p-1)} \big(\tfrac{1}{2}|c|\big)^{(\delta-d)(p-1)} = 3^{(d-\delta)(p-1)} \le 3^{d(p-1)}\, \delta^{1-p}.
+\end{align*}
+Taking the supremum over all cubes gives $w_\delta \in A_p$ with
 \begin{equation}\label{eq:wdelta}
-  [w_\delta]_{A_p} \le C\, \delta^{1-p},
+  [w_\delta]_{A_p} \le C\, \delta^{1-p}, \qquad C := \max\{(2\sqrt{d})^{d(p-1)}|S^{d-1}|^{p-1},\, 3^{d(p-1)}\}.
 \end{equation}
-where $C$ depends only on $p$ and $d$. The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Write $a := (d-\delta)(p-1) \ge 0$, and let $Q := Q(c,\ell)$ be a cube. Every $y \in Q$ satisfies $|y - c| \le \frac{\sqrt{d}}{2}\,\ell$.
 
-Suppose first that $|c| \le \sqrt{d}\,\ell$. Then every $y \in Q$ satisfies $|y| \le R\ell$ with $R := \frac{3\sqrt{d}}{2}$. Since $a \ge 0$, this gives $w_\delta \le (R\ell)^a$ on $Q$, and by \eqref{eq:polar},
+The inclusion $Q(0,2) \subseteq B(0, 2\sqrt{d})$ and \eqref{eq:polar} give
 \[
-  \frac{1}{|Q|} \int_Q |y|^{\delta-d}\,dy \le \frac{1}{\ell^d} \int_{\{|y| < R\ell\}} |y|^{\delta-d}\,dy = \frac{\omega_d\, R^\delta\, \ell^{\delta-d}}{\delta}.
+  \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q(0,2)} |y|^{(\delta-d)p}\, |y|^{(d-\delta)(p-1)}\,dy = \int_{Q(0,2)} |y|^{\delta-d}\,dy \le |S^{d-1}|\, \frac{(2\sqrt{d})^\delta}{\delta} < \infty,
 \]
-Since $a + (\delta - d)(p-1) = 0$, we obtain
+and $\|f_\delta\|_{L^p_{w_\delta}} > 0$. Let $x \in Q(0,2)$ with $x \neq 0$ and $r := |x|_\infty$, so that $0 < r \le |x|$. The cube $Q(0,2r)$ contains $x$, is contained in $Q(0,2)$, and contains $B(0,r)$. The definition of $M$ and \eqref{eq:polar} give
 \[
-  \left( \frac{1}{|Q|} \int_Q w_\delta\,dy \right) \left( \frac{1}{|Q|} \int_Q |y|^{\delta-d}\,dy \right)^{p-1} \le (R\ell)^a \left( \frac{\omega_d\, R^\delta\, \ell^{\delta-d}}{\delta} \right)^{p-1} = R^{d(p-1)}\, \omega_d^{\,p-1}\, \delta^{1-p}.
+  Mf_\delta(x) \ge \frac{1}{(2r)^d} \int_{Q(0,2r)} |y|^{\delta-d}\,dy \ge \frac{1}{(2r)^d} \int_{B(0,r)} |y|^{\delta-d}\,dy = \frac{|S^{d-1}|}{2^d\delta}\, r^{\delta-d} \ge \frac{|S^{d-1}|}{2^d\delta}\, |x|^{\delta-d},
 \]
-
-Suppose instead that $|c| > \sqrt{d}\,\ell$. Then $|y - c| < \frac{1}{2}|c|$, so $\frac{1}{2}|c| \le |y| \le \frac{3}{2}|c|$ for every $y \in Q$. Hence $w_\delta \le \big(\tfrac{3}{2}|c|\big)^a$ and $|y|^{\delta-d} \le \big(\tfrac{1}{2}|c|\big)^{\delta-d}$ on $Q$, and
-\[
-  \left( \frac{1}{|Q|} \int_Q w_\delta\,dy \right) \left( \frac{1}{|Q|} \int_Q |y|^{\delta-d}\,dy \right)^{p-1} \le \Big( \tfrac{3}{2} \Big)^a\, 2^{(d-\delta)(p-1)} = 3^a \le 3^{d(p-1)} \le 3^{d(p-1)}\, \delta^{1-p}.
-\]
-Taking the supremum over all cubes proves \eqref{eq:wdelta} with $C := \max\{R^{d(p-1)}\omega_d^{\,p-1},\, 3^{d(p-1)}\}$.
-
-Next we construct a function for which $M$ is large in $L^p_{w_\delta}$. Let $f_\delta(x) := |x|^{\delta-d}\chi_{Q(0,2)}(x)$. Then $f_\delta \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and since $Q(0,2) \subseteq \{|y| < 2\sqrt{d}\}$, \eqref{eq:polar} gives
-\[
-  \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q(0,2)} |y|^{(\delta-d)p}\, |y|^{(d-\delta)(p-1)}\,dy = \int_{Q(0,2)} |y|^{\delta-d}\,dy \le \omega_d\, \frac{(2\sqrt{d})^\delta}{\delta} < \infty .
-\]
-Moreover $\|f_\delta\|_{L^p_{w_\delta}} > 0$, so $f_\delta \in L^p_{w_\delta}(\mathbb{R}^d)$ is not the zero element. Let $x \in Q(0,2)$ with $x \neq 0$, and put $r := |x|_\infty$, so that $0 < r \le |x|$. The cube $Q(0,2r)$ contains $x$, is contained in $Q(0,2)$, and contains the ball $\{|y| < r\}$. By the definition of $M$ and \eqref{eq:polar},
-\[
-  Mf_\delta(x) \ge \frac{1}{(2r)^d} \int_{Q(0,2r)} |y|^{\delta-d}\,dy \ge \frac{1}{(2r)^d} \int_{\{|y| < r\}} |y|^{\delta-d}\,dy = \frac{\omega_d}{2^d\delta}\, r^{\delta-d} \ge \frac{\omega_d}{2^d\delta}\, |x|^{\delta-d},
-\]
-where the last inequality holds because $\delta - d < 0$ and $r \le |x|$. Thus $Mf_\delta \ge \frac{\omega_d}{2^d\delta} f_\delta$ almost everywhere on $Q(0,2)$, and this also holds outside $Q(0,2)$, where $f_\delta = 0$. Consequently
+where the last step uses $\delta - d < 0$ and $r \le |x|$. Hence $Mf_\delta \ge \frac{|S^{d-1}|}{2^d\delta} f_\delta$ almost everywhere on $Q(0,2)$, and trivially outside $Q(0,2)$, where $f_\delta = 0$. Taking norms gives
 \begin{equation}\label{eq:Mfdelta}
-  \|Mf_\delta\|_{L^p_{w_\delta}} \ge \frac{\omega_d}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} .
+  \|Mf_\delta\|_{L^p_{w_\delta}} \ge \frac{|S^{d-1}|}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} .
 \end{equation}
 
-Finally we combine these estimates. Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and using \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$, we obtain
+Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and using \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$, gives
 \[
-  \frac{\omega_d}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} \le \|Mf_\delta\|_{L^p_{w_\delta}} \le c\, [w_\delta]_{A_p}^{\alpha}\, \|f_\delta\|_{L^p_{w_\delta}} \le c\, C^\alpha\, \delta^{\alpha(1-p)}\, \|f_\delta\|_{L^p_{w_\delta}} .
+  \frac{|S^{d-1}|}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} \le \|Mf_\delta\|_{L^p_{w_\delta}} \le c\, [w_\delta]_{A_p}^{\alpha}\, \|f_\delta\|_{L^p_{w_\delta}} \le c\, C^\alpha\, \delta^{\alpha(1-p)}\, \|f_\delta\|_{L^p_{w_\delta}} .
 \]
-Dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$ and multiplying by $\delta$ gives
-\[
-  \frac{\omega_d}{2^d} \le c\, C^\alpha\, \delta^{1 - \alpha(p-1)} \qquad \text{for every } 0 < \delta < 1 .
-\]
-Since $\alpha < \frac{1}{p-1}$, the exponent $1 - \alpha(p-1)$ is positive, so the right-hand side tends to $0$ as $\delta \to 0$, while the left-hand side is a positive constant independent of $\delta$. This is a contradiction, and the proof is complete.
+Dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$ and multiplying by $\delta$ gives $2^{-d}|S^{d-1}| \le c\, C^\alpha\, \delta^{1 - \alpha(p-1)}$ for every $0 < \delta < 1$. The exponent $1 - \alpha(p-1)$ is positive, so the right-hand side tends to $0$ as $\delta \to 0$, which contradicts $2^{-d}|S^{d-1}| > 0$.
 \end{proof}
 
 \clearpage
