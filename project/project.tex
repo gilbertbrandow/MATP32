@@ -31,7 +31,7 @@ B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal 
 \section{Introduction}
 
 \begin{definition}[Weights]\label{def:weight}
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$. For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets. For $1 < p < \infty$, $w^{-\frac{1}{p-1}}$ is interpreted as $\infty$ where $w = 0$.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero.\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. Following the convention used in \cite[Section~1]{Buckley1993}.} For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets. For $1 < p < \infty$, $w^{-\frac{1}{p-1}}$ is interpreted as $\infty$ where $w = 0$.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
@@ -59,17 +59,13 @@ It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1
 for all $f \in L^p_w(\mathbb{R}^d)$.
 
 \begin{remark}[The endpoint $p = \infty$]
-For $p = \infty$, the boundedness of $M$ has a simple characterisation. Muckenhoupt \cite[Theorem~3]{Muckenhoupt1972} shows that, on an interval, $M$ is bounded on $L^\infty_w$ if and only if $w > 0$ almost everywhere or $w = 0$ almost everywhere. This condition only concerns where $w$ vanishes.
-\end{remark}
-
-\begin{remark}[The zero weight]\label{rem:zero}
-If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for every measurable function $f$. Applying this to $f$ and to $Mf$ gives $\|Mf\|_{L^p_w} = 0 = \|f\|_{L^p_w}$, so \eqref{eq:question} holds with any constant $C$.
+For $p = \infty$, the boundedness of $M$ has a simple characterisation. Muckenhoupt \cite[Theorem~3]{Muckenhoupt1972} shows that, on an interval, $M$ is bounded on $L^\infty_w$ if and only if $w > 0$ almost everywhere. This condition only concerns where $w$ vanishes.
 \end{remark}
 
 If \eqref{eq:question} holds, then each $f \in L^p_w(\mathbb{R}^d)$ and each cube $Q$ give a condition on $w$, and Muckenhoupt showed that a suitable choice of $f$ for each cube gives the following necessary condition. It is not needed for the proof of the main result, but it motivates the definition of $A_p$ below, so its proof is included in Appendix~\ref{app:necessity}.
 
 \begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972}, \cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then every cube $Q$ satisfies $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
+Let $1 < p < \infty$ and let $w$ be a weight. If \eqref{eq:question} holds with constant $C$, then every cube $Q$ satisfies $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
 \begin{equation}\label{eq:Apcube}
   \left( \frac{1}{|Q|} \int_Q w\,dx \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dx \right)^{p-1} \le C^p .
 \end{equation}
@@ -81,7 +77,7 @@ Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of
 \begin{equation}\label{eq:Ap}
   [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w(x)\,dx \right) \left( \frac{1}{|Q|} \int_Q w(x)^{-\frac{1}{p-1}}\,dx \right)^{p-1},
 \end{equation}
-where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. The weight $w$ belongs to $A_p$ if $[w]_{A_p} < \infty$.
+where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$, with the convention $0 \cdot \infty := 0$ \cite[Section~1]{Muckenhoupt1972}. The weight $w$ belongs to $A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
 
 \begin{definition}[{Dual weight \cite[Section~1]{Buckley1993}}]\label{def:dual}
@@ -94,7 +90,7 @@ Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $
 Taking the supremum over all cubes in Proposition~\ref{prop:necessity} gives the following.
 
 \begin{corollary}\label{cor:necessity}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then $w \in A_p$ with
+Let $1 < p < \infty$ and let $w$ be a weight. If \eqref{eq:question} holds with constant $C$, then $w \in A_p$ with
 \begin{equation}\label{eq:lower}
   [w]_{A_p} \le C^p .
 \end{equation}
@@ -103,7 +99,7 @@ Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero.
 Muckenhoupt proved that the condition $w \in A_p$ is also sufficient.
 
 \begin{theorem}[{Muckenhoupt \cite[Theorem~9]{Muckenhoupt1972}}]\label{thm:muckenhoupt}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
+Let $1 < p < \infty$ and let $w$ be a weight. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
 \end{theorem}
 
 Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$, and which power is the smallest possible. This was answered by Buckley.
@@ -152,7 +148,7 @@ Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, Lemma~\ref{lem:cubes} g
 \end{proof}
 
 \begin{lemma}\label{lem:sigma}
-Let $1 < p < \infty$ and let $w \in A_p$ be a weight that is not almost everywhere zero. Then $w > 0$ almost everywhere and $\sigma$, as in Definition~\ref{def:dual}, is a weight. Moreover $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$, and $L^p_w(\mathbb{R}^d) \subseteq L^1_{\mathrm{loc}}(\mathbb{R}^d)$.
+Let $1 < p < \infty$ and let $w \in A_p$. Then $w > 0$ almost everywhere and $\sigma$, as in Definition~\ref{def:dual}, is a weight. Moreover $w(Q) > 0$ and $0 < \sigma(Q) < \infty$ for every cube $Q$, and $L^p_w(\mathbb{R}^d) \subseteq L^1_{\mathrm{loc}}(\mathbb{R}^d)$.
 \end{lemma}
 
 \begin{proof}
@@ -300,7 +296,7 @@ The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, 
 \subsection{Proof of Theorem~\ref{thm:main}}
 
 \begin{lemma}[{Lerner \cite[proof of Theorem~C]{Lerner2008}}]\label{lem:lerner}
-Let $1 < p < \infty$, let $w \in A_p$ be a weight that is not almost everywhere zero, and let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then, for every $x \in \mathbb{R}^d$,
+Let $1 < p < \infty$, let $w \in A_p$, and let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then, for every $x \in \mathbb{R}^d$,
 \begin{equation}\label{eq:pointwise}
   M^c f(x) \le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
 \end{equation}
@@ -328,7 +324,7 @@ Raising both sides to the power $\frac{1}{p-1}$ and taking the supremum over $r 
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. For $w = 0$ almost everywhere, the integrands in $\|Mf\|_{L^p_w}$ and $\|f\|_{L^p_w}$ vanish almost everywhere, so $\|Mf\|_{L^p_w} = 0 = \|f\|_{L^p_w}$ and the inequality holds trivially. Assume therefore that $w$ is not almost everywhere zero. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$.
+Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$ and $\sigma^{1-p} = w$, together with Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
 \begin{equation}\label{eq:innernorm}
@@ -352,11 +348,11 @@ Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$, and suppose, for contradictio
 \begin{equation}\label{eq:contra}
   \|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}
 \end{equation}
-for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. Let $w \in A_p$ be a weight that is not almost everywhere zero. Then $w > 0$ almost everywhere by Lemma~\ref{lem:sigma}, and for every cube $Q$, H\"older's inequality with exponents $p$ and $\frac{p}{p-1}$ gives
+for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. Let $w \in A_p$. Then $w > 0$ almost everywhere by Lemma~\ref{lem:sigma}, and for every cube $Q$, H\"older's inequality with exponents $p$ and $\frac{p}{p-1}$ gives
 \[
   1 = \frac{1}{|Q|} \int_Q w^{\frac{1}{p}}\, w^{-\frac{1}{p}}\,dy \le \left( \frac{1}{|Q|} \int_Q w\,dy \right)^{\frac{1}{p}} \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{\frac{p-1}{p}},
 \]
-so $[w]_{A_p} \ge 1$. Together with Remark~\ref{rem:zero}, this shows that \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, so $\alpha$ may be assumed to satisfy $0 \le \alpha < \frac{1}{p-1}$. For $0 < \delta < 1$ let
+so $[w]_{A_p} \ge 1$. Hence \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, so $\alpha$ may be assumed to satisfy $0 \le \alpha < \frac{1}{p-1}$. For $0 < \delta < 1$ let
 \[
   w_\delta(x) := |x|^{(d-\delta)(p-1)} \qquad \text{and} \qquad f_\delta(x) := w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x).
 \]
@@ -366,7 +362,7 @@ where $|x|$ denotes the Euclidean norm of $x$. With $B(0,r) := \{y \in \mathbb{R
 \end{equation}
 where $|S^{d-1}|$ denotes the surface measure of the unit sphere $S^{d-1} \subseteq \mathbb{R}^d$.
 
-The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Let $Q(x_0,\ell)$ be a cube. Every $y \in Q(x_0,\ell)$ satisfies $|y - x_0| \le \sqrt{d}\,|y - x_0|_\infty \le \frac{\sqrt{d}}{2}\ell$.
+The function $w_\delta$ is continuous and positive outside the origin, so it is a weight. Let $Q(x_0,\ell)$ be a cube. Every $y \in Q(x_0,\ell)$ satisfies $|y - x_0| \le \sqrt{d}\,|y - x_0|_\infty \le \frac{\sqrt{d}}{2}\ell$.
 
 If $|x_0| \le \sqrt{d}\,\ell$, then $Q(x_0,\ell) \subseteq B(0, 2\sqrt{d}\,\ell)$. On this ball $w_\delta \le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)}$, and \eqref{eq:polar} gives
 \begin{align*}
