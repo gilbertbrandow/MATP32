@@ -384,34 +384,38 @@ If $|c| \le \sqrt{d}\,\ell$, then $Q(c,\ell) \subseteq B(0, 2\sqrt{d}\,\ell)$. O
   &\le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{1}{\ell^d} \int_{B(0,2\sqrt{d}\,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
   &= (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{|S^{d-1}|\,(2\sqrt{d}\,\ell)^{\delta}}{\delta\,\ell^d} \right)^{p-1} = (2\sqrt{d})^{d(p-1)}\, |S^{d-1}|^{p-1}\, \delta^{1-p}.
 \end{align*}
-If $|c| > \sqrt{d}\,\ell$, then $|y - c| < \frac{1}{2}|c|$, so $\frac{1}{2}|c| \le |y| \le \frac{3}{2}|c|$ for every $y \in Q(c,\ell)$, and
-\begin{align*}
-  \MoveEqLeft \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
-  &\le \big(\tfrac{3}{2}|c|\big)^{(d-\delta)(p-1)} \big(\tfrac{1}{2}|c|\big)^{(\delta-d)(p-1)} = 3^{(d-\delta)(p-1)} \le 3^{d(p-1)}\, \delta^{1-p}.
-\end{align*}
+If $|c| > \sqrt{d}\,\ell$, then $|y - c| < \frac{1}{2}|c|$, so $\frac{1}{2}|c| \le |y| \le \frac{3}{2}|c|$ for every $y \in Q(c,\ell)$. Bounding $w_\delta$ by $\big(\tfrac{3}{2}|c|\big)^{(d-\delta)(p-1)}$ and $|y|^{\delta-d}$ by $\big(\tfrac{1}{2}|c|\big)^{\delta-d}$ on $Q(c,\ell)$ gives
+\[
+  \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \le 3^{(d-\delta)(p-1)} \le 3^{d(p-1)}\, \delta^{1-p}.
+\]
 Taking the supremum over all cubes gives $w_\delta \in A_p$ with
 \begin{equation}\label{eq:wdelta}
   [w_\delta]_{A_p} \le C\, \delta^{1-p}, \qquad C := \max\{(2\sqrt{d})^{d(p-1)}|S^{d-1}|^{p-1},\, 3^{d(p-1)}\}.
 \end{equation}
 
-The inclusion $Q(0,2) \subseteq B(0, 2\sqrt{d})$ and \eqref{eq:polar} give
+The norm of $f_\delta$ satisfies
 \[
-  \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q(0,2)} |y|^{(\delta-d)p}\, |y|^{(d-\delta)(p-1)}\,dy = \int_{Q(0,2)} |y|^{\delta-d}\,dy \le |S^{d-1}|\, \frac{(2\sqrt{d})^\delta}{\delta} < \infty,
+  \|f_\delta\|_{L^p_{w_\delta}}^p = \int_{Q(0,2)} \underbrace{|y|^{(\delta-d)p}}_{|f_\delta(y)|^p}\ \underbrace{|y|^{(d-\delta)(p-1)}}_{w_\delta(y)}\,dy = \int_{Q(0,2)} |y|^{\delta-d}\,dy \le \int_{B(0,2\sqrt{d})} |y|^{\delta-d}\,dy < \infty,
 \]
-and $\|f_\delta\|_{L^p_{w_\delta}} > 0$. Let $x \in Q(0,2)$ with $x \neq 0$ and $r := |x|_\infty$, so that $0 < r \le |x|$. The cube $Q(0,2r)$ contains $x$, is contained in $Q(0,2)$, and contains $B(0,r)$. The definition of $M$ and \eqref{eq:polar} give
-\[
-  Mf_\delta(x) \ge \frac{1}{(2r)^d} \int_{Q(0,2r)} |y|^{\delta-d}\,dy \ge \frac{1}{(2r)^d} \int_{B(0,r)} |y|^{\delta-d}\,dy = \frac{|S^{d-1}|}{2^d\delta}\, r^{\delta-d} \ge \frac{|S^{d-1}|}{2^d\delta}\, |x|^{\delta-d},
-\]
-where the last step uses $\delta - d < 0$ and $r \le |x|$. Hence $Mf_\delta \ge \frac{|S^{d-1}|}{2^d\delta} f_\delta$ almost everywhere on $Q(0,2)$, and trivially outside $Q(0,2)$, where $f_\delta = 0$. Taking norms gives
+by $Q(0,2) \subseteq B(0, 2\sqrt{d})$ and \eqref{eq:polar}. Moreover $\|f_\delta\|_{L^p_{w_\delta}} > 0$, since the integrand is positive on $Q(0,2)$. Let $x \in Q(0,2)$ with $x \neq 0$, and let $r := |x|_\infty$, so that $0 < r \le 1$ and $r \le |x|$. The cube $Q(0,2r)$ contains $x$, is contained in $Q(0,2)$, where $f_\delta(y) = |y|^{\delta-d}$, and contains $B(0,r)$. The definition of $M$, together with bounding the marked factors, gives
+\begin{align*}
+  Mf_\delta(x) &\ge \frac{1}{(2r)^d}\, \underbrace{\int_{Q(0,2r)} f_\delta\,dy}_{\mathclap{\ge\, \int_{B(0,r)} |y|^{\delta-d}\,dy}} \ge \frac{1}{(2r)^d}\, \underbrace{\int_{B(0,r)} |y|^{\delta-d}\,dy}_{=\, |S^{d-1}|\, r^\delta/\delta \text{ by } \eqref{eq:polar}} \\
+  &= \frac{|S^{d-1}|}{2^d\delta}\, \underbrace{r^{\delta-d}}_{\mathclap{\ge\, |x|^{\delta-d},\ \text{as } \delta - d < 0}} \ge \frac{|S^{d-1}|}{2^d\delta}\, f_\delta(x).
+\end{align*}
+Since $f_\delta = 0$ outside $Q(0,2)$, this gives $Mf_\delta \ge \frac{|S^{d-1}|}{2^d\delta}\, f_\delta$ almost everywhere, and taking norms gives
 \begin{equation}\label{eq:Mfdelta}
-  \|Mf_\delta\|_{L^p_{w_\delta}} \ge \frac{|S^{d-1}|}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} .
+  \|Mf_\delta\|_{L^p_{w_\delta}} \ge D\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}}, \qquad D := 2^{-d}\, |S^{d-1}|.
 \end{equation}
 
-Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and using \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$, gives
+Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$, gives together with \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$
 \[
-  \frac{|S^{d-1}|}{2^d\delta}\, \|f_\delta\|_{L^p_{w_\delta}} \le \|Mf_\delta\|_{L^p_{w_\delta}} \le c\, [w_\delta]_{A_p}^{\alpha}\, \|f_\delta\|_{L^p_{w_\delta}} \le c\, C^\alpha\, \delta^{\alpha(1-p)}\, \|f_\delta\|_{L^p_{w_\delta}} .
+  D\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le c\, [w_\delta]_{A_p}^{\alpha} \le c\, C^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
 \]
-Dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$ and multiplying by $\delta$ gives $2^{-d}|S^{d-1}| \le c\, C^\alpha\, \delta^{1 - \alpha(p-1)}$ for every $0 < \delta < 1$. The exponent $1 - \alpha(p-1)$ is positive, so the right-hand side tends to $0$ as $\delta \to 0$, which contradicts $2^{-d}|S^{d-1}| > 0$.
+Hence
+\[
+  \delta^{\alpha(p-1)-1} \le \frac{c\, C^\alpha}{D} \qquad \text{for every } 0 < \delta < 1.
+\]
+The assumption $\alpha < \frac{1}{p-1}$ makes the exponent $\alpha(p-1) - 1$ negative, so the left-hand side tends to $\infty$ as $\delta \to 0$, while the right-hand side is a constant. This is a contradiction.
 \end{proof}
 
 \clearpage
