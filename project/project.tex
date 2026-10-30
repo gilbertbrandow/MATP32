@@ -31,11 +31,11 @@ B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal 
 \section{Introduction}
 
 \begin{definition}[Weights]
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$. For a measurable set $E \subseteq \mathbb{R}^d$ we write $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$. For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
-Let $w$ be a weight and let $1 \le p < \infty$. We define
+Let $w$ be a weight and let $1 \le p < \infty$. The weighted $L^p$ space is
 \[
   L^p_w(\mathbb{R}^d) := \left\{ f : \mathbb{R}^d \to \mathbb{R} \text{ measurable} : \int_{\mathbb{R}^d} |f(x)|^p\, w(x)\,dx < \infty \right\},
 \]
@@ -49,10 +49,10 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 \[
   M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy,
 \]
-where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, $r > 0$, where $|z|_\infty := \max_{1 \le k \le d} |z_k|$, we write $M^c_w$. If $w \equiv 1$ we drop the subscript and write $M$ and $M^c$.
+where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, $r > 0$, where $|z|_\infty := \max_{1 \le k \le d} |z_k|$, the operator is denoted $M^c_w$. If $w \equiv 1$, the subscript is dropped, giving $M$ and $M^c$.
 \end{definition}
 
-It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Theorem~1.1]{Duoandikoetxea2013}. For $1 < p < \infty$ and a weight $w$ we say that $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that
+It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Theorem~1.1]{Duoandikoetxea2013}. For $1 < p < \infty$ and a weight $w$, $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that
 \begin{equation}\label{eq:question}
   \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dx \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dx \right)^{1/p} = C\, \|f\|_{L^p_w}
 \end{equation}
@@ -69,7 +69,7 @@ If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for e
 If \eqref{eq:question} holds, then each $f \in L^p_w(\mathbb{R}^d)$ and each cube $Q$ give a condition on $w$, and Muckenhoupt showed that a suitable choice of $f$ for each cube gives the following necessary condition. It is not needed for the proof of the main result, but it motivates the definition of $A_p$ below, so its proof is included in Appendix~\ref{app:necessity}.
 
 \begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972}, \cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
-Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then for every cube $Q$ we have $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
+Let $1 < p < \infty$ and let $w$ be a weight that is not almost everywhere zero. If \eqref{eq:question} holds with constant $C$, then every cube $Q$ satisfies $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
 \begin{equation}\label{eq:Apcube}
   \left( \frac{1}{|Q|} \int_Q w\,dx \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dx \right)^{p-1} \le C^p .
 \end{equation}
@@ -81,11 +81,11 @@ Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of
 \begin{equation}\label{eq:Ap}
   [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w(x)\,dx \right) \left( \frac{1}{|Q|} \int_Q w(x)^{-\frac{1}{p-1}}\,dx \right)^{p-1},
 \end{equation}
-where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. We say that $w \in A_p$ if $[w]_{A_p} < \infty$.
+where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. The weight $w$ belongs to $A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
 
 \begin{definition}[{Dual weight \cite[Section~1]{Buckley1993}}]\label{def:dual}
-Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$, with $\sigma = \infty$ where $w = 0$. For measurable sets $E$ we write $\sigma(E) := \int_E \sigma\,dx$. With this notation \eqref{eq:Ap} takes the more compact form
+Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$, with $\sigma = \infty$ where $w = 0$. For measurable sets $E$, $\sigma(E) := \int_E \sigma\,dx$. With this notation \eqref{eq:Ap} takes the more compact form
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
 \]
@@ -119,7 +119,7 @@ Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{proposition}
 
-Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on a deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. We present his argument in detail and complete it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993}, which we extend to $\mathbb{R}^d$.
+Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on a deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. This report presents his argument in detail and completes it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
 If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
@@ -137,12 +137,12 @@ Let $Q$ be a cube with side length $\ell(Q)$ and let $y \in Q$. Then $Q \subsete
 Every $z \in Q$ satisfies $|z - y|_\infty \le \ell(Q)$, since both $z$ and $y$ lie in $Q$. Hence $Q \subseteq Q(y, 2\ell(Q))$. If $c$ is the centre of $Q$, then $|y - c|_\infty \le \frac{1}{2}\ell(Q)$, so every $z \in Q(y, 2\ell(Q))$ satisfies $|z - c|_\infty \le |z - y|_\infty + |y - c|_\infty \le \frac{3}{2}\ell(Q)$, that is, $z \in 3Q$.
 \end{proof}
 
-\begin{lemma}\label{lem:centred}
+\begin{lemma}[{\cite[Section~2.1.1]{GrafakosClassical}}]\label{lem:centred}
 Let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then $Mf(x) \le 2^d M^c f(x)$ for every $x \in \mathbb{R}^d$.
 \end{lemma}
 
 \begin{proof}
-Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, Lemma~\ref{lem:cubes} gives $Q \subseteq Q(x, 2\ell(Q))$, and since $|Q(x, 2\ell(Q))| = 2^d |Q|$ we obtain
+Let $x \in \mathbb{R}^d$. For a cube $Q$ containing $x$, Lemma~\ref{lem:cubes} gives $Q \subseteq Q(x, 2\ell(Q))$, and $|Q(x, 2\ell(Q))| = 2^d |Q|$ gives
 \begin{align*}
   Mf(x) &= \sup_{Q \ni x} \frac{1}{|Q|} \int_Q |f(y)|\,dy \\
   &\le \sup_{Q \ni x} \frac{2^d}{|Q(x, 2\ell(Q))|} \int_{Q(x, 2\ell(Q))} |f(y)|\,dy \\
@@ -162,9 +162,9 @@ Let $Q$ be a cube with $w(Q) > 0$. By the definition of $[w]_{A_p}$,
 \end{equation}
 so $\sigma(Q) < \infty$ on any cube $Q$ where $w(Q) > 0$.
 
-Assume, for contradiction, that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, $w > 0$ on a set $F$ with $|F| > 0$, so we can choose a cube $Q$ with $|Q \cap E| > 0$ and $|Q \cap F| > 0$. Then $w(Q) \ge w(Q \cap F) > 0$, so $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}. But $\sigma = \infty$ on $Q \cap E$ by Definition~\ref{def:dual}, so $\sigma(Q) = \infty$, a contradiction. Therefore $w > 0$ almost everywhere. In particular $w(Q) > 0$, and hence $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}, for every cube $Q$.
+Assume, for contradiction, that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, $w > 0$ on a set $F$ with $|F| > 0$, so some cube $Q$ satisfies $|Q \cap E| > 0$ and $|Q \cap F| > 0$. Then $w(Q) \ge w(Q \cap F) > 0$, so $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}. But $\sigma = \infty$ on $Q \cap E$ by Definition~\ref{def:dual}, so $\sigma(Q) = \infty$, a contradiction. Therefore $w > 0$ almost everywhere. In particular $w(Q) > 0$, and hence $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}, for every cube $Q$.
 
-Since $w(Q) < \infty$ for every cube $Q$, we have $w < \infty$ almost everywhere, so $\sigma > 0$ almost everywhere and $\sigma(Q) > 0$ for every cube $Q$. As every compact set lies in a cube, $\sigma$ is locally integrable and hence a weight. Finally, for $f \in L^p_w(\mathbb{R}^d)$ and every cube $Q$, applying H\"older's inequality gives
+Every cube $Q$ has $w(Q) < \infty$, so $w < \infty$ almost everywhere. Hence $\sigma > 0$ almost everywhere and $\sigma(Q) > 0$ for every cube $Q$. As every compact set lies in a cube, $\sigma$ is locally integrable and hence a weight. Finally, for $f \in L^p_w(\mathbb{R}^d)$ and every cube $Q$, applying H\"older's inequality gives
 \[
   \int_Q |f|\,dx = \int_Q |f|\, w^{\frac{1}{p}}\, w^{-\frac{1}{p}}\,dx \le \Big( \int_Q |f|^p\, w\,dx \Big)^{\frac{1}{p}} \Big( \int_Q w^{-\frac{1}{p-1}}\,dx \Big)^{\frac{p-1}{p}} \le \|f\|_{L^p_w}\, \sigma(Q)^{\frac{p-1}{p}},
 \]
@@ -321,7 +321,7 @@ The inequality $w(Q(x,r)) \le w(Q(x,3r))$, the equality $|Q(x,3r)| = 3^d\,|Q(x,r
 \begin{equation}\label{eq:Apfactor}
   \frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^p} \le 3^{dp}\, \frac{w(Q(x,3r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,3r)|^p} \le 3^{dp}\, [w]_{A_p}.
 \end{equation}
-Multiplying and dividing by $w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}$ separates the $A_p$ factor from a $w$-average of $\sigma$-averages. Bounding the two marked factors by \eqref{eq:Apfactor} and \eqref{eq:inner} then gives
+Multiplying and dividing by $w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}$, and then bounding the two marked factors by \eqref{eq:Apfactor} and \eqref{eq:inner}, gives
 \begin{align*}
   \MoveEqLeft \left( \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dz \right)^{p-1} \\
   &= \underbrace{\frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^p}}_{\le\, 3^{dp} [w]_{A_p} \text{ by } \eqref{eq:Apfactor}} \cdot \frac{1}{w(Q(x,r))} \int_{Q(x,r)} \Bigg( \underbrace{\frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,dz}_{\le\, M^c_\sigma(|f|\sigma^{-1})(y) \text{ by } \eqref{eq:inner}} \Bigg)^{p-1} dy \\
@@ -360,7 +360,7 @@ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. Let $w \in A_p$ be a we
 \[
   1 = \frac{1}{|Q|} \int_Q w^{\frac{1}{p}}\, w^{-\frac{1}{p}}\,dy \le \left( \frac{1}{|Q|} \int_Q w\,dy \right)^{\frac{1}{p}} \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{\frac{p-1}{p}},
 \]
-so $[w]_{A_p} \ge 1$. Together with Remark~\ref{rem:zero}, this shows that \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, and we may assume that $0 \le \alpha < \frac{1}{p-1}$. For $0 < \delta < 1$ let
+so $[w]_{A_p} \ge 1$. Together with Remark~\ref{rem:zero}, this shows that \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, so $\alpha$ may be assumed to satisfy $0 \le \alpha < \frac{1}{p-1}$. For $0 < \delta < 1$ let
 \[
   w_\delta(x) := |x|^{(d-\delta)(p-1)} \qquad \text{and} \qquad f_\delta(x) := w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x).
 \]
