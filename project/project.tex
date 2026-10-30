@@ -30,8 +30,8 @@ B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal 
 
 \section{Introduction}
 
-\begin{definition}[Weights]
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$. For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets.
+\begin{definition}[Weights]\label{def:weight}
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$. For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets. For $1 < p < \infty$, $w^{-\frac{1}{p-1}}$ is interpreted as $\infty$ where $w = 0$.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
@@ -85,7 +85,7 @@ where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$. The weight 
 \end{definition}
 
 \begin{definition}[{Dual weight \cite[Section~1]{Buckley1993}}]\label{def:dual}
-Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$, with $\sigma = \infty$ where $w = 0$. For measurable sets $E$, $\sigma(E) := \int_E \sigma\,dx$. With this notation \eqref{eq:Ap} takes the more compact form
+Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$. For measurable sets $E$, $\sigma(E) := \int_E \sigma\,dx$. With this notation \eqref{eq:Ap} takes the more compact form
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
 \]
@@ -162,7 +162,7 @@ Let $Q$ be a cube with $w(Q) > 0$. By the definition of $[w]_{A_p}$,
 \end{equation}
 so $\sigma(Q) < \infty$ on any cube $Q$ where $w(Q) > 0$.
 
-Assume, for contradiction, that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, $w > 0$ on a set $F$ with $|F| > 0$, so some cube $Q$ satisfies $|Q \cap E| > 0$ and $|Q \cap F| > 0$. Then $w(Q) \ge w(Q \cap F) > 0$, so $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}. But $\sigma = \infty$ on $Q \cap E$ by Definition~\ref{def:dual}, so $\sigma(Q) = \infty$, a contradiction. Therefore $w > 0$ almost everywhere. In particular $w(Q) > 0$, and hence $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}, for every cube $Q$.
+Assume, for contradiction, that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, $w > 0$ on a set $F$ with $|F| > 0$, so some cube $Q$ satisfies $|Q \cap E| > 0$ and $|Q \cap F| > 0$. Then $w(Q) \ge w(Q \cap F) > 0$, so $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}. But $\sigma = \infty$ on $Q \cap E$ by Definition~\ref{def:weight}, so $\sigma(Q) = \infty$, a contradiction. Therefore $w > 0$ almost everywhere. In particular $w(Q) > 0$, and hence $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}, for every cube $Q$.
 
 Every cube $Q$ has $w(Q) < \infty$, so $w < \infty$ almost everywhere. Hence $\sigma > 0$ almost everywhere and $\sigma(Q) > 0$ for every cube $Q$. As every compact set lies in a cube, $\sigma$ is locally integrable and hence a weight. Finally, for $f \in L^p_w(\mathbb{R}^d)$ and every cube $Q$, applying H\"older's inequality gives
 \[
@@ -254,7 +254,7 @@ Thus $x \mapsto \int_{Q(x,r)} |f|\,v\,dy$ is sequentially continuous, and hence 
 \]
 is continuous for every $r > 0$. For $t > 0$ the set $\{M^c_v f > t\}$ is the union over $r > 0$ of the sets where this average exceeds $t$. These are open, so $\{M^c_v f > t\}$ is open. Since $t > 0$ was arbitrary and $M^c_v f \ge 0$, the function $M^c_v f$ is measurable.
 
-Now fix $t > 0$. For $k = 1, 2, \ldots$ let $E_k := \{x : |x| < k \text{ and } M^c_v f(x) > t\}$. Let $x \in E_k$. Since $M^c_v f(x) > t$, the definition of $M^c_v$ gives some $r > 0$ with $\frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy > t$. Choose such an $r$ and call it $r_x$. Since $E_k$ is bounded, Lemma~\ref{lem:besicovitch} gives points $x_1, x_2, \ldots \in E_k$ such that the cubes $Q(x_j, r_{x_j})$ cover $E_k$ and $\sum_j \chi_{Q(x_j, r_{x_j})} \le N_d$. Hence
+Now fix $t > 0$. For $k = 1, 2, \ldots$ let $E_k := \{x : |x|_\infty < k \text{ and } M^c_v f(x) > t\}$. Let $x \in E_k$. Since $M^c_v f(x) > t$, the definition of $M^c_v$ gives some $r > 0$ with $\frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy > t$. Choose such an $r$ and call it $r_x$. Since $E_k$ is bounded, Lemma~\ref{lem:besicovitch} gives points $x_1, x_2, \ldots \in E_k$ such that the cubes $Q(x_j, r_{x_j})$ cover $E_k$ and $\sum_j \chi_{Q(x_j, r_{x_j})} \le N_d$. Hence
 \begin{align*}
   v(E_k) &\le \sum_j v\big(Q(x_j, r_{x_j})\big) \le \frac{1}{t} \sum_j \int_{Q(x_j, r_{x_j})} |f|\, v\,dy \\
   &= \frac{1}{t} \int_{\mathbb{R}^d} \Big( \sum_j \chi_{Q(x_j, r_{x_j})} \Big) |f|\, v\,dy \le \frac{N_d}{t}\, \|f\|_{L^1_v},
@@ -364,27 +364,27 @@ so $[w]_{A_p} \ge 1$. Together with Remark~\ref{rem:zero}, this shows that \eqre
 \[
   w_\delta(x) := |x|^{(d-\delta)(p-1)} \qquad \text{and} \qquad f_\delta(x) := w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x).
 \]
-For every $r > 0$, polar coordinates give
+where $|x|$ denotes the Euclidean norm of $x$. With $B(0,r) := \{y \in \mathbb{R}^d : |y| < r\}$, polar coordinates give, for every $r > 0$,
 \begin{equation}\label{eq:polar}
   \int_{B(0,r)} w_\delta(y)^{-\frac{1}{p-1}}\,dy = \int_{B(0,r)} |y|^{\delta - d}\,dy = |S^{d-1}| \int_0^r s^{\delta-d}\, s^{d-1}\,ds = |S^{d-1}|\, \frac{r^\delta}{\delta},
 \end{equation}
 where $|S^{d-1}|$ denotes the surface measure of the unit sphere $S^{d-1} \subseteq \mathbb{R}^d$.
 
-The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Let $Q(c,\ell)$ be a cube. Every $y \in Q(c,\ell)$ satisfies $|y - c| \le \sqrt{d}\,|y - c|_\infty \le \frac{\sqrt{d}}{2}\ell$.
+The function $w_\delta$ is continuous and positive outside the origin, so it is a weight that is not almost everywhere zero. Let $Q(x_0,\ell)$ be a cube. Every $y \in Q(x_0,\ell)$ satisfies $|y - x_0| \le \sqrt{d}\,|y - x_0|_\infty \le \frac{\sqrt{d}}{2}\ell$.
 
-If $|c| \le \sqrt{d}\,\ell$, then $Q(c,\ell) \subseteq B(0, 2\sqrt{d}\,\ell)$. On this ball $w_\delta \le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)}$, and \eqref{eq:polar} gives
+If $|x_0| \le \sqrt{d}\,\ell$, then $Q(x_0,\ell) \subseteq B(0, 2\sqrt{d}\,\ell)$. On this ball $w_\delta \le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)}$, and \eqref{eq:polar} gives
 \begin{align*}
-  \MoveEqLeft \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
+  \MoveEqLeft \left( \frac{1}{|Q(x_0,\ell)|} \int_{Q(x_0,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(x_0,\ell)|} \int_{Q(x_0,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
   &\le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{1}{\ell^d} \int_{B(0,2\sqrt{d}\,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
   &= (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{|S^{d-1}|\,(2\sqrt{d}\,\ell)^{\delta}}{\delta\,\ell^d} \right)^{p-1} = (2\sqrt{d})^{d(p-1)}\, |S^{d-1}|^{p-1}\, \delta^{1-p}.
 \end{align*}
-If $|c| > \sqrt{d}\,\ell$, then $|y - c| < \frac{1}{2}|c|$, so $\frac{1}{2}|c| \le |y| \le \frac{3}{2}|c|$ for every $y \in Q(c,\ell)$. Bounding $w_\delta$ by $\big(\tfrac{3}{2}|c|\big)^{(d-\delta)(p-1)}$ and $|y|^{\delta-d}$ by $\big(\tfrac{1}{2}|c|\big)^{\delta-d}$ on $Q(c,\ell)$ gives
+If $|x_0| > \sqrt{d}\,\ell$, then $|y - x_0| < \frac{1}{2}|x_0|$, so $\frac{1}{2}|x_0| \le |y| \le \frac{3}{2}|x_0|$ for every $y \in Q(x_0,\ell)$. Bounding $w_\delta$ by $\big(\tfrac{3}{2}|x_0|\big)^{(d-\delta)(p-1)}$ and $|y|^{\delta-d}$ by $\big(\tfrac{1}{2}|x_0|\big)^{\delta-d}$ on $Q(x_0,\ell)$ gives
 \[
-  \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(c,\ell)|} \int_{Q(c,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \le 3^{(d-\delta)(p-1)} \le 3^{d(p-1)}\, \delta^{1-p}.
+  \left( \frac{1}{|Q(x_0,\ell)|} \int_{Q(x_0,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(x_0,\ell)|} \int_{Q(x_0,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \le 3^{(d-\delta)(p-1)} \le 3^{d(p-1)}\, \delta^{1-p}.
 \]
 Taking the supremum over all cubes gives $w_\delta \in A_p$ with
 \begin{equation}\label{eq:wdelta}
-  [w_\delta]_{A_p} \le C\, \delta^{1-p}, \qquad C := \max\{(2\sqrt{d})^{d(p-1)}|S^{d-1}|^{p-1},\, 3^{d(p-1)}\}.
+  [w_\delta]_{A_p} \le K\, \delta^{1-p}, \qquad K := \max\{(2\sqrt{d})^{d(p-1)}|S^{d-1}|^{p-1},\, 3^{d(p-1)}\}.
 \end{equation}
 
 The norm of $f_\delta$ satisfies
@@ -403,11 +403,11 @@ Since $f_\delta = 0$ outside $Q(0,2)$, this gives $Mf_\delta \ge \frac{|S^{d-1}|
 
 Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$, gives together with \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$
 \[
-  D\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le c\, [w_\delta]_{A_p}^{\alpha} \le c\, C^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
+  D\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le c\, [w_\delta]_{A_p}^{\alpha} \le c\, K^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
 \]
 Hence
 \[
-  \delta^{\alpha(p-1)-1} \le \frac{c\, C^\alpha}{D} \qquad \text{for every } 0 < \delta < 1.
+  \delta^{\alpha(p-1)-1} \le \frac{c\, K^\alpha}{D} \qquad \text{for every } 0 < \delta < 1.
 \]
 The assumption $\alpha < \frac{1}{p-1}$ makes the exponent $\alpha(p-1) - 1$ negative, so the left-hand side tends to $\infty$ as $\delta \to 0$, while the right-hand side is a constant. This is a contradiction.
 \end{proof}
