@@ -11,21 +11,32 @@
 \author{Simon Gustafsson}
 \date{6th of November 2026}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{corollary}{Corollary}
-\newtheorem{definition}{Definition}
-\newtheorem{remark}{Remark}
-
 
 \begin{document}
 \maketitle
 
-The text after Remark 5 claims that $L\log^+ L$ is the dual of $\exp L$,
-without any assumption on the measure. Theorem 6.5 of Bennett
-and Sharpley only gives the reverse, $\exp L$ is the dual of $L\log L$,
-and only for a measure space of total measure $1$. 
+The report presents the maximal inequality of Fefferman and
+Stein in a careful and rigorous way, and the proofs are generally easy to
+follow. 
 
-In the statement of Lemma 6, $f$ must not be positive.
+The duality between $\exp L$ and $L\log^+ L$ after Remark 5 is an important
+ingredient in the proof of (iii) and perhaps would fit better as a separate
+proposition. At the moment Chebyshev's inequality gets its own proposition
+while this is only listed as a fact.
+
+Lemma 6 assumes $f$ positive but is later applied to arbitrary $f_k$. Since
+$f_k^* = |f_k|^*$, it would be enough to assume $f_k \geq 0$ at the start of
+the proof of Theorem 7, or simply to drop the positivity assumption in Lemma 6.
+
+I see why the order of the proof of Theorem 7 is necessary, since the case $p = r$ is
+needed for (ii), which in turn gives the remaining cases of (i). It would be
+easier to follow this non-linear structure with clearer markers and boundaries 
+between the cases. For example, ``This shows that (i) holds'' on page 6 refers 
+only to the case $p = r$ while I understood it to first claim proof of all cases of (i).
+
+Moreover, vague references to the course and to Canvas could be replaced by
+references to the course literature, which would make the report more
+self-contained. The introduction could also say a few words about the motivation for these results. 
+Finally, my opinion is that a short abstract and suitable title could add to the reading experience.
+
 \end{document}
