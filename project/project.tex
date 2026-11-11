@@ -31,7 +31,7 @@ B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal 
 \section{Introduction}
 
 \begin{definition}[Weights]\label{def:weight}
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero.\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p\, w\,dx = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. This is the convention of \cite[Section~1]{Buckley1993}.} For a measurable set $E \subseteq \mathbb{R}^d$, $w(E) := \int_E w(x)\,dx$. Then $E \mapsto w(E)$ is a measure on the Lebesgue measurable sets. For $1 < p < \infty$, $w^{-\frac{1}{p-1}}$ is interpreted as $\infty$ where $w = 0$.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero. For a measurable function $v \geq 0$ on $\mathbb{R}^d$ and a measurable set $E \subseteq \mathbb{R}^d$, $v(E) := \int_E v(x)\,dx \in [0,\infty]$. The map $E \mapsto v(E)$ is a measure on the Lebesgue measurable sets.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
@@ -60,7 +60,7 @@ It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1
 If \eqref{eq:question} holds, then each $f \in L^p_w(\mathbb{R}^d)$ and each cube $Q$ give a condition on $w$, and Muckenhoupt showed that a suitable choice of $f$ for each cube gives the following necessary condition. It is not needed for the proof of the main result, but it motivates the definition of $A_p$ below, so its proof is included in Appendix~\ref{app:necessity}.
 
 \begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972}, \cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
-Let $1 < p < \infty$ and let $w$ be a weight. If \eqref{eq:question} holds with constant $C$, then every cube $Q$ satisfies $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
+Let $1 < p < \infty$ and let $w$ be a weight, with $w^{-\frac{1}{p-1}} := \infty$ on $\{w = 0\}$. If \eqref{eq:question} holds with constant $C$, then every cube $Q$ satisfies $\int_Q w^{-\frac{1}{p-1}}\,dx < \infty$ and
 \begin{equation}\label{eq:Apcube}
   \left( \frac{1}{|Q|} \int_Q w\,dx \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dx \right)^{p-1} \le C^p .
 \end{equation}
@@ -76,7 +76,7 @@ where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$, with the co
 \end{definition}
 
 \begin{definition}[{Dual weight \cite[Section~1]{Buckley1993}}]\label{def:dual}
-Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$. For measurable sets $E$, $\sigma(E) := \int_E \sigma\,dx$. With this notation \eqref{eq:Ap} takes the more compact form
+Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$ (not necessarily a weight in the sense of Definition~\ref{def:weight}). With this notation \eqref{eq:Ap} takes the more compact form
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
 \]
