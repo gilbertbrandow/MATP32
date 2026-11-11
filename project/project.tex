@@ -297,10 +297,14 @@ Let $1 < p < \infty$, let $w \in A_p$, and let $f \in L^1_{\mathrm{loc}}(\mathbb
 \end{lemma}
 
 \begin{proof}
-By Lemmas~\ref{lem:sigma} and~\ref{lem:weak}, $\sigma$ is a weight, $M^c_w$ and $M^c_\sigma$ are defined, and $M^c_\sigma(|f|\sigma^{-1})$ is measurable. Let $x \in \mathbb{R}^d$ and $r > 0$. Then
+By Lemmas~\ref{lem:sigma} and~\ref{lem:weak}, $\sigma$ is a weight, $M^c_w$ and $M^c_\sigma$ are defined, and $M^c_\sigma(|f|\sigma^{-1})$ is measurable. Let $x \in \mathbb{R}^d$ and $r > 0$. By Lemma~\ref{lem:cubes}, $Q(x,r) \subseteq Q(x,3r)$, and $|Q(x,3r)| = 3^d\,|Q(x,r)|$. Together with Definition~\ref{def:dual} this implies
+\begin{equation}\label{eq:Apfactor}
+  \frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^{p}} \le 3^{dp}\, \frac{w(Q(x,3r))}{|Q(x,3r)|} \left( \frac{\sigma(Q(x,3r))}{|Q(x,3r)|} \right)^{p-1} \le 3^{dp}\, [w]_{A_p}.
+\end{equation}
+Then
 \begin{align*}
   \MoveEqLeft \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dz \\
-  &= \Bigg( \underbrace{\frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^{p}}}_{\le\, 3^{dp} [w]_{A_p} \text{ by Definition~\ref{def:Ap}}} \cdot \frac{|Q(x,r)|^{p}}{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}} \Bigg)^{\frac{1}{p-1}} \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dz \\
+  &= \Bigg( \underbrace{\frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^{p}}}_{\le\, 3^{dp} [w]_{A_p} \text{ by \eqref{eq:Apfactor}}} \cdot \frac{|Q(x,r)|^{p}}{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}} \Bigg)^{\frac{1}{p-1}} \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dz \\
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Bigg( \frac{|Q(x,r)|}{w(Q(x,r))} \Bigg( \underbrace{\frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,\sigma^{-1}\sigma\,dz}_{\substack{\le\, M^c_\sigma(|f|\sigma^{-1})(y) \text{ for all } y \in Q(x,r) \text{ by Lemma~\ref{lem:cubes}}}} \Bigg)^{p-1} \Bigg)^{\frac{1}{p-1}} \\
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \left( \frac{1}{w(Q(x,r))} \int_{Q(x,r)} \Big( M^c_\sigma\big(|f|\sigma^{-1}\big)(y) \Big)^{p-1} w(y)^{-1}\, w(y)\,dy \right)^{\frac{1}{p-1}} \\
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}}.
@@ -324,7 +328,7 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
-The inequality in Theorem~\ref{thm:main} therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$, which depends only on $p$ and $d$.\end{proof}
+The inequality in Theorem~\ref{thm:main} therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.\end{proof}
 \subsection{Sharpness of the exponent}
 
 \begin{proof}[Proof of Proposition~\ref{prop:sharp}]
