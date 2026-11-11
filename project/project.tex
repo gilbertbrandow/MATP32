@@ -304,7 +304,7 @@ By Lemmas~\ref{lem:sigma} and~\ref{lem:weak}, $\sigma$ is a weight, $M^c_w$ and 
 Then
 \begin{align*}
   \MoveEqLeft \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dy \\
-  &= \Bigg( \underbrace{\frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^{p}}}_{\le\, 3^{dp} [w]_{A_p} \text{ by \eqref{eq:Apfactor}}} \cdot \frac{|Q(x,r)|^{p}}{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}} \Bigg)^{\frac{1}{p-1}} \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dy \\
+  &= \Bigg( \underbrace{\frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^{p}}}_{\le\, 3^{dp} [w]_{A_p} \text{ by \eqref{eq:Apfactor}}} \frac{|Q(x,r)|^{p}}{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}} \Bigg)^{\frac{1}{p-1}} \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dy \\
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Bigg( \frac{|Q(x,r)|}{w(Q(x,r))} \Bigg( \underbrace{\frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,\sigma^{-1}\sigma\,dy}_{\substack{\le\, M^c_\sigma(|f|\sigma^{-1})(z) \text{ for all } z \in Q(x,r) \text{ by Lemma~\ref{lem:cubes}}}} \Bigg)^{p-1} \Bigg)^{\frac{1}{p-1}} \\
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \left( \frac{1}{w(Q(x,r))} \int_{Q(x,r)} \Big( M^c_\sigma\big(|f|\sigma^{-1}\big)(z) \Big)^{p-1} w(z)^{-1}\, w(z)\,dz \right)^{\frac{1}{p-1}} \\
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}}.
