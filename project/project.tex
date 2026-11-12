@@ -118,9 +118,9 @@ Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley199
 If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
 \end{remark}
 
-\section{Proofs}\label{sec:proofs}
+\section{Preliminaries}\label{sec:prelim}
 
-\subsection{Preliminaries}
+\subsection{Basic results on cubes, weights and maximal operators}\label{sec:cubes}
 
 \begin{lemma}\label{lem:cubes}
 Let $Q$ be a cube with side length $\ell(Q)$ and let $y \in Q$. Then $Q \subseteq Q(y, 2\ell(Q)) \subseteq 3Q$, where $3Q$ denotes the cube with the same centre as $Q$ and side length $3\ell(Q)$.
@@ -162,7 +162,7 @@ Every cube $Q$ has $w(Q) < \infty$, so $w < \infty$ almost everywhere. Hence $\s
 which is finite.
 \end{proof}
 
-\subsection{Weighted maximal operators}\label{sec:weighted}
+\subsection{Weight-independent bounds for \texorpdfstring{$M^c_v$}{the centred maximal operator}}\label{sec:weighted}
 
 For $M$, the Vitali covering lemma gives the weak type $(1,1)$ estimate, and Marcinkiewicz interpolation with the bound on $L^\infty$ gives the strong type $(p,p)$ estimate \cite[Sections~1.3.1 and~2.1.1]{GrafakosClassical}. The Vitali covering lemma enlarges the selected cubes $Q$ to $3Q$, so for the measure $v(y)\,dy$ the constant depends on $v(3Q)/v(Q)$, which for $v \in A_p$ is only bounded in terms of $[v]_{A_p}$ \cite[Remark~1.11]{Duoandikoetxea2013}. The Besicovitch covering lemma, by contrast, does not enlarge the cubes, but it requires them to be centred. Used in place of the Vitali covering lemma, it gives the analogous estimates for $M^c_v$ by the same arguments, with constants depending only on $d$ and $q$ (Lemmas~\ref{lem:weak} and~\ref{lem:key}).
 
@@ -260,34 +260,9 @@ Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$
 for all $f \in L^q_v(\mathbb{R}^d)$.
 \end{lemma}
 
-\begin{proof}
-Let $f \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$, so that $f = f_1 + f_2$ with $f_1 \in L^1_v(\mathbb{R}^d)$ and $f_2 \in L^\infty_v(\mathbb{R}^d)$. By the definition of $\|f_2\|_{L^\infty_v}$, the sets $\{|f_2| > \|f_2\|_{L^\infty_v} + 1/n\}$, $n = 1, 2, \ldots$, have $v$-measure zero, and hence so does their union $\{|f_2| > \|f_2\|_{L^\infty_v}\}$. This implies
-\begin{equation}\label{eq:Linfty}
-  \int_Q |f_2|\,v\,dy \le \|f_2\|_{L^\infty_v}\, v(Q) \quad \text{for every cube } Q,
-\end{equation}
-and therefore
-\[
-  \int_Q |f|\,v\,dy \le \int_Q |f_1|\,v\,dy + \int_Q |f_2|\,v\,dy \le \|f_1\|_{L^1_v} + \|f_2\|_{L^\infty_v}\, v(Q) < \infty .
-\]
-Hence $|f|\,v \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, so $M^c_v f$ is defined and, by Lemma~\ref{lem:weak}, measurable.
+Given Lemma~\ref{lem:weak}, the proof of Lemma~\ref{lem:key} is the standard interpolation argument for $M$ with $dy$ replaced by $v(y)\,dy$ \cite[Section~2.1.1]{GrafakosClassical}, and it is therefore given in Appendix~\ref{app:weighted}.
 
-Let $f, h \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$, $x \in \mathbb{R}^d$ and $r > 0$. The pointwise inequality $|f + h| \le |f| + |h|$ gives
-\begin{align*}
-  \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f + h|\,v\,dy &\le \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy + \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |h|\,v\,dy \\
-  &\le M^c_v f(x) + M^c_v h(x).
-\end{align*}
-The right-hand side does not depend on $r$, so taking the supremum over $r > 0$ yields $M^c_v(f + h)(x) \le M^c_v f(x) + M^c_v h(x)$. For a scalar $\lambda$, the factor $|\lambda| \ge 0$ can be taken out of the supremum, implying
-\[
-  M^c_v(\lambda f)(x) = \sup_{r > 0} \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |\lambda|\,|f|\,v\,dy = |\lambda|\, M^c_v f(x).
-\]
-Hence $M^c_v$ is sublinear.
-
-By Lemma~\ref{lem:weak}, $v(\{M^c_v f > t\}) \le \frac{N_d}{t} \|f\|_{L^1_v}$ for every $f \in L^1_v(\mathbb{R}^d)$ and $t > 0$. For $f \in L^\infty_v(\mathbb{R}^d)$, \eqref{eq:Linfty} with $f_2 = f$ shows that every average in the definition of $M^c_v f(x)$ is at most $\|f\|_{L^\infty_v}$. Hence $M^c_v f(x) \le \|f\|_{L^\infty_v}$ for every $x \in \mathbb{R}^d$, and in particular $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$.
-
-Every $f \in L^q_v(\mathbb{R}^d)$ satisfies $f = f\chi_{\{|f| > 1\}} + f\chi_{\{|f| \le 1\}} \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$. The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, applied on the measure space $(\mathbb{R}^d, v(y)\,dy)$ with exponents $1$ and $\infty$, now gives the claim with a constant depending only on $q$ and on the constants $N_d$ and $1$, and hence only on $q$ and $d$.
-\end{proof}
-
-\subsection{Proof of Theorem~\ref{thm:main}}
+\section{Proof of Theorem~\ref{thm:main} and Proposition~\ref{prop:sharp}}\label{sec:main}
 
 \begin{lemma}[{Lerner \cite[proof of Theorem~C]{Lerner2008}}]\label{lem:lerner}
 Let $1 < p < \infty$, let $w \in A_p$, and let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then, for every $x \in \mathbb{R}^d$,
@@ -334,7 +309,6 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
 The inequality in Theorem~\ref{thm:main} therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.\end{proof}
-\subsection{Sharpness of the exponent}
 
 \begin{proof}[Proof of Proposition~\ref{prop:sharp}]
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
@@ -421,6 +395,36 @@ The functions $f_n$ increase to $w^{-\frac{1}{p-1}}\chi_Q$ as $n \to \infty$, so
   C^p \ge \lim_{n\to\infty} \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q f_n\,dy \Big)^{p-1} = \frac{w(Q)}{|Q|} \Big( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \Big)^{p-1}.
 \]
 Since $w(Q) > 0$, $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$. As $Q$ was arbitrary, $w > 0$ almost everywhere.
+\end{proof}
+
+
+\section{Proof of Lemma~\ref{lem:key}}\label{app:weighted}
+
+\begin{proof}
+Let $f \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$, so that $f = f_1 + f_2$ with $f_1 \in L^1_v(\mathbb{R}^d)$ and $f_2 \in L^\infty_v(\mathbb{R}^d)$. By the definition of $\|f_2\|_{L^\infty_v}$, the sets $\{|f_2| > \|f_2\|_{L^\infty_v} + 1/n\}$, $n = 1, 2, \ldots$, have $v$-measure zero, and hence so does their union $\{|f_2| > \|f_2\|_{L^\infty_v}\}$. This implies
+\begin{equation}\label{eq:Linfty}
+  \int_Q |f_2|\,v\,dy \le \|f_2\|_{L^\infty_v}\, v(Q) \quad \text{for every cube } Q,
+\end{equation}
+and therefore
+\[
+  \int_Q |f|\,v\,dy \le \int_Q |f_1|\,v\,dy + \int_Q |f_2|\,v\,dy \le \|f_1\|_{L^1_v} + \|f_2\|_{L^\infty_v}\, v(Q) < \infty .
+\]
+Hence $|f|\,v \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, so $M^c_v f$ is defined and, by Lemma~\ref{lem:weak}, measurable.
+
+Let $f, h \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$, $x \in \mathbb{R}^d$ and $r > 0$. The pointwise inequality $|f + h| \le |f| + |h|$ gives
+\begin{align*}
+  \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f + h|\,v\,dy &\le \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |f|\,v\,dy + \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |h|\,v\,dy \\
+  &\le M^c_v f(x) + M^c_v h(x).
+\end{align*}
+The right-hand side does not depend on $r$, so taking the supremum over $r > 0$ yields $M^c_v(f + h)(x) \le M^c_v f(x) + M^c_v h(x)$. For a scalar $\lambda$, the factor $|\lambda| \ge 0$ can be taken out of the supremum, implying
+\[
+  M^c_v(\lambda f)(x) = \sup_{r > 0} \frac{1}{v(Q(x,r))}\int_{Q(x,r)} |\lambda|\,|f|\,v\,dy = |\lambda|\, M^c_v f(x).
+\]
+Hence $M^c_v$ is sublinear.
+
+By Lemma~\ref{lem:weak}, $v(\{M^c_v f > t\}) \le \frac{N_d}{t} \|f\|_{L^1_v}$ for every $f \in L^1_v(\mathbb{R}^d)$ and $t > 0$. For $f \in L^\infty_v(\mathbb{R}^d)$, \eqref{eq:Linfty} with $f_2 = f$ shows that every average in the definition of $M^c_v f(x)$ is at most $\|f\|_{L^\infty_v}$. Hence $M^c_v f(x) \le \|f\|_{L^\infty_v}$ for every $x \in \mathbb{R}^d$, and in particular $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$.
+
+Every $f \in L^q_v(\mathbb{R}^d)$ satisfies $f = f\chi_{\{|f| > 1\}} + f\chi_{\{|f| \le 1\}} \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$. The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, applied on the measure space $(\mathbb{R}^d, v(y)\,dy)$ with exponents $1$ and $\infty$, now gives the claim with a constant depending only on $q$ and on the constants $N_d$ and $1$, and hence only on $q$ and $d$.
 \end{proof}
 
 \bibliographystyle{amsplain}
