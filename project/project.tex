@@ -101,21 +101,21 @@ Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mat
 
 The answer matters beyond $M$. The dependence of operator norms on $[w]_{A_p}$ later became a central question for singular integrals such as the Hilbert transform, known as the $A_2$ conjecture, and $M$ was the first operator for which it was determined \cite{Pereyra2019}.
 
-\begin{theorem}[{Buckley \cite[Theorem~2.5]{Buckley1993}}]\label{thm:main}
-Let $1 < p < \infty$. There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
-\[
-  \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
-\]
+\begin{theorem}[{Buckley \cite[Theorem~2.5]{Buckley1993}, Lerner \cite[Theorem~C]{Lerner2008}}]\label{thm:main}
+Let $1 < p < \infty$.
+\begin{enumerate}[label=(\roman*)]
+  \item There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
+  \[
+    \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
+  \]
+  \item If $\alpha < \frac{1}{p-1}$, then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+\end{enumerate}
 \end{theorem}
 
-\begin{proposition}[{Buckley \cite[Theorem~2.5]{Buckley1993}}]\label{prop:sharp}
-Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$. Then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
-\end{proposition}
-
-Buckley's proof of Theorem~\ref{thm:main} \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}. Together, Theorem~\ref{thm:main} and Proposition~\ref{prop:sharp} form Theorem~C in \cite{Lerner2008}, whose proof there covers only the upper bound. This report presents his argument in detail and completes it with a proof of Proposition~\ref{prop:sharp}, based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
+Buckley's proof of Theorem~\ref{thm:main}(i) \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}(i). Theorem~\ref{thm:main} is Theorem~C in \cite{Lerner2008}, whose proof there covers only part (i). This report presents his argument in detail and completes it with a proof of part (ii), based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
-If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}. Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
+If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}(i). Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
 \end{remark}
 
 \section{Preliminaries}\label{sec:prelim}
@@ -262,7 +262,7 @@ for all $f \in L^q_v(\mathbb{R}^d)$.
 
 Given Lemma~\ref{lem:weak}, the proof of Lemma~\ref{lem:key} is the standard interpolation argument for $M$ with $dy$ replaced by $v(y)\,dy$ \cite[Section~2.1.1]{GrafakosClassical}, and it is therefore given in Appendix~\ref{app:weighted}.
 
-\section{Proof of Theorem~\ref{thm:main} and Proposition~\ref{prop:sharp}}\label{sec:main}
+\section{Proof of Theorem~\ref{thm:main}}\label{sec:main}
 
 \begin{lemma}[{Lerner \cite[proof of Theorem~C]{Lerner2008}}]\label{lem:lerner}
 Let $1 < p < \infty$, let $w \in A_p$, and let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then, for every $x \in \mathbb{R}^d$,
@@ -292,7 +292,7 @@ Finally, by multiplying with 1 we see
 Taking the supremum over $r > 0$ gives \eqref{eq:pointwise}.
 \end{proof}
 
-\begin{proof}[Proof of Theorem~\ref{thm:main}]
+\begin{proof}[Proof of Theorem~\ref{thm:main}(i)]
 Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open \cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$, $\sigma^{1-p} = w$, and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
@@ -308,9 +308,9 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
-The inequality in Theorem~\ref{thm:main} therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.\end{proof}
+The inequality in Theorem~\ref{thm:main}(i) therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.\end{proof}
 
-\begin{proof}[Proof of Proposition~\ref{prop:sharp}]
+\begin{proof}[Proof of Theorem~\ref{thm:main}(ii)]
 Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
 \begin{equation}\label{eq:contra}
   \|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}
