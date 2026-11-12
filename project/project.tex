@@ -24,13 +24,13 @@
 \maketitle
 
 \begin{abstract}
-B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal operator is bounded on $L^p_w(\mathbb{R}^d)$, $1 < p < \infty$, if and only if $w \in A_p$. S.~Buckley \cite{Buckley1993} proved that its operator norm is at most a constant times $[w]_{A_p}^{1/(p-1)}$, and that this exponent is best possible. This report presents A.~K.~Lerner's later proof \cite{Lerner2008} of this bound, together with Buckley's example showing that the exponent cannot be improved.
+S.~Buckley~\cite{Buckley1993} proved that the operator norm of the Hardy-Littlewood maximal operator on $L^p_w(\mathbb{R}^d)$, $1<p<\infty$, is at most a constant times $[w]_{A_p}^{1/(p-1)}$, where $[w]_{A_p}$ is the Muckenhoupt $A_p$ characteristic of $w$, and that this exponent is best possible. This report presents A.~Lerner's proof of this bound~\cite{Lerner2008} via a pointwise estimate for the centred maximal operator, and extends Buckley's sharpness argument to $\mathbb{R}^d$.
 \end{abstract}
 
 \section{Introduction}
 
 \begin{definition}[Weights]\label{def:weight}
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p w\,dy = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. This is also the convention by Buckley\cite[Section~1]{Buckley1993}.}. For a measurable function $v \geq 0$ on $\mathbb{R}^d$ and a measurable set $E \subseteq \mathbb{R}^d$, $v(E) := \int_E v(y)\,dy \in [0,\infty]$. The map $E \mapsto v(E)$ is a measure on the Lebesgue measurable sets.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p w\,dy = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. This is also the convention by Buckley~\cite[Section~1]{Buckley1993}.}. For a measurable function $v \geq 0$ on $\mathbb{R}^d$ and a measurable set $E \subseteq \mathbb{R}^d$, $v(E) := \int_E v(y)\,dy \in [0,\infty]$. The map $E \mapsto v(E)$ is a measure on the Lebesgue measurable sets.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
@@ -51,14 +51,14 @@ Let $w$ be a weight with $w(Q) > 0$ for every cube $Q$. For a measurable functio
 where the supremum is taken over all closed cubes $Q \subset \mathbb{R}^d$ with sides parallel to the axes containing $x$. All cubes in this report are of this kind. If the supremum is taken only over the cubes $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, $r > 0$, where $|z|_\infty := \max_{1 \le k \le d} |z_k|$, the operator is denoted $M^c_w$. If $w \equiv 1$, the subscript is dropped, giving $M$ and $M^c$. The Euclidean norm of $z \in \mathbb{R}^d$ is denoted $|z|$, and $B(x,r) := \{y : |y - x| < r\}$.
 \end{definition}
 
-It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$ \cite[Section~2.1]{GrafakosClassical}, \cite[Theorem~1.1]{Duoandikoetxea2013}, and Section~\ref{sec:weighted} adapts the standard proof to weighted maximal operators. Weighted versions of these bounds are used to prove weighted mean convergence and summability results for orthogonal series, and they are needed to characterise the weights for which the conjugate function and the Hilbert transform are bounded \cite[Section~1]{Muckenhoupt1972}. For $1 < p < \infty$ and a weight $w$, $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that for all $f \in L^p_w(\mathbb{R}^d)$
+It is well known that $M$ is of weak type $(1,1)$ and strong type $(p,p)$ for $1 < p \le \infty$~\cite[Section~2.1]{GrafakosClassical},~\cite[Theorem~1.1]{Duoandikoetxea2013}, and Section~\ref{sec:weighted} adapts the standard proof to weighted maximal operators. Weighted versions of these bounds are used to prove weighted mean convergence and summability results for orthogonal series, and they are needed to characterise the weights for which the conjugate function and the Hilbert transform are bounded~\cite[Section~1]{Muckenhoupt1972}. For $1 < p < \infty$ and a weight $w$, $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if there is a constant $C$ such that for all $f \in L^p_w(\mathbb{R}^d)$
 \begin{equation}\label{eq:question}
   \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dy \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dy \right)^{1/p} = C\, \|f\|_{L^p_w} .
 \end{equation}
 
 If \eqref{eq:question} holds, then each $f \in L^p_w(\mathbb{R}^d)$ and each cube $Q$ give a condition on $w$, and Muckenhoupt showed that a suitable choice of $f$ for each cube gives the following necessary condition. It is not needed for the proof of the main result, but it motivates the definition of $A_p$ below, so its proof is included in Appendix~\ref{app:necessity}.
 
-\begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972}, \cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
+\begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972},~\cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
 Let $1 < p < \infty$ and let $w$ be a weight, with $w^{-\frac{1}{p-1}} := \infty$ on $\{w = 0\}$. If \eqref{eq:question} holds with constant $C$, then every cube $Q$ satisfies $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$ and
 \begin{equation}\label{eq:Apcube}
   \left( \frac{1}{|Q|} \int_Q w\,dy \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1} \le C^p .
@@ -66,15 +66,15 @@ Let $1 < p < \infty$ and let $w$ be a weight, with $w^{-\frac{1}{p-1}} := \infty
 In particular, $w > 0$ almost everywhere.
 \end{proposition}
 
-\begin{definition}[{Muckenhoupt $A_p$ weights \cite[(7.10)]{Muckenhoupt1972}}]\label{def:Ap}
+\begin{definition}[{Muckenhoupt $A_p$ weights~\cite[(7.10)]{Muckenhoupt1972}}]\label{def:Ap}
 Let $1 < p < \infty$ and let $w$ be a weight. The \emph{$A_p$ characteristic} of $w$ is
 \begin{equation}\label{eq:Ap}
   [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w(y)\,dy \right) \left( \frac{1}{|Q|} \int_Q w(y)^{-\frac{1}{p-1}}\,dy \right)^{p-1},
 \end{equation}
-where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$, with the convention $0 \cdot \infty := 0$ \cite[Section~1]{Muckenhoupt1972}. The weight $w$ belongs to $A_p$ if $[w]_{A_p} < \infty$.
+where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$, with the convention $0 \cdot \infty := 0$~\cite[Section~1]{Muckenhoupt1972}. The weight $w$ belongs to $A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
 
-\begin{definition}[{Dual weight \cite[Section~1]{Buckley1993}}]\label{def:dual}
+\begin{definition}[{Dual weight~\cite[Section~1]{Buckley1993}}]\label{def:dual}
 Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$ (not necessarily a weight in the sense of Definition~\ref{def:weight}). With this notation \eqref{eq:Ap} takes the more compact form
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
@@ -92,15 +92,15 @@ Let $1 < p < \infty$ and let $w$ be a weight. If \eqref{eq:question} holds with 
 
 Muckenhoupt proved that the condition $w \in A_p$ is also sufficient.
 
-\begin{theorem}[{Muckenhoupt \cite[Theorem~9]{Muckenhoupt1972}}]\label{thm:muckenhoupt}
+\begin{theorem}[{Muckenhoupt~\cite[Theorem~9]{Muckenhoupt1972}}]\label{thm:muckenhoupt}
 Let $1 < p < \infty$ and let $w$ be a weight. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
 \end{theorem}
 
 Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$, and which power is the smallest possible.
 
-The answer matters beyond $M$. The dependence of operator norms on $[w]_{A_p}$ later became a central question for singular integrals such as the Hilbert transform, known as the $A_2$ conjecture, and $M$ was the first operator for which it was determined \cite{Pereyra2019}.
+The answer matters beyond $M$. The dependence of operator norms on $[w]_{A_p}$ later became a central question for singular integrals such as the Hilbert transform, known as the $A_2$ conjecture, and $M$ was the first operator for which it was determined~\cite{Pereyra2019}.
 
-\begin{theorem}[{Buckley \cite[Theorem~2.5]{Buckley1993}, Lerner \cite[Theorem~C]{Lerner2008}}]\label{thm:main}
+\begin{theorem}[{Buckley~\cite[Theorem~2.5]{Buckley1993}, Lerner~\cite[Theorem~C]{Lerner2008}}]\label{thm:main}
 Let $1 < p < \infty$.
 \begin{enumerate}[label=(\roman*)]
   \item There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
@@ -111,7 +111,7 @@ Let $1 < p < \infty$.
 \end{enumerate}
 \end{theorem}
 
-Buckley's proof of Theorem~\ref{thm:main}~(i) \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}~(i). Theorem~\ref{thm:main} is Theorem~C in \cite{Lerner2008}, whose proof there covers only part (i). This report presents his argument in detail and completes it with a proof of part (ii), based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
+Buckley's proof of Theorem~\ref{thm:main}~(i)~\cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt}~\cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$~\cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner~\cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}~(i). Theorem~\ref{thm:main} is Theorem~C in~\cite{Lerner2008}, whose proof there covers only part (i). This report presents his argument in detail and completes it with a proof of part (ii), based on Buckley's example in $\mathbb{R}$~\cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
 If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}~(i). Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
@@ -163,9 +163,9 @@ which is finite.
 
 \subsection{Weight-independent bounds for \texorpdfstring{$M^c_v$}{the centred maximal operator}}\label{sec:weighted}
 
-For $M$, the Vitali covering lemma gives the weak type $(1,1)$ estimate, and Marcinkiewicz interpolation with the bound on $L^\infty$ gives the strong type $(p,p)$ estimate \cite[Sections~1.3.1 and~2.1.1]{GrafakosClassical}. The Vitali covering lemma enlarges the selected cubes $Q$ to $3Q$, so for the measure $v(y)\,dy$ the constant depends on $v(3Q)/v(Q)$, which for $v \in A_p$ is only bounded in terms of $[v]_{A_p}$ \cite[Remark~1.11]{Duoandikoetxea2013}. The Besicovitch covering lemma, by contrast, does not enlarge the cubes, but it requires them to be centred. Used in place of the Vitali covering lemma, it gives the analogous estimates for $M^c_v$ by the same arguments, with constants depending only on $d$ and $q$ (Lemmas~\ref{lem:weak} and~\ref{lem:key}).
+For $M$, the Vitali covering lemma gives the weak type $(1,1)$ estimate, and Marcinkiewicz interpolation with the bound on $L^\infty$ gives the strong type $(p,p)$ estimate~\cite[Sections~1.3.1 and~2.1.1]{GrafakosClassical}. The Vitali covering lemma enlarges the selected cubes $Q$ to $3Q$, so for the measure $v(y)\,dy$ the constant depends on $v(3Q)/v(Q)$, which for $v \in A_p$ is only bounded in terms of $[v]_{A_p}$~\cite[Remark~1.11]{Duoandikoetxea2013}. The Besicovitch covering lemma, by contrast, does not enlarge the cubes, but it requires them to be centred. Used in place of the Vitali covering lemma, it gives the analogous estimates for $M^c_v$ by the same arguments, with constants depending only on $d$ and $q$ (Lemmas~\ref{lem:weak} and~\ref{lem:key}).
 
-\begin{lemma}[{Besicovitch covering lemma \cite[Theorem~1.1]{Guzman1975}}]\label{lem:besicovitch}
+\begin{lemma}[{Besicovitch covering lemma~\cite[Theorem~1.1]{Guzman1975}}]\label{lem:besicovitch}
 Let $E \subset \mathbb{R}^d$ be a bounded set, and suppose that for each $x \in E$ a cube $Q(x, r_x)$ centred at $x$ is given. Then there are points $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and every point of $\mathbb{R}^d$ lies in at most $N_d$ of them, where $N_d$ depends only on $d$.
 \end{lemma}
 
@@ -259,11 +259,11 @@ Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$
 for all $f \in L^q_v(\mathbb{R}^d)$.
 \end{lemma}
 
-Given Lemma~\ref{lem:weak}, the proof of Lemma~\ref{lem:key} is the standard interpolation argument for $M$ with $dy$ replaced by $v(y)\,dy$ \cite[Section~2.1.1]{GrafakosClassical}, and is deferred to Appendix~\ref{app:weighted}.
+Given Lemma~\ref{lem:weak}, the proof of Lemma~\ref{lem:key} is the standard interpolation argument for $M$ with $dy$ replaced by $v(y)\,dy$~\cite[Section~2.1.1]{GrafakosClassical}, and is deferred to Appendix~\ref{app:weighted}.
 
 \section{Proof of Theorem~\ref{thm:main}}\label{sec:main}
 
-\begin{lemma}[{Lerner \cite[proof of Theorem~C]{Lerner2008}}]\label{lem:lerner}
+\begin{lemma}[{Lerner~\cite[proof of Theorem~C]{Lerner2008}}]\label{lem:lerner}
 Let $1 < p < \infty$, let $w \in A_p$, and let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then, for every $x \in \mathbb{R}^d$,
 \begin{equation}\label{eq:pointwise}
   M^c f(x) \le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
@@ -294,7 +294,7 @@ Taking the supremum over $r > 0$ gives \eqref{eq:pointwise}.
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
 Let $1 < p < \infty$.
 
-(i) Let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open \cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
+(i) Let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open~\cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$, $\sigma^{1-p} = w$, and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
 \begin{equation}\label{eq:innernorm}
@@ -424,7 +424,7 @@ Hence $M^c_v$ is sublinear.
 
 By Lemma~\ref{lem:weak}, $v(\{M^c_v f > t\}) \le \frac{N_d}{t} \|f\|_{L^1_v}$ for every $f \in L^1_v(\mathbb{R}^d)$ and $t > 0$. For $f \in L^\infty_v(\mathbb{R}^d)$, \eqref{eq:Linfty} with $f_2 = f$ shows that every average in the definition of $M^c_v f(x)$ is at most $\|f\|_{L^\infty_v}$. Hence $M^c_v f(x) \le \|f\|_{L^\infty_v}$ for every $x \in \mathbb{R}^d$, and in particular $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$.
 
-Every $f \in L^q_v(\mathbb{R}^d)$ satisfies $f = f\chi_{\{|f| > 1\}} + f\chi_{\{|f| \le 1\}} \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$. The Marcinkiewicz interpolation theorem \cite[Theorem A.6]{Duoandikoetxea2013}, applied on the measure space $(\mathbb{R}^d, v(y)\,dy)$ with exponents $1$ and $\infty$, now gives the claim with a constant depending only on $q$ and on the constants $N_d$ and $1$, and hence only on $q$ and $d$.
+Every $f \in L^q_v(\mathbb{R}^d)$ satisfies $f = f\chi_{\{|f| > 1\}} + f\chi_{\{|f| \le 1\}} \in L^1_v(\mathbb{R}^d) + L^\infty_v(\mathbb{R}^d)$. The Marcinkiewicz interpolation theorem~\cite[Theorem A.6]{Duoandikoetxea2013}, applied on the measure space $(\mathbb{R}^d, v(y)\,dy)$ with exponents $1$ and $\infty$, now gives the claim with a constant depending only on $q$ and on the constants $N_d$ and $1$, and hence only on $q$ and $d$.
 \end{proof}
 
 \bibliographystyle{amsplain}
