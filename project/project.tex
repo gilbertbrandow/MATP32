@@ -30,7 +30,7 @@ B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal 
 \section{Introduction}
 
 \begin{definition}[Weights]\label{def:weight}
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p w\,dy = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. This is the same convention as used in \cite[Section~1]{Buckley1993}.}. For a measurable function $v \geq 0$ on $\mathbb{R}^d$ and a measurable set $E \subseteq \mathbb{R}^d$, $v(E) := \int_E v(y)\,dy \in [0,\infty]$. The map $E \mapsto v(E)$ is a measure on the Lebesgue measurable sets.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p w\,dy = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. This is also the convention by Buckley\cite[Section~1]{Buckley1993}.}. For a measurable function $v \geq 0$ on $\mathbb{R}^d$ and a measurable set $E \subseteq \mathbb{R}^d$, $v(E) := \int_E v(y)\,dy \in [0,\infty]$. The map $E \mapsto v(E)$ is a measure on the Lebesgue measurable sets.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
@@ -111,10 +111,10 @@ Let $1 < p < \infty$.
 \end{enumerate}
 \end{theorem}
 
-Buckley's proof of Theorem~\ref{thm:main}(i) \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}(i). Theorem~\ref{thm:main} is Theorem~C in \cite{Lerner2008}, whose proof there covers only part (i). This report presents his argument in detail and completes it with a proof of part (ii), based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
+Buckley's proof of Theorem~\ref{thm:main}~(i) \cite[proof of Theorem~2.5]{Buckley1993}, like Muckenhoupt's proof of Theorem~\ref{thm:muckenhoupt} \cite[Lemma~5 and proof of Theorem~9]{Muckenhoupt1972}, relies on the deep property that every $A_p$ weight belongs to $A_{p-\varepsilon}$ for some $\varepsilon > 0$ \cite[Theorem~4.5]{Duoandikoetxea2013}, together with interpolation. Lerner \cite[Theorem~C]{Lerner2008} found a short and elementary proof of Theorem~\ref{thm:main}~(i). Theorem~\ref{thm:main} is Theorem~C in \cite{Lerner2008}, whose proof there covers only part (i). This report presents his argument in detail and completes it with a proof of part (ii), based on Buckley's example in $\mathbb{R}$ \cite[proof of Theorem~2.5]{Buckley1993} and extended here to $\mathbb{R}^d$.
 
 \begin{remark}[An alternative proof of Theorem~\ref{thm:muckenhoupt}]
-If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}(i). Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
+If $M$ is bounded on $L^p_w(\mathbb{R}^d)$, then $w \in A_p$ by Corollary~\ref{cor:necessity}, which follows from Proposition~\ref{prop:necessity}. Conversely, if $w \in A_p$, then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ by Theorem~\ref{thm:main}~(i). Combined, these results imply Theorem~\ref{thm:muckenhoupt}.
 \end{remark}
 
 \section{Preliminaries}\label{sec:prelim}
@@ -259,7 +259,7 @@ Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$
 for all $f \in L^q_v(\mathbb{R}^d)$.
 \end{lemma}
 
-Given Lemma~\ref{lem:weak}, the proof of Lemma~\ref{lem:key} is the standard interpolation argument for $M$ with $dy$ replaced by $v(y)\,dy$ \cite[Section~2.1.1]{GrafakosClassical}, and it is therefore given in Appendix~\ref{app:weighted}.
+Given Lemma~\ref{lem:weak}, the proof of Lemma~\ref{lem:key} is the standard interpolation argument for $M$ with $dy$ replaced by $v(y)\,dy$ \cite[Section~2.1.1]{GrafakosClassical}, and is deferred to Appendix~\ref{app:weighted}.
 
 \section{Proof of Theorem~\ref{thm:main}}\label{sec:main}
 
@@ -292,7 +292,9 @@ Taking the supremum over $r > 0$ gives \eqref{eq:pointwise}.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-(i) Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open \cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
+Let $1 < p < \infty$.
+
+(i) Let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open \cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$, $\sigma^{1-p} = w$, and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
 \begin{equation}\label{eq:innernorm}
@@ -307,9 +309,9 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
-The inequality in Theorem~\ref{thm:main} (i) therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.
+The inequality in Theorem~\ref{thm:main}~(i) therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.
 
-(ii) Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
+(ii) Let $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
 \begin{equation}\label{eq:contra}
   \|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}
 \end{equation}
