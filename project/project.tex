@@ -75,7 +75,7 @@ where the supremum is taken over all cubes $Q \subset \mathbb{R}^d$, with the co
 \end{definition}
 
 \begin{definition}[{Dual weight~\cite[Section~1]{Buckley1993}}]\label{def:dual}
-Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$ (not necessarily a weight in the sense of Definition~\ref{def:weight}). With this notation \eqref{eq:Ap} takes the more compact form
+Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$ (not necessarily a weight in the sense of Definition~\ref{def:weight}). With this notation~\eqref{eq:Ap} takes the more compact form
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
 \]
@@ -84,7 +84,7 @@ Let $w$ be a weight and let $1 < p < \infty$. The \emph{dual weight} of $w$ is $
 Taking the supremum over all cubes in Proposition~\ref{prop:necessity} gives the following.
 
 \begin{corollary}\label{cor:necessity}
-Let $1 < p < \infty$ and let $w$ be a weight. If \eqref{eq:question} holds with constant $C$, then $w \in A_p$ with
+Let $1 < p < \infty$ and let $w$ be a weight. If~\eqref{eq:question} holds with constant $C$, then $w \in A_p$ with
 \begin{equation}\label{eq:lower}
   [w]_{A_p} \le C^p .
 \end{equation}
@@ -96,7 +96,7 @@ Muckenhoupt proved that the condition $w \in A_p$ is also sufficient.
 Let $1 < p < \infty$ and let $w$ be a weight. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
 \end{theorem}
 
-Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in \eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$, and which power is the smallest possible.
+Theorem~\ref{thm:muckenhoupt} shows that the operator norm of $M$ on $L^p_w(\mathbb{R}^d)$, that is, the smallest constant $C$ in~\eqref{eq:question}, is finite precisely when $w \in A_p$. By Corollary~\ref{cor:necessity}, this norm is bounded from below by $[w]_{A_p}^{1/p}$. The natural question is therefore whether it is also bounded from above by a power of $[w]_{A_p}$, and which power is the smallest possible.
 
 The answer matters beyond $M$. The dependence of operator norms on $[w]_{A_p}$ later became a central question for singular integrals such as the Hilbert transform, known as the $A_2$ conjecture, and $M$ was the first operator for which it was determined~\cite{Pereyra2019}.
 
@@ -152,7 +152,7 @@ Let $Q$ be a cube with $w(Q) > 0$. By the definition of $[w]_{A_p}$,
 \end{equation}
 so $\sigma(Q) < \infty$ on any cube $Q$ where $w(Q) > 0$.
 
-Assume, for contradiction, that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, $w > 0$ on a set $F$ with $|F| > 0$, so some cube $Q$ satisfies $|Q \cap E| > 0$ and $|Q \cap F| > 0$. Then $w(Q) \ge w(Q \cap F) > 0$, so $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}. But $\sigma = \infty$ on $Q \cap E$ by Definition~\ref{def:weight}, so $\sigma(Q) = \infty$, a contradiction. Therefore $w > 0$ almost everywhere. In particular $w(Q) > 0$, and hence $\sigma(Q) < \infty$ by \eqref{eq:sigmafinite}, for every cube $Q$.
+Assume, for contradiction, that $w = 0$ on a set $E$ with $|E| > 0$. Since $w$ is not almost everywhere zero, $w > 0$ on a set $F$ with $|F| > 0$, so some cube $Q$ satisfies $|Q \cap E| > 0$ and $|Q \cap F| > 0$. Then $w(Q) \ge w(Q \cap F) > 0$, so $\sigma(Q) < \infty$ by~\eqref{eq:sigmafinite}. But $\sigma = \infty$ on $Q \cap E$ by Definition~\ref{def:weight}, so $\sigma(Q) = \infty$, a contradiction. Therefore $w > 0$ almost everywhere. In particular $w(Q) > 0$, and hence $\sigma(Q) < \infty$ by~\eqref{eq:sigmafinite}, for every cube $Q$.
 
 Every cube $Q$ has $w(Q) < \infty$, so $w < \infty$ almost everywhere. Hence $\sigma > 0$ almost everywhere and $\sigma(Q) > 0$ for every cube $Q$. As every compact set lies in a cube, $\sigma$ is locally integrable and hence a weight. Finally, for $f \in L^p_w(\mathbb{R}^d)$ and every cube $Q$, applying H\"older's inequality gives
 \[
@@ -181,7 +181,7 @@ and choose $x_{m+1} \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j})$ with $r_{
   |x_i - x_j|_\infty > \frac{r_{x_j}}{2} \qquad \text{and} \qquad r_{x_i} \le s_{j-1} < 2 r_{x_j} .
 \end{equation}
 
-If the selection stops, the cubes $Q(x_j, r_{x_j})$ cover $E$ by construction. Assume that it does not stop, and suppose, for contradiction, that some $x \in E$ is not covered. Then $x$ is a possible choice at every step, so $r_x \le s_{j-1} < 2r_{x_j}$ for every $j$. If $j < i$, then by \eqref{eq:besA}
+If the selection stops, the cubes $Q(x_j, r_{x_j})$ cover $E$ by construction. Assume that it does not stop, and suppose, for contradiction, that some $x \in E$ is not covered. Then $x$ is a possible choice at every step, so $r_x \le s_{j-1} < 2r_{x_j}$ for every $j$. If $j < i$, then by~\eqref{eq:besA}
 \[
   \frac{r_{x_i}}{8} + \frac{r_{x_j}}{8} < \frac{3 r_{x_j}}{8} < |x_i - x_j|_\infty ,
 \]
@@ -204,13 +204,13 @@ For each $\varepsilon$ let
 \[
   J_\varepsilon := \{ x_i : x_i \in O_\varepsilon \text{ and } z \in Q(x_i, r_{x_i}) \}.
 \]
-Fix $\varepsilon_0$ with $J_{\varepsilon_0}$ nonempty and let $j := \min\{ i : x_i \in J_{\varepsilon_0} \}$, so that $x_j$ is the point of $J_{\varepsilon_0}$ that was chosen first. Let $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$, so that $i > j$. Since $z$ lies in both $Q(x_i, r_{x_i})$ and $Q(x_j, r_{x_j})$, \eqref{eq:besA} and \eqref{eq:orthant} give
+Fix $\varepsilon_0$ with $J_{\varepsilon_0}$ nonempty and let $j := \min\{ i : x_i \in J_{\varepsilon_0} \}$, so that $x_j$ is the point of $J_{\varepsilon_0}$ that was chosen first. Let $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$, so that $i > j$. Since $z$ lies in both $Q(x_i, r_{x_i})$ and $Q(x_j, r_{x_j})$,~\eqref{eq:besA} and~\eqref{eq:orthant} give
 \[
   \frac{r_{x_j}}{2} < |x_i - x_j|_\infty \le \max\{ |x_i - z|_\infty,\ |x_j - z|_\infty \} \le \max\Big\{ \frac{r_{x_i}}{2},\ \frac{r_{x_j}}{2} \Big\}.
 \]
-Hence $r_{x_i} > r_{x_j}$, and by \eqref{eq:besA} also $|x_i - z|_\infty \le r_{x_i}/2 < r_{x_j}$.
+Hence $r_{x_i} > r_{x_j}$, and by~\eqref{eq:besA} also $|x_i - z|_\infty \le r_{x_i}/2 < r_{x_j}$.
 
-For each $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$ consider the cube $Q(x_i, r_{x_j}/2)$. If $x_i, x_m \in J_{\varepsilon_0} \setminus \{x_j\}$ with $m < i$, then $r_{x_m} > r_{x_j}$, so \eqref{eq:besA} gives $|x_i - x_m|_\infty > r_{x_m}/2 > r_{x_j}/2$. Thus the centres of these cubes are more than their side length apart, and the cubes are pairwise disjoint. Moreover, for $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$ every $y \in Q(x_i, r_{x_j}/2)$ satisfies
+For each $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$ consider the cube $Q(x_i, r_{x_j}/2)$. If $x_i, x_m \in J_{\varepsilon_0} \setminus \{x_j\}$ with $m < i$, then $r_{x_m} > r_{x_j}$, so~\eqref{eq:besA} gives $|x_i - x_m|_\infty > r_{x_m}/2 > r_{x_j}/2$. Thus the centres of these cubes are more than their side length apart, and the cubes are pairwise disjoint. Moreover, for $x_i \in J_{\varepsilon_0} \setminus \{x_j\}$ every $y \in Q(x_i, r_{x_j}/2)$ satisfies
 \[
   |y - z|_\infty \le |y - x_i|_\infty + |x_i - z|_\infty < \frac{r_{x_j}}{4} + r_{x_j} = \frac{5 r_{x_j}}{4},
 \]
