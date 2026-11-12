@@ -8,10 +8,9 @@
 \usepackage{amsthm}
 
 \title{The sharp $A_p$ bound for the\\
-       Hardy--Littlewood maximal operator\\[0.3em]
-       \large An exposition of Lerner's proof of Buckley's theorem}
+       Hardy--Littlewood maximal operator\\[0.3em]}
 \author{Simon Gustafsson}
-\date{30 October 2026}
+\date{November 2026}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -292,8 +291,8 @@ Multiplying by $1$ then gives
 Taking the supremum over $r > 0$ gives \eqref{eq:pointwise}.
 \end{proof}
 
-\begin{proof}[Proof of Theorem~\ref{thm:main}(i)]
-Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open \cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+(i) Let $1 < p < \infty$, let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open \cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$, $\sigma^{1-p} = w$, and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
 \begin{equation}\label{eq:innernorm}
@@ -308,10 +307,9 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
   &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
-The inequality in Theorem~\ref{thm:main}(i) therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.\end{proof}
+The inequality in Theorem~\ref{thm:main} (i) therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.
 
-\begin{proof}[Proof of Theorem~\ref{thm:main}(ii)]
-Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
+(ii) Let $1 < p < \infty$ and $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
 \begin{equation}\label{eq:contra}
   \|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}
 \end{equation}
