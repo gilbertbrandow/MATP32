@@ -31,7 +31,7 @@ B.~Muckenhoupt \cite{Muckenhoupt1972} showed that the Hardy--Littlewood maximal 
 \section{Introduction}
 
 \begin{definition}[Weights]\label{def:weight}
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero. For a measurable function $v \geq 0$ on $\mathbb{R}^d$ and a measurable set $E \subseteq \mathbb{R}^d$, $v(E) := \int_E v(y)\,dy \in [0,\infty]$. The map $E \mapsto v(E)$ is a measure on the Lebesgue measurable sets.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \geq 0$ that is not almost everywhere zero\footnote{If $w = 0$ almost everywhere, then $\int_{\mathbb{R}^d} |f|^p w\,dy = 0$ for every measurable $f$, and the boundedness of $M$ holds trivially. This is the same convention as used in \cite[Section~1]{Buckley1993}.}. For a measurable function $v \geq 0$ on $\mathbb{R}^d$ and a measurable set $E \subseteq \mathbb{R}^d$, $v(E) := \int_E v(y)\,dy \in [0,\infty]$. The map $E \mapsto v(E)$ is a measure on the Lebesgue measurable sets.
 \end{definition}
 
 \begin{definition}[Weighted $L^p$ spaces]\label{def:Lp}
@@ -280,7 +280,7 @@ Every $z \in Q(x,r)$ satisfies $Q(x,r) \subseteq Q(z,2r) \subseteq Q(x,3r)$ by L
 \begin{equation}\label{eq:inneravg}
   \frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,\sigma^{-1}\sigma\,dy \le \frac{1}{\sigma(Q(z,2r))} \int_{Q(z,2r)} |f|\,\sigma^{-1}\sigma\,dy \le M^c_\sigma\big(|f|\sigma^{-1}\big)(z).
 \end{equation}
-Finally, by multiplying with 1 we see
+Multiplying by $1$ then gives
 \begin{align*}
   \MoveEqLeft \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dy \\
   &= \Bigg( \underbrace{\frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^{p}}}_{\le\, 3^{dp} [w]_{A_p} \text{ by \eqref{eq:Apfactor}}} \frac{|Q(x,r)|^{p}}{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}} \Bigg)^{\frac{1}{p-1}} \frac{1}{|Q(x,r)|} \int_{Q(x,r)} |f|\,dy \\
