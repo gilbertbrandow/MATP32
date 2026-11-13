@@ -101,11 +101,11 @@ Theorem~\ref{thm:muckenhoupt} characterises the weights for which $M$ is bounded
 \begin{theorem}[{Buckley~\cite[Theorem~2.5]{Buckley1993}, Lerner~\cite[Theorem~C]{Lerner2008}}]\label{thm:main}
 Let $1 < p < \infty$.
 \begin{enumerate}[label=(\roman*)]
-  \item There is a constant $c_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
+  \item There is a constant $D_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
   \[
-    \|Mf\|_{L^p_w} \le c_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
+    \|Mf\|_{L^p_w} \le D_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
   \]
-  \item If $\alpha < \frac{1}{p-1}$, then there is no constant $c$ such that $\|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+  \item If $\alpha < \frac{1}{p-1}$, then there is no constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{enumerate}
 \end{theorem}
 
@@ -167,7 +167,7 @@ Let $E \subset \mathbb{R}^d$ be a bounded set, and suppose that for each $x \in 
 \end{lemma}
 
 \begin{proof}
-Assume that $E$ is nonempty and let $D := \sup_{x,y \in E} |x - y|_\infty < \infty$. If $r_x \ge 2D$ for some $x \in E$, then $E \subseteq Q(x, r_x)$ and this single cube suffices. Hence assume that $r_x < 2D$ for every $x \in E$.
+Assume that $E$ is nonempty and let $\rho := \sup_{x,y \in E} |x - y|_\infty < \infty$. If $r_x \ge 2\rho$ for some $x \in E$, then $E \subseteq Q(x, r_x)$ and this single cube suffices. Hence assume that $r_x < 2\rho$ for every $x \in E$.
 
 Let $s_0 := \sup_{x \in E} r_x$ and choose $x_1 \in E$ with $r_{x_1} > s_0/2$. Given $x_1, \ldots, x_m$, let
 \[
@@ -182,11 +182,11 @@ If the selection stops, the cubes $Q(x_j, r_{x_j})$ cover $E$ by construction. A
 \[
   \frac{r_{x_i}}{8} + \frac{r_{x_j}}{8} < \frac{3 r_{x_j}}{8} < |x_i - x_j|_\infty ,
 \]
-so the cubes $Q(x_j, r_{x_j}/4)$ are pairwise disjoint. Since $x_j \in E$ and $r_{x_j} < 2D$, they are all contained in $Q(x_1, 4D)$. Comparing volumes, for every $N$,
+so the cubes $Q(x_j, r_{x_j}/4)$ are pairwise disjoint. Since $x_j \in E$ and $r_{x_j} < 2\rho$, they are all contained in $Q(x_1, 4\rho)$. Comparing volumes, for every $k$,
 \[
-  N \left( \frac{r_x}{8} \right)^d < \sum_{j=1}^N \left( \frac{r_{x_j}}{4} \right)^d \le (4D)^d ,
+  k \left( \frac{r_x}{8} \right)^d < \sum_{j=1}^k \left( \frac{r_{x_j}}{4} \right)^d \le (4\rho)^d ,
 \]
-which is false for large $N$. Hence every $x \in E$ is covered.
+which is false for large $k$. Hence every $x \in E$ is covered.
 
 Fix $z \in \mathbb{R}^d$. For $\varepsilon \in \{-1, 1\}^d$ let
 \[
@@ -227,7 +227,7 @@ where $N_d$ is the constant in Lemma~\ref{lem:besicovitch}.
 \end{lemma}
 
 \begin{proof}
-Let $r > 0$ and $x \in \mathbb{R}^d$, and let $(x_n)$ be a sequence converging to $x$. If $|y - x|_\infty < r/2$, then $|y - x_n|_\infty < r/2$ for all large $n$. If $|y - x|_\infty > r/2$, then $|y - x_n|_\infty > r/2$ for all large $n$. Hence $\chi_{Q(x_n, r)}(y) \to \chi_{Q(x, r)}(y)$ for every $y$ outside the boundary of $Q(x, r)$, which is a set of measure zero. Moreover, $R := \sup_n |x_n - x|_\infty$ is finite, and $Q(x_n, r) \subseteq Q(x, r + 2R)$ for every $n$, so $\chi_{Q(x_n, r)}\,|f|\,v \le \chi_{Q(x, r+2R)}\,|f|\,v$, which is integrable since $|f|\,v \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. By dominated convergence,
+Let $r > 0$ and $x \in \mathbb{R}^d$, and let $(x_n)$ be a sequence converging to $x$. If $|y - x|_\infty < r/2$, then $|y - x_n|_\infty < r/2$ for all large $n$. If $|y - x|_\infty > r/2$, then $|y - x_n|_\infty > r/2$ for all large $n$. Hence $\chi_{Q(x_n, r)}(y) \to \chi_{Q(x, r)}(y)$ for every $y$ outside the boundary of $Q(x, r)$, which is a set of measure zero. Moreover, $\rho := \sup_n |x_n - x|_\infty$ is finite, and $Q(x_n, r) \subseteq Q(x, r + 2\rho)$ for every $n$, so $\chi_{Q(x_n, r)}\,|f|\,v \le \chi_{Q(x, r+2\rho)}\,|f|\,v$, which is integrable since $|f|\,v \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. By dominated convergence,
 \[
   \lim_{n\to\infty} \int_{Q(x_n, r)} |f|\, v\,dy = \lim_{n\to\infty} \int_{\mathbb{R}^d} \chi_{Q(x_n, r)}\,|f|\, v\,dy = \int_{\mathbb{R}^d} \chi_{Q(x, r)}\,|f|\, v\,dy = \int_{Q(x, r)} |f|\, v\,dy .
 \]
@@ -249,9 +249,9 @@ where the second inequality holds by the choice of $r_{x_j}$, and the equality f
 \end{proof}
 
 \begin{lemma}[{\cite[Theorem~1.10]{Duoandikoetxea2013}}]\label{lem:key}
-Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$. Then there is a constant $C_{q,d}$, depending only on $q$ and $d$, such that
+Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$. Then there is a constant $B_{q,d}$, depending only on $q$ and $d$, such that
 \[
-  \|M^c_v f\|_{L^q_v} \le C_{q,d}\, \|f\|_{L^q_v}
+  \|M^c_v f\|_{L^q_v} \le B_{q,d}\, \|f\|_{L^q_v}
 \]
 for all $f \in L^q_v(\mathbb{R}^d)$.
 \end{lemma}
@@ -295,7 +295,7 @@ Let $1 < p < \infty$.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$, $\sigma^{1-p} = w$, and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
 \begin{equation}\label{eq:innernorm}
-  \Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}} = \big\| M^c_\sigma\big(|f|\sigma^{-1}\big) \big\|_{L^p_\sigma} \le C_{p,d}\, \big\| |f|\sigma^{-1} \big\|_{L^p_\sigma} = C_{p,d}\, \|f\|_{L^p_w} .
+  \Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}} = \big\| M^c_\sigma\big(|f|\sigma^{-1}\big) \big\|_{L^p_\sigma} \le B_{p,d}\, \big\| |f|\sigma^{-1} \big\|_{L^p_\sigma} = B_{p,d}\, \|f\|_{L^p_w} .
 \end{equation}
 In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}_w(\mathbb{R}^d)$. Lemma~\ref{lem:centred} gives the first inequality below, and bounding the marked factors as indicated gives
 \begin{align*}
@@ -303,14 +303,14 @@ In particular $\big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \in L^{p/(p-1)}
   &\le 2^d\, \Big\| \underbrace{M^c f}_{\mathclap{\text{bounded by Lemma~\ref{lem:lerner}}}} \Big\|_{L^p_w} \\
   &\le 2^d\, \Big\| 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big) \Big)^{\frac{1}{p-1}} \Big\|_{L^p_w} \\
   &= 2^d\, 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big) \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by Lemma~\ref{lem:key} with } v = w,\ q = \frac{p}{p-1}} \\
-  &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
-  &\le 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, C_{p,d}\, \|f\|_{L^p_w}.
+  &\le 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \underbrace{\Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}}}_{\text{bounded by } \eqref{eq:innernorm}} \\
+  &\le 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, B_{p,d}\, \|f\|_{L^p_w}.
 \end{align*}
-The inequality in Theorem~\ref{thm:main}~(i) therefore holds with $c_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, C_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, C_{p,d}$.
+The inequality in Theorem~\ref{thm:main}~(i) therefore holds with $D_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, B_{p,d}$.
 
-(ii) Let $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $c$ such that
+(ii) Let $\alpha < \frac{1}{p-1}$, and suppose, for contradiction, that there is a constant $D$ such that
 \begin{equation}\label{eq:contra}
-  \|Mf\|_{L^p_w} \le c\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}
+  \|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}
 \end{equation}
 for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. Let $w \in A_p$. Then $w > 0$ almost everywhere by Lemma~\ref{lem:sigma}, and for every cube $Q$, H\"older's inequality with exponents $p$ and $\frac{p}{p-1}$ gives
 \[
@@ -357,13 +357,13 @@ Since $f_\delta = 0$ outside $Q(0,2)$, this gives $Mf_\delta \ge \frac{|S^{d-1}|
   \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}}, \qquad K_2 := 2^{-d}\, |S^{d-1}|.
 \end{equation}
 
-Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$, gives together with \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$
+The constants $K_1$ and $K_2$ depend only on $p$ and $d$. Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$, gives together with \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$
 \[
-  K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le c\, [w_\delta]_{A_p}^{\alpha} \le c\, K_1^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
+  K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
 \]
 Hence
 \[
-  \delta^{\alpha(p-1)-1} \le \frac{c\, K_1^\alpha}{K_2} \qquad \text{for every } 0 < \delta < 1.
+  \delta^{\alpha(p-1)-1} \le \frac{D\, K_1^\alpha}{K_2} \qquad \text{for every } 0 < \delta < 1.
 \]
 The assumption $\alpha < \frac{1}{p-1}$ makes the exponent $\alpha(p-1) - 1$ negative, so the left-hand side tends to $\infty$ as $\delta \to 0$, while the right-hand side is a constant. This is a contradiction.
 \end{proof}
