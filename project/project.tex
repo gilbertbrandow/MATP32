@@ -60,9 +60,9 @@ If \eqref{eq:question} holds, then each $f \in L^p_w(\mathbb{R}^d)$ and each cub
 
 \begin{proposition}[{\cite[Theorem~9]{Muckenhoupt1972},~\cite[proof of Theorem~1.7]{Duoandikoetxea2013}}]\label{prop:necessity}
 Let $1 < p < \infty$ and let $w$ be a weight, with $w^{-\frac{1}{p-1}} := \infty$ on $\{w = 0\}$. If \eqref{eq:question} holds with constant $C$, then every cube $Q$ satisfies $\int_Q w^{-\frac{1}{p-1}}\,dy < \infty$ and
-\begin{equation}\label{eq:Apcube}
+\[
   \left( \frac{1}{|Q|} \int_Q w\,dy \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1} \le C^p .
-\end{equation}
+\]
 In particular, $w > 0$ almost everywhere.
 \end{proposition}
 
@@ -85,9 +85,9 @@ Taking the supremum over all cubes in Proposition~\ref{prop:necessity} gives the
 
 \begin{corollary}\label{cor:necessity}
 Let $1 < p < \infty$ and let $w$ be a weight. If~\eqref{eq:question} holds with constant $C$, then $w \in A_p$ with
-\begin{equation}\label{eq:lower}
+\[
   [w]_{A_p} \le C^p .
-\end{equation}
+\]
 \end{corollary}
 
 Muckenhoupt proved that the condition $w \in A_p$ is also sufficient.
@@ -262,9 +262,9 @@ Given Lemma~\ref{lem:weak}, the proof of Lemma~\ref{lem:key} is the standard int
 
 \begin{lemma}[{Lerner~\cite[proof of Theorem~C]{Lerner2008}}]\label{lem:lerner}
 Let $1 < p < \infty$, let $w \in A_p$, and let $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then, for every $x \in \mathbb{R}^d$,
-\begin{equation}\label{eq:pointwise}
+\[
   M^c f(x) \le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
-\end{equation}
+\]
 \end{lemma}
 
 \begin{proof}
@@ -285,7 +285,7 @@ Multiplying by $1$ then gives
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \left( \frac{1}{w(Q(x,r))} \int_{Q(x,r)} \Big( M^c_\sigma\big(|f|\sigma^{-1}\big)(z) \Big)^{p-1} w(z)^{-1}\, w(z)\,dz \right)^{\frac{1}{p-1}} \\
   &\le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}}.
 \end{align*}
-Taking the supremum over $r > 0$ gives \eqref{eq:pointwise}.
+Taking the supremum over $r > 0$ proves the lemma.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
