@@ -291,7 +291,7 @@ Taking the supremum over $r > 0$ proves the lemma.
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
 Let $1 < p < \infty$.
 
-(i) Let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$. Lemma~\ref{lem:key} therefore shows that $M^c_w$ and $M^c_\sigma$ are of strong type $(q,q)$ on $L^q_w(\mathbb{R}^d)$ and $L^q_\sigma(\mathbb{R}^d)$, respectively, for every $1 < q < \infty$. The sets $\{Mf > t\}$, $t > 0$, are open~\cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable. Lemma~\ref{lem:weak} with $v \equiv 1$ shows that $M^c f$ is measurable as well.
+(i) Let $w \in A_p$ and let $f \in L^p_w(\mathbb{R}^d)$. Lemma~\ref{lem:sigma} gives $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$, and $w(Q) > 0$ and $\sigma(Q) > 0$ for every cube $Q$, so Lemma~\ref{lem:key} applies with $v = w$ and with $v = \sigma$. The sets $\{Mf > t\}$, $t > 0$, are open~\cite[Section~2.1.1]{GrafakosClassical}, so $Mf$ is measurable, and Lemma~\ref{lem:weak} with $v \equiv 1$ gives the measurability of $M^c f$.
 
 The identities $w^{1 - \frac{p}{p-1}} = \sigma$, $\sigma^{1-p} = w$, and Lemma~\ref{lem:key} with $v = \sigma$ and $q = p$, give
 \begin{equation}\label{eq:innernorm}
@@ -316,7 +316,7 @@ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. Let $w \in A_p$. Then $
 \[
   1 = \frac{1}{|Q|} \int_Q w^{\frac{1}{p}}\, w^{-\frac{1}{p}}\,dy \le \left( \frac{1}{|Q|} \int_Q w\,dy \right)^{\frac{1}{p}} \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{\frac{p-1}{p}},
 \]
-so $[w]_{A_p} \ge 1$. Hence \eqref{eq:contra} remains true if $\alpha$ is replaced by $\max\{\alpha, 0\}$, so $\alpha$ may be assumed to satisfy $0 \le \alpha < \frac{1}{p-1}$. For $0 < \delta < 1$ let
+so $[w]_{A_p} \ge 1$. Hence \eqref{eq:contra} also holds with $\max\{\alpha, 0\}$ in place of $\alpha$, and $\alpha \ge 0$ may be assumed. For $0 < \delta < 1$ let
 \[
   w_\delta(x) := |x|^{(d-\delta)(p-1)} \qquad \text{and} \qquad f_\delta(x) := w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x).
 \]
@@ -331,8 +331,7 @@ Since $(d-\delta)(p-1) > 0$, the function $w_\delta$ is continuous on $\mathbb{R
 If $|x_0| \le \sqrt{d}\,\ell$, then $Q(x_0,\ell) \subseteq B(0, 2\sqrt{d}\,\ell)$. On this ball $w_\delta \le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)}$, and \eqref{eq:polar} gives
 \begin{align*}
   \MoveEqLeft \left( \frac{1}{|Q(x_0,\ell)|} \int_{Q(x_0,\ell)} w_\delta\,dy \right) \left( \frac{1}{|Q(x_0,\ell)|} \int_{Q(x_0,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
-  &\le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{1}{\ell^d} \int_{B(0,2\sqrt{d}\,\ell)} |y|^{\delta-d}\,dy \right)^{p-1} \\
-  &= (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{|S^{d-1}|\,(2\sqrt{d}\,\ell)^{\delta}}{\delta\,\ell^d} \right)^{p-1} = (2\sqrt{d})^{d(p-1)}\, |S^{d-1}|^{p-1}\, \delta^{1-p}.
+  &\le (2\sqrt{d}\,\ell)^{(d-\delta)(p-1)} \left( \frac{|S^{d-1}|\,(2\sqrt{d}\,\ell)^{\delta}}{\delta\,\ell^d} \right)^{p-1} = (2\sqrt{d})^{d(p-1)}\, |S^{d-1}|^{p-1}\, \delta^{1-p}.
 \end{align*}
 If $|x_0| > \sqrt{d}\,\ell$, then $|y - x_0| < \frac{1}{2}|x_0|$, so $\frac{1}{2}|x_0| \le |y| \le \frac{3}{2}|x_0|$ for every $y \in Q(x_0,\ell)$. Bounding $w_\delta$ by $\big(\tfrac{3}{2}|x_0|\big)^{(d-\delta)(p-1)}$ and $|y|^{\delta-d}$ by $\big(\tfrac{1}{2}|x_0|\big)^{\delta-d}$ on $Q(x_0,\ell)$ gives
 \[
@@ -357,15 +356,12 @@ Since $f_\delta = 0$ outside $Q(0,2)$, this gives $Mf_\delta \ge \frac{|S^{d-1}|
   \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}}, \qquad K_2 := 2^{-d}\, |S^{d-1}|.
 \end{equation}
 
-The constants $K_1$ and $K_2$ depend only on $p$ and $d$. Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, and dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$, gives together with \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$
+Applying \eqref{eq:contra} to $w_\delta$ and $f_\delta$, dividing by $\|f_\delta\|_{L^p_{w_\delta}} \in (0,\infty)$, and using \eqref{eq:Mfdelta}, \eqref{eq:wdelta} and $\alpha \ge 0$ gives
 \[
   K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^\alpha\, \delta^{-\alpha(p-1)} \qquad \text{for every } 0 < \delta < 1.
 \]
-Hence
-\[
-  \delta^{\alpha(p-1)-1} \le \frac{D\, K_1^\alpha}{K_2} \qquad \text{for every } 0 < \delta < 1.
-\]
-The assumption $\alpha < \frac{1}{p-1}$ makes the exponent $\alpha(p-1) - 1$ negative, so the left-hand side tends to $\infty$ as $\delta \to 0$, while the right-hand side is a constant. This is a contradiction.
+Hence $\delta^{\alpha(p-1)-1} \le D\, K_1^\alpha / K_2$ for every $0 < \delta < 1$.
+The assumption $\alpha < \frac{1}{p-1}$ makes the exponent $\alpha(p-1) - 1$ negative, so the left-hand side tends to $\infty$ as $\delta \to 0$, while the right-hand side does not depend on $\delta$. This is a contradiction.
 \end{proof}
 
 \appendix
