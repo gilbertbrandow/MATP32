@@ -1,0 +1,68 @@
+\documentclass[aspectratio=1610]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%%%%%%%
+\usepackage{hyperref}
+% \usepackage{layout}
+% \usepackage{lipsum}
+%%%%%%%
+\usetheme[%%%%%%%%% Complete settings. Default (without argument) value in []
+% titleimagecolor=red,                 % [gray], darkgray, red, blue, green
+% titleimagemargin=2mm,           % Distance [2mm]    Frame around title page image
+% navigationsymbols=false,         % true   / [false]  Navigation symbols in the foot
+% mathseriffont=false,                 % true   / [false]  Serif / non-serif math fonts
+% foot=true,                                 % true / [false]    Footline or not
+% slidenumnofoot=true,              % [true]   / false  Keep slide num even when foot=false
+% blackenumeratenumber=true,  % [true] / false    Black enumerate numbers, o.w. Lund bronze
+% blackitemmark=false,              % true   / [false]  Black item marks, o.w. Lund bronze
+% defaultfont=false,                    % true   / [false]  Falls back to default beamer fonts
+% sectionframe=true,
+% centeralign = true,                   % true/[false]  Vertically alignes text on the slide. Othewise top aligned (default)
+% titleline = true,                         % true/[false] line to separete the title from the text
+%%%%%%%%%% Logo version
+%footlogo=false,                         % [true] / false    Put LU logo to the right in footer (LU style)
+%logo=LTH,
+%logolang = swe,                        %  swe/[eng] language for logo
+%logocol=BW,                             % RGB/BW/neg  
+% LUseal = false,                         % [true]/false LU sigill i nedre högra hörnet
+%%%%%%%%%%% Template variants
+%%%%%%%%%%%%% LTH
+% LTHbg = true,                          % true/[false]  Gray backgruond on slides (in LTH template)
+% LTHtemplate,                           % LTH version of template, overrides and sets logo=LTH, footlogo=false, LUseal=false, LTHbg=true
+]{ulund}
+%%%%%%%%%%%%%%%%%%%%% Layout commands 
+%%%% Foot
+% \ulundfootleft{\insertshortauthor}
+% \ulundfootmid{\insertshorttitle}
+% \ulundfootright{\insertframenumber}% {\insertframenumber:\inserttotalframenumber}
+%%%% Titleimage
+%\titleimage{example-image} % Replaces the LU image.
+%\titleimage{Pictures/Fikapaus}
+%\titleimage{Pictures/titlepictureGroup}
+%%%% Redefine LTH background color
+%5 Default RGB: 216,212,207
+%\definecolor{LTHgrey}{RGB}{200,200,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Title short]{Title}
+\author[Name short]{Name}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{frame}[plain]% Use plain to suppress footline box
+  \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%% 
+\begin{frame}
+  \frametitle{Frame title}
+  Text
+\end{frame}
+
+
+%%%%%%%%%%%% End frame
+\begin{frame}[plain]
+  \endpage
+\end{frame}
+
+%%%%%%%%%%%
+\end{document}
