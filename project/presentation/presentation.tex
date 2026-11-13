@@ -6,6 +6,7 @@
 % \usepackage{layout}
 % \usepackage{lipsum}
 %%%%%%%
+\usefonttheme{professionalfonts} % keep beamer from replacing the math fonts
 \usetheme[%%%%%%%%% Complete settings. Default (without argument) value in []
 % titleimagecolor=red,                 % [gray], darkgray, red, blue, green
 % titleimagemargin=2mm,           % Distance [2mm]    Frame around title page image
@@ -30,6 +31,17 @@
 % LTHbg = true,                          % true/[false]  Gray backgruond on slides (in LTH template)
 % LTHtemplate,                           % LTH version of template, overrides and sets logo=LTH, footlogo=false, LUseal=false, LTHbg=true
 ]{ulund}
+%%%% Math in Computer Modern (standard LaTeX) instead of the theme's Palatino
+\DeclareSymbolFont{operators}{OT1}{cmr}{m}{n}
+\DeclareSymbolFont{letters}{OML}{cmm}{m}{it}
+\DeclareSymbolFont{symbols}{OMS}{cmsy}{m}{n}
+\DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+\SetSymbolFont{operators}{bold}{OT1}{cmr}{bx}{n}
+\SetSymbolFont{letters}{bold}{OML}{cmm}{b}{it}
+\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
+\DeclareMathAlphabet{\mathrm}{OT1}{cmr}{m}{n}
+\DeclareMathAlphabet{\mathit}{OT1}{cmr}{m}{it}
+\DeclareMathAlphabet{\mathbf}{OT1}{cmr}{bx}{n}
 %%%%%%%%%%%%%%%%%%%%% Layout commands 
 %%%% Foot
 % \ulundfootleft{\insertshortauthor}
