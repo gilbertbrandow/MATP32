@@ -180,6 +180,44 @@ Choose $x_1 \in E$ with $r_{x_1} > \frac12 \sup_{x \in E} r_x$. Given $x_1, \ldo
 \end{block}
 \end{frame}
 
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Preliminaries: weak type $(1,1)$ for $M^c_v$}
+\begin{lem}
+Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$. Then for every $t > 0$,
+\[
+  v\big(\{M^c_v f > t\}\big) \le \tfrac{N_d}{t}\, \|f\|_{L^1_v} .
+\]
+\end{lem}
+\pause
+\vspace{-0.8em}
+\begin{block}{Key estimate}
+\small
+For $E_k := \{|x|_\infty < k,\ M^c_v f(x) > t\}$, choose $r_x$ with average $> t$ and apply Lemma 4:
+\vspace{-0.4em}
+\begin{align*}
+  v(E_k) &\le \sum_j v\big(Q(x_j, r_{x_j})\big) \le \frac{1}{t} \sum_j \int_{Q(x_j, r_{x_j})} |f|\, v\,dy \\
+  &= \frac{1}{t} \int_{\mathbb{R}^d} \Big( \sum_j \chi_{Q(x_j, r_{x_j})} \Big) |f|\, v\,dy \le \frac{N_d}{t}\, \|f\|_{L^1_v} .
+\end{align*}
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Preliminaries: strong type for $M^c_v$}
+\begin{lem}
+Let $v$ be a weight with $v(Q) > 0$ for every cube $Q$, and let $1 < q < \infty$. Then there is a constant $B_{q,d}$, depending only on $q$ and $d$, such that
+\[
+  \|M^c_v f\|_{L^q_v} \le B_{q,d}\, \|f\|_{L^q_v}
+\]
+for all $f \in L^q_v(\mathbb{R}^d)$.
+\end{lem}
+\pause
+\begin{block}{Idea of proof}
+As for $M$: the weak type $(1,1)$ bound of Lemma 5 and the trivial bound $\|M^c_v f\|_{L^\infty_v} \le \|f\|_{L^\infty_v}$ give the $L^q_v$ bound by Marcinkiewicz interpolation. Neither bound depends on $v$, so neither does $B_{q,d}$.
+\end{block}
+\end{frame}
+
 %%%%%%%%%%%% End frame
 \begin{frame}[plain]
   \endpage
