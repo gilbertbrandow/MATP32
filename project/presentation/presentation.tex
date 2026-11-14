@@ -58,6 +58,7 @@
 \setbeamertemplate{theorems}[numbered] % Definition 1, 2, ... as in the report
 \newtheorem{proposition}{Proposition}
 \newtheorem{corol}{Corollary} % own counter, numbered as in the report
+\newtheorem{thm}{Theorem} % own counter, numbered as in the report
 \title[The sharp $A_p$ bound for $M$]{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator}
 \author[Simon Gustafsson]{Simon Gustafsson}
 %%%%%%%%%%%%%%%%%%%%%
@@ -129,6 +130,14 @@ If $M$ is bounded on $L^p_w(\mathbb{R}^d)$ with constant $C$, then $w \in A_p$ w
   [w]_{A_p} \le C^p .
 \]
 \end{corol}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Muckenhoupt's theorem}
+\begin{thm}[Muckenhoupt 1972]
+Let $1 < p < \infty$ and let $w$ be a weight. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
+\end{thm}
 \end{frame}
 
 %%%%%%%%%%%% End frame
