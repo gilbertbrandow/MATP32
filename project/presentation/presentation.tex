@@ -56,6 +56,7 @@
 %\definecolor{LTHgrey}{RGB}{200,200,255}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{theorems}[numbered] % Definition 1, 2, ... as in the report
+\newtheorem{proposition}{Proposition}
 \title[The sharp $A_p$ bound for $M$]{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator}
 \author[Simon Gustafsson]{Simon Gustafsson}
 %%%%%%%%%%%%%%%%%%%%%
@@ -80,6 +81,40 @@ with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(y)|^p\, w(y)\,dy \righ
 \end{definition}
 \end{frame}
 
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{The Hardy--Littlewood maximal operator}
+\begin{definition}[Hardy--Littlewood maximal operator]
+\[
+  M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy .
+\]
+$M^c_w$ takes the supremum over centred cubes $Q(x,r)$ only, and $w \equiv 1$ gives $M$ and $M^c$.
+\end{definition}
+\begin{block}{$M$ bounded on $L^p_w(\mathbb{R}^d)$}
+\[
+  \|Mf\|_{L^p_w} = \left( \int_{\mathbb{R}^d} (Mf)^p\, w\,dy \right)^{1/p} \le C \left( \int_{\mathbb{R}^d} |f|^p\, w\,dy \right)^{1/p} = C\, \|f\|_{L^p_w}
+\]
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{A necessary condition on $w$}
+\begin{proposition}[Muckenhoupt]
+If $M$ is bounded on $L^p_w(\mathbb{R}^d)$ with constant $C$, then every cube $Q$ satisfies
+\[
+  \left( \frac{1}{|Q|} \int_Q w\,dy \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1} \le C^p .
+\]
+\end{proposition}
+\pause
+\begin{definition}[$A_p$ characteristic]
+\[
+  [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w\,dy \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1},
+\]
+and $w \in A_p$ if $[w]_{A_p} < \infty$.
+\end{definition}
+\end{frame}
 
 %%%%%%%%%%%% End frame
 \begin{frame}[plain]
