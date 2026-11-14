@@ -57,6 +57,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{theorems}[numbered] % Definition 1, 2, ... as in the report
 \newtheorem{proposition}{Proposition}
+\newtheorem{corol}{Corollary} % own counter, numbered as in the report
 \title[The sharp $A_p$ bound for $M$]{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator}
 \author[Simon Gustafsson]{Simon Gustafsson}
 %%%%%%%%%%%%%%%%%%%%%
@@ -114,6 +115,20 @@ If $M$ is bounded on $L^p_w(\mathbb{R}^d)$ with constant $C$, then every cube $Q
 \]
 and $w \in A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Dual weights and $A_p$ as a necessary condition}
+\begin{definition}[Dual weight]
+The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$.
+\end{definition}
+\begin{corol}
+If $M$ is bounded on $L^p_w(\mathbb{R}^d)$ with constant $C$, then $w \in A_p$ with
+\[
+  [w]_{A_p} \le C^p .
+\]
+\end{corol}
 \end{frame}
 
 %%%%%%%%%%%% End frame
