@@ -218,6 +218,36 @@ As for $M$: the weak type $(1,1)$ bound of Lemma 5 and the trivial bound $\|M^c_
 \end{block}
 \end{frame}
 
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Lerner's pointwise bound}
+\begin{lem}[Lerner]
+Let $1 < p < \infty$, $w \in A_p$ and $f \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$. Then, for every $x \in \mathbb{R}^d$,
+\[
+  M^c f(x) \le 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big)(x) \Big)^{\frac{1}{p-1}} .
+\]
+\end{lem}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Lerner's pointwise bound, Proof}
+\small
+\begin{block}{The $A_p$ factor}
+For $x \in \mathbb{R}^d$ and $r > 0$, $Q(x,r) \subseteq Q(x,3r)$ and $|Q(x,3r)| = 3^d\,|Q(x,r)|$ give
+\[
+  \frac{w(Q(x,r))\,\sigma(Q(x,3r))^{p-1}}{|Q(x,r)|^{p}} \le 3^{dp}\, \frac{w(Q(x,3r))}{|Q(x,3r)|} \left( \frac{\sigma(Q(x,3r))}{|Q(x,3r)|} \right)^{p-1} \le 3^{dp}\, [w]_{A_p}.
+\]
+\end{block}
+\pause
+\begin{block}{The inner average}
+Every $z \in Q(x,r)$ satisfies $Q(x,r) \subseteq Q(z,2r) \subseteq Q(x,3r)$, so
+\[
+  \frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,\sigma^{-1}\sigma\,dy \le \frac{1}{\sigma(Q(z,2r))} \int_{Q(z,2r)} |f|\,\sigma^{-1}\sigma\,dy \le M^c_\sigma\big(|f|\sigma^{-1}\big)(z).
+\]
+\end{block}
+\end{frame}
+
 %%%%%%%%%%%% End frame
 \begin{frame}[plain]
   \endpage
