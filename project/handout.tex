@@ -25,7 +25,7 @@
 \noindent{\small\textbf{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator} \hfill Simon Gustafsson}
 
 \begin{notation}
-$\ell(Q)$ is the side length of $Q$, and $3Q$ has the same centre as $Q$ and side length $3\ell(Q)$. Centred cubes are $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, and $v(E) := \int_E v\,dy$.
+Cubes are closed with sides parallel to the axes, $\ell(Q)$ is the side length of $Q$, and $3Q$ has the same centre as $Q$ and side length $3\ell(Q)$. Centred cubes are $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, and $v(E) := \int_E v\,dy$.
 \end{notation}
 
 \begin{definition}[Weights]
@@ -49,10 +49,10 @@ For $w \equiv 1$ these are $M$ and $M^c$.
 \[
   [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w\,dy \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1},
 \]
-and $w \in A_p$ if $[w]_{A_p} < \infty$.
+with the convention $0 \cdot \infty := 0$, and $w \in A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
 \begin{definition}[Dual weight]
-$\sigma := w^{-\frac{1}{p-1}}$, so that $\sigma^{1-p} = w$, $w^{1-\frac{p}{p-1}} = \sigma$, $\sigma^p w = \sigma$ and
+$\sigma := w^{-\frac{1}{p-1}}$, with $\sigma := \infty$ on $\{w = 0\}$, so that $\sigma^{1-p} = w$, $w^{1-\frac{p}{p-1}} = \sigma$, $\sigma^p w = \sigma$ and
 \[
   [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
 \]
