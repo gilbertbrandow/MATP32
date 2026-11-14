@@ -23,6 +23,8 @@
 \begin{document}
 \noindent{\small\textbf{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator} \hfill Simon Gustafsson}
 
+\medskip
+\noindent\textbf{Notation.}
 \begin{itemize}
   \item Cubes are closed with sides parallel to the axes. A cube $Q$ has side length $\ell(Q)$, and $3Q$ is the cube with the same centre and side length $3\ell(Q)$.
   \item $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$ is the cube centred at $x$ with side length $r$, where $|z|_\infty := \max_{k} |z_k|$.
@@ -33,7 +35,11 @@
 A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \ge 0$ that is not almost everywhere zero.
 \end{definition}
 \begin{definition}[Weighted $L^p$ spaces]
-$\|f\|_{L^p_w} := \big( \int_{\mathbb{R}^d} |f|^p\, w\,dy \big)^{1/p}$, and $L^p_w(\mathbb{R}^d)$ consists of the $f$ with $\|f\|_{L^p_w} < \infty$.
+Let $w$ be a weight and let $1 \le p < \infty$. The weighted $L^p$ space is
+\[
+  L^p_w(\mathbb{R}^d) := \left\{ f : \mathbb{R}^d \to \mathbb{R} \text{ measurable} : \int_{\mathbb{R}^d} |f(y)|^p\, w(y)\,dy < \infty \right\},
+\]
+with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(y)|^p\, w(y)\,dy \right)^{1/p}$. Moreover, $L^\infty_w(\mathbb{R}^d)$ is the space of measurable functions $f$ with $\|f\|_{L^\infty_w} := \inf\{ t \ge 0 : w(\{|f| > t\}) = 0 \} < \infty$.
 \end{definition}
 \begin{definition}[Maximal operators]
 \[
