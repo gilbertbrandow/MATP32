@@ -42,6 +42,16 @@
 \DeclareMathAlphabet{\mathrm}{OT1}{cmr}{m}{n}
 \DeclareMathAlphabet{\mathit}{OT1}{cmr}{m}{it}
 \DeclareMathAlphabet{\mathbf}{OT1}{cmr}{bx}{n}
+%%%% Draw the LU logo again on top of the slide content (the theme puts it in the background)
+\makeatletter
+\addtobeamertemplate{footline}{}{%
+  \ifulund@printlogo
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south east,inner sep=0pt] at ([xshift=-5mm,yshift=4mm]current page.south east)
+        {\includegraphics[height=13mm]{\ulund@logopath}};
+    \end{tikzpicture}%
+  \fi}
+\makeatother
 %%%%%%%%%%%%%%%%%%%%% Layout commands 
 %%%% Foot
 % \ulundfootleft{\insertshortauthor}
@@ -110,33 +120,46 @@ If $M$ is bounded on $L^p_w(\mathbb{R}^d)$ with constant $C$, then every cube $Q
 \]
 \end{proposition}
 \pause
-\begin{definition}[$A_p$ characteristic]
+\vspace{-0.5em}
+\begin{block}{Definitions 4 and 5 ($A_p$ characteristic, dual weight)}
+\vspace{-1.2em}
 \[
-  [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w\,dy \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1},
+  [w]_{A_p} := \sup_{Q} \left( \frac{1}{|Q|} \int_Q w\,dy \right) \left( \frac{1}{|Q|} \int_Q w^{-\frac{1}{p-1}}\,dy \right)^{p-1}
+  = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1},
 \]
-and $w \in A_p$ if $[w]_{A_p} < \infty$.
-\end{definition}
+where $\sigma := w^{-1/(p-1)}$ is the \emph{dual weight} of $w$, and $w \in A_p$ if $[w]_{A_p} < \infty$.
+\end{block}
 \end{frame}
 
 %%%%%%%%%%%%%%%
 \begin{frame}
-  \frametitle{Dual weights and $A_p$ as a necessary condition}
-\begin{definition}[Dual weight]
-The \emph{dual weight} of $w$ is $\sigma := w^{-\frac{1}{p-1}}$.
-\end{definition}
+  \frametitle{$A_p$ is necessary and sufficient}
 \begin{corol}
 If $M$ is bounded on $L^p_w(\mathbb{R}^d)$ with constant $C$, then $w \in A_p$ with
 \[
-  [w]_{A_p} \le C^p .
+  [w]_{A_p} \le C^p \quad\iff\quad [w]_{A_p}^{\frac{1}{p}} \le C .
 \]
 \end{corol}
+\pause
+\begin{thm}[Muckenhoupt 1972]
+Let $1 < p < \infty$ and $w$ a weight. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ iff $w \in A_p$.
+\end{thm}
 \end{frame}
+
+
 
 %%%%%%%%%%%%%%%
 \begin{frame}
-  \frametitle{Muckenhoupt's theorem}
-\begin{thm}[Muckenhoupt 1972]
-Let $1 < p < \infty$ and let $w$ be a weight. Then $M$ is bounded on $L^p_w(\mathbb{R}^d)$ if and only if $w \in A_p$.
+  \frametitle{Main result}
+\begin{thm}[Buckley 1993, Lerner 2008]
+Let $1 < p < \infty$.
+\begin{enumerate}[(i)]
+  \item There is a constant $D_{p,d}$, depending only on $p$ and $d$, such that for every $w \in A_p$ and every $f \in L^p_w(\mathbb{R}^d)$,
+  \[
+    \|Mf\|_{L^p_w} \le D_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
+  \]
+  \item If $\alpha < \frac{1}{p-1}$, then there is no constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+\end{enumerate}
 \end{thm}
 \end{frame}
 
