@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 %%%%%%%
 \usepackage{hyperref}
+\usepackage{mathtools}
 % \usepackage{layout}
 % \usepackage{lipsum}
 %%%%%%%
@@ -246,6 +247,22 @@ Every $z \in Q(x,r)$ satisfies $Q(x,r) \subseteq Q(z,2r) \subseteq Q(x,3r)$, so
   \frac{1}{\sigma(Q(x,3r))} \int_{Q(x,r)} |f|\,\sigma^{-1}\sigma\,dy \le \frac{1}{\sigma(Q(z,2r))} \int_{Q(z,2r)} |f|\,\sigma^{-1}\sigma\,dy \le M^c_\sigma\big(|f|\sigma^{-1}\big)(z).
 \]
 \end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Proof of Theorem 2 (i)}
+\small
+\vspace{-0.8em}
+\begin{align*}
+  \|Mf\|_{L^p_w}
+  &\le 2^d\, \| M^c f \|_{L^p_w} \\
+  \onslide<2->{&\le 2^d\, \Big\| 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}} \Big( M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big) \Big)^{\frac{1}{p-1}} \Big\|_{L^p_w} \\}
+  \onslide<3->{&= 2^d\, 3^{\frac{dp}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \Big\| M^c_w\Big( \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big) \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}} \\}
+  \onslide<4->{&\le 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, \Big\| \big(M^c_\sigma(|f|\sigma^{-1})\big)^{p-1} w^{-1} \Big\|_{L^{p/(p-1)}_w}^{\frac{1}{p-1}} \\}
+  \onslide<5->{&\le 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, B_{p,d}\, \|f\|_{L^p_w}.}
+\end{align*}
+\onslide<6->{Choosing $D_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, B_{p,d}$ proves (i). \hfill $\square$}
 \end{frame}
 
 %%%%%%%%%%%% End frame
