@@ -69,6 +69,7 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{corol}{Corollary} % own counter, numbered as in the report
 \newtheorem{thm}{Theorem} % own counter, numbered as in the report
+\newtheorem{lem}{Lemma} % own counter, numbered as in the report
 \title[The sharp $A_p$ bound for $M$]{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator}
 \author[Simon Gustafsson]{Simon Gustafsson}
 %%%%%%%%%%%%%%%%%%%%%
@@ -161,6 +162,22 @@ Let $1 < p < \infty$.
   \item If $\alpha < \frac{1}{p-1}$, then there is no constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{enumerate}
 \end{thm}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Preliminaries: Besicovitch covering lemma}
+\setcounter{lem}{3}
+\begin{lem}[Besicovitch]
+Let $E \subset \mathbb{R}^d$ be bounded, and for each $x \in E$ let a centred cube $Q(x, r_x)$ be given. Then there are $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and every point of $\mathbb{R}^d$ lies in at most $N_d$ of them.
+\end{lem}
+\pause
+\begin{block}{Choice of the cubes}
+Choose $x_1 \in E$ with $r_{x_1} > \frac12 \sup_{x \in E} r_x$. Given $x_1, \ldots, x_m$, choose an uncovered point $x_{m+1}$ with
+\[
+  r_{x_{m+1}} > \tfrac12 \sup\Big\{ r_x : x \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j}) \Big\}.
+\]
+\end{block}
 \end{frame}
 
 %%%%%%%%%%%% End frame
