@@ -18,18 +18,15 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{definition}{Definition}
 \newtheorem{remark}{Remark}
+\newtheorem*{notation}{Notation}
 
 
 \begin{document}
 \noindent{\small\textbf{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator} \hfill Simon Gustafsson}
 
-\medskip
-\noindent\textbf{Notation.}
-\begin{itemize}
-  \item Cubes are closed with sides parallel to the axes. A cube $Q$ has side length $\ell(Q)$, and $3Q$ is the cube with the same centre and side length $3\ell(Q)$.
-  \item $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$ is the cube centred at $x$ with side length $r$, where $|z|_\infty := \max_{k} |z_k|$.
-  \item $v(E) := \int_E v\,dy$ for measurable $v \ge 0$ and measurable $E \subseteq \mathbb{R}^d$. In particular $|E|$ is the Lebesgue measure of $E$.
-\end{itemize}
+\begin{notation}
+Cubes are closed with sides parallel to the axes, $\ell(Q)$ is the side length of $Q$, and $3Q$ has the same centre as $Q$ and side length $3\ell(Q)$. Centred cubes are $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, and $v(E) := \int_E v\,dy$.
+\end{notation}
 
 \begin{definition}[Weights]
 A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \ge 0$ that is not almost everywhere zero.
@@ -55,8 +52,10 @@ For $w \equiv 1$ these are $M$ and $M^c$.
 and $w \in A_p$ if $[w]_{A_p} < \infty$.
 \end{definition}
 \begin{definition}[Dual weight]
-$\sigma := w^{-\frac{1}{p-1}}$, so that
-$\displaystyle [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}$.
+$\sigma := w^{-\frac{1}{p-1}}$, so that $\sigma^{1-p} = w$, $w^{1-\frac{p}{p-1}} = \sigma$, $\sigma^p w = \sigma$ and
+\[
+  [w]_{A_p} = \sup_Q \frac{w(Q)}{|Q|} \left( \frac{\sigma(Q)}{|Q|} \right)^{p-1}.
+\]
 \end{definition}
 
 \end{document}
