@@ -301,12 +301,21 @@ For $0 < \delta < 1$ let $w_\delta(x) := |x|^{(d-\delta)(p-1)}$ and $f_\delta :=
 \]
 \end{block}
 \pause
-Since $[w]_{A_p} \ge 1$, it may be assumed that $\alpha \ge 0$. Applying the assumed bound to $w_\delta$ and $f_\delta$ gives, for every $0 < \delta < 1$,
 \[
-  K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^{\alpha}\, \delta^{-\alpha(p-1)} .
+  \|Mf_\delta\|_{L^p_{w_\delta}} \le D\, [w_\delta]_{A_p}^{\alpha}\, \|f_\delta\|_{L^p_{w_\delta}}
 \]
 \pause
-Hence $\delta^{\alpha(p-1) - 1} \le D\, K_1^{\alpha} / K_2$ for every $0 < \delta < 1$. Since $\alpha(p-1) - 1 < 0$, the left-hand side tends to $\infty$ as $\delta \to 0$, a contradiction. \hfill $\square$
+\[
+  \Longrightarrow \quad K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^{\alpha}\, \delta^{-\alpha(p-1)}
+\]
+\pause
+\[
+  \Longrightarrow \quad \delta^{\alpha(p-1) - 1} \le \frac{D\, K_1^{\alpha}}{K_2} \quad \text{for all } 0 < \delta < 1 ,
+\]
+\pause
+\[
+  \delta^{\alpha(p-1) - 1} \to \infty \text{ as } \delta \to 0 \text{contradiction}. \qquad \square
+\]
 \end{frame}
 
 %%%%%%%%%%%% End frame
