@@ -86,6 +86,7 @@
 \begin{definition}[Weights]
 A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \ge 0$ that is not almost everywhere zero.
 \end{definition}
+\pause
 \begin{definition}[Weighted $L^p$ spaces]
 Let $w$ be a weight and let $1 \le p < \infty$. The weighted $L^p$ space is
 \[
@@ -270,27 +271,36 @@ Every $z \in Q(x,r)$ satisfies $Q(x,r) \subseteq Q(z,2r) \subseteq Q(x,3r)$, so
 %%%%%%%%%%%%%%%
 \begin{frame}
   \frametitle{Proof of Theorem 2 (ii)}
-\small
+\only<1>{%
 \begin{block}{Outline}
-Fix $\alpha < \frac{1}{p-1}$ and assume, for contradiction, that there is a constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
-\end{block}
+Fix $\alpha < \frac{1}{p-1}$ and assume constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+\end{block}}
 \pause
-\begin{block}{Construction of $w_\delta$ and $f_\delta$}
-For $0 < \delta < 1$ let $w_\delta(x) := |x|^{(d-\delta)(p-1)}$ and $f_\delta := w_\delta^{-1/(p-1)}\chi_{Q(0,2)} = |x|^{\delta-d}\chi_{Q(0,2)}$,
-and note that $\int_{B(0,r)} |y|^{\delta-d}\,dy = |S^{d-1}|\, r^\delta/\delta$ for every $r > 0$.
+\begin{block}{Choose}
+For $0 < \delta < 1$ let $w_\delta(x) := |x|^{(d-\delta)(p-1)}$ and $f_\delta := w_\delta^{-\frac{1}{p-1}}\chi_{Q(0,2)} = |x|^{\delta-d}\chi_{Q(0,2)}$.
 \end{block}
-\pause
-\begin{block}{Two estimates}
-\vspace{-0.8em}
+
+\only<2->{%
+\uncover<3->{Everything rests on the polar identity
 \[
-  [w_\delta]_{A_p} \le K_1\, \delta^{1-p}, \qquad \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}} .
-\]
-\end{block}
+  \int_{B(0,r)} |y|^{\delta-d}\,dy = |S^{d-1}|\, \frac{r^\delta}{\delta} \qquad (r > 0).
+\]}
+\begin{itemize}
+  \item<4-> $[w_\delta]_{A_p} \le K_1\, \delta^{1-p}$: use the polar identity for cubes near $0$, and $|y| \approx |x_0|$ on cubes $Q(x_0,\ell)$ far from $0$.
+  \item<5-> $Mf_\delta \ge K_2\, \delta^{-1} f_\delta$: for $r = |x|_\infty$, average $f_\delta$ over $Q(0,2r) \supseteq B(0,r)$ and use the polar identity.
+\end{itemize}}
 \end{frame}
 
 %%%%%%%%%%%%%%%
 \begin{frame}
   \frametitle{Proof of Theorem 2 (ii)}
+\begin{block}{Bounds}
+\vspace{-0.8em}
+\[
+  [w_\delta]_{A_p} \le K_1\, \delta^{1-p}, \qquad \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}} .
+\]
+\end{block}
+\pause
 Since $[w]_{A_p} \ge 1$, it may be assumed that $\alpha \ge 0$. Applying the assumed bound to $w_\delta$ and $f_\delta$ gives, for every $0 < \delta < 1$,
 \[
   K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^{\alpha}\, \delta^{-\alpha(p-1)} .
