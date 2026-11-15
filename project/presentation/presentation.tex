@@ -281,14 +281,23 @@ For $0 < \delta < 1$ let $w_\delta(x) := |x|^{(d-\delta)(p-1)}$ and $f_\delta :=
 \end{block}
 
 \only<2->{%
-\uncover<3->{Everything rests on the polar identity
+\uncover<3->{%
 \[
-  \int_{B(0,r)} |y|^{\delta-d}\,dy = |S^{d-1}|\, \frac{r^\delta}{\delta} \qquad (r > 0).
+  \int_{B(0,r)} |y|^{\delta-d}\,dy = |S^{d-1}|\, \frac{r^\delta}{\delta}
+  \qquad \big(|y|^{\delta-d} \text{ barely integrable at } 0\big)
 \]}
-\begin{itemize}
-  \item<4-> $[w_\delta]_{A_p} \le K_1\, \delta^{1-p}$: use the polar identity for cubes near $0$, and $|y| \approx |x_0|$ on cubes $Q(x_0,\ell)$ far from $0$.
-  \item<5-> $Mf_\delta \ge K_2\, \delta^{-1} f_\delta$: for $r = |x|_\infty$, average $f_\delta$ over $Q(0,2r) \supseteq B(0,r)$ and use the polar identity.
-\end{itemize}}
+\uncover<4->{%
+Cube $Q$ of side $\ell$ around $0$:
+\[
+  \frac{w_\delta(Q)}{|Q|} \approx \ell^{(d-\delta)(p-1)}, \quad
+  \frac{1}{|Q|}\int_Q |y|^{\delta-d}\,dy \approx \frac{\ell^{\delta-d}}{\delta}
+  \quad\Longrightarrow\quad [w_\delta]_{A_p} \approx \delta^{1-p}
+\]}
+\uncover<5->{%
+Averaging $f_\delta$ over a cube around $0$ that contains $x$:
+\[
+  Mf_\delta(x) \gtrsim \frac{1}{|x|^d} \int_{B(0,|x|)} |y|^{\delta-d}\,dy \approx \frac{1}{\delta}\, |x|^{\delta-d} = \frac{1}{\delta}\, f_\delta(x)
+\]}}
 \end{frame}
 
 %%%%%%%%%%%%%%%
@@ -310,11 +319,11 @@ For $0 < \delta < 1$ let $w_\delta(x) := |x|^{(d-\delta)(p-1)}$ and $f_\delta :=
 \]
 \pause
 \[
-  \Longrightarrow \quad \delta^{\alpha(p-1) - 1} \le \frac{D\, K_1^{\alpha}}{K_2} \quad \text{for all } 0 < \delta < 1 ,
+  \Longrightarrow \quad \delta^{\alpha(p-1) - 1} \le \frac{D\, K_1^{\alpha}}{K_2},
 \]
 \pause
 \[
-  \delta^{\alpha(p-1) - 1} \to \infty \text{ as } \delta \to 0 \text{contradiction}. \qquad \square
+  \delta^{\alpha(p-1) - 1} \to \infty \text{ as } \delta \to 0, \text{ contradiction}. \qquad \square
 \]
 \end{frame}
 
