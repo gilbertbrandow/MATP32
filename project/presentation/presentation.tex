@@ -161,6 +161,7 @@ Let $1 < p < \infty$.
   \[
     \|Mf\|_{L^p_w} \le D_{p,d}\, [w]_{A_p}^{\frac{1}{p-1}}\, \|f\|_{L^p_w} .
   \]
+  \pause
   \item If $\alpha < \frac{1}{p-1}$, then there is no constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
 \end{enumerate}
 \end{thm}
@@ -264,6 +265,38 @@ Every $z \in Q(x,r)$ satisfies $Q(x,r) \subseteq Q(z,2r) \subseteq Q(x,3r)$, so
   \onslide<5->{&\le 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, [w]_{A_p}^{\frac{1}{p-1}}\, B_{p,d}\, \|f\|_{L^p_w}.}
 \end{align*}
 \onslide<6->{Choosing $D_{p,d} := 2^d\, 3^{\frac{dp}{p-1}}\, B_{\frac{p}{p-1},d}^{\frac{1}{p-1}}\, B_{p,d}$ proves (i). \hfill $\square$}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Proof of Theorem 2 (ii)}
+\small
+\begin{block}{Outline}
+Fix $\alpha < \frac{1}{p-1}$ and assume, for contradiction, that there is a constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+\end{block}
+\pause
+\begin{block}{Construction of $w_\delta$ and $f_\delta$}
+For $0 < \delta < 1$ let $w_\delta(x) := |x|^{(d-\delta)(p-1)}$ and $f_\delta := w_\delta^{-1/(p-1)}\chi_{Q(0,2)} = |x|^{\delta-d}\chi_{Q(0,2)}$,
+and note that $\int_{B(0,r)} |y|^{\delta-d}\,dy = |S^{d-1}|\, r^\delta/\delta$ for every $r > 0$.
+\end{block}
+\pause
+\begin{block}{Two estimates}
+\vspace{-0.8em}
+\[
+  [w_\delta]_{A_p} \le K_1\, \delta^{1-p}, \qquad \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}} .
+\]
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Proof of Theorem 2 (ii)}
+Since $[w]_{A_p} \ge 1$, it may be assumed that $\alpha \ge 0$. Applying the assumed bound to $w_\delta$ and $f_\delta$ gives, for every $0 < \delta < 1$,
+\[
+  K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^{\alpha}\, \delta^{-\alpha(p-1)} .
+\]
+\pause
+Hence $\delta^{\alpha(p-1) - 1} \le D\, K_1^{\alpha} / K_2$ for every $0 < \delta < 1$. Since $\alpha(p-1) - 1 < 0$, the left-hand side tends to $\infty$ as $\delta \to 0$, a contradiction. \hfill $\square$
 \end{frame}
 
 %%%%%%%%%%%% End frame
