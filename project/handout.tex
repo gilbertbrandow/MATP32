@@ -22,15 +22,17 @@
 
 
 \begin{document}
+\pagestyle{empty}
 \noindent{\small\textbf{The sharp $A_p$ bound for the Hardy--Littlewood maximal operator} \hfill Simon Gustafsson}
 
 \begin{notation}
-Cubes are closed with sides parallel to the axes, $\ell(Q)$ is the side length of $Q$, and $3Q$ has the same centre as $Q$ and side length $3\ell(Q)$. Centred cubes are $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, and $v(E) := \int_E v\,dy$.
+Cubes are closed with sides parallel to the axes, $\ell(Q)$ is the side length of $Q$, and $3Q$ has the same centre as $Q$ and side length $3\ell(Q)$. Centred cubes are $Q(x,r) := \{y : |y - x|_\infty \le r/2\}$, where $|z|_\infty := \max_k |z_k|$, and $v(E) := \int_E v\,dy$.
 \end{notation}
 
 \begin{definition}[Weights]
-A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \ge 0$ that is not almost everywhere zero.
+A \emph{weight} is a function $w \in L^1_{\mathrm{loc}}(\mathbb{R}^d)$ with $w \ge 0$ that is not almost everywhere zero. It induces the measure $w(E) = \int_E w\,dy$.
 \end{definition}
+
 \begin{definition}[Weighted $L^p$ spaces]
 Let $w$ be a weight and let $1 \le p < \infty$. The weighted $L^p$ space is
 \[
@@ -38,12 +40,11 @@ Let $w$ be a weight and let $1 \le p < \infty$. The weighted $L^p$ space is
 \]
 with norm $\|f\|_{L^p_w} := \left( \int_{\mathbb{R}^d} |f(y)|^p\, w(y)\,dy \right)^{1/p}$. Moreover, $L^\infty_w(\mathbb{R}^d)$ is the space of measurable functions $f$ with $\|f\|_{L^\infty_w} := \inf\{ t \ge 0 : w(\{|f| > t\}) = 0 \} < \infty$.
 \end{definition}
-\begin{definition}[Maximal operators]
+\begin{definition}[Hardy--Littlewood maximal operator]
 \[
-  M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f|\, w\,dy, \qquad
-  M^c_w f(x) := \sup_{r > 0} \frac{1}{w(Q(x,r))} \int_{Q(x,r)} |f|\, w\,dy .
+  M_w f(x) := \sup_{Q \ni x} \frac{1}{w(Q)} \int_Q |f(y)|\, w(y)\,dy .
 \]
-For $w \equiv 1$ these are $M$ and $M^c$.
+$M^c_w$ takes the supremum over centred cubes $Q(x,r)$ only, and $w \equiv 1$ gives $M$ and $M^c$.
 \end{definition}
 \begin{definition}[$A_p$ characteristic]
 \[
