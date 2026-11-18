@@ -171,13 +171,22 @@ Let $1 < p < \infty$.
 %%%%%%%%%%%%%%%
 \begin{frame}
   \frametitle{Preliminaries: Besicovitch covering lemma}
+\small
 \setcounter{lem}{3}
 \begin{lem}[Besicovitch]
 Let $E \subset \mathbb{R}^d$ be bounded, and for each $x \in E$ let a centred cube $Q(x, r_x)$ be given. Then there are $x_1, x_2, \ldots \in E$ such that the cubes $Q(x_j, r_{x_j})$ cover $E$ and every point of $\mathbb{R}^d$ lies in at most $N_d$ of them.
 \end{lem}
 \pause
+\vspace{-0.6em}
+\begin{block}{Compare: Vitali covering lemma}
+Let $\{B_\ell\}_{\ell=1}^N$ be a finite collection of open balls in $\mathbb{R}^d$. Then there is a finite subcollection $\{B_{\ell_j}\}_{j=1}^M$ which is pairwise disjoint and satisfies
+$\big|\bigcup_{\ell=1}^N B_\ell\big| \le 3^d \big|\bigcup_{j=1}^M B_{\ell_j}\big|$.
+\end{block}
+\pause
+\vspace{-0.6em}
 \begin{block}{Choice of the cubes}
 Choose $x_1 \in E$ with $r_{x_1} > \frac12 \sup_{x \in E} r_x$. Given $x_1, \ldots, x_m$, choose an uncovered point $x_{m+1}$ with
+\vspace{-0.4em}
 \[
   r_{x_{m+1}} > \tfrac12 \sup\Big\{ r_x : x \in E \setminus \bigcup_{j \le m} Q(x_j, r_{x_j}) \Big\}.
 \]
