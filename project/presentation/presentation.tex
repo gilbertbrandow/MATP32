@@ -278,62 +278,83 @@ Every $z \in Q(x,r)$ satisfies $Q(x,r) \subseteq Q(z,2r) \subseteq Q(x,3r)$, so
 \end{frame}
 
 %%%%%%%%%%%%%%%
-\begin{frame}
-  \frametitle{Proof of Theorem 2 (ii)}
+\begin{frame}[t]
+  \frametitle{Proof of Theorem 2 (ii) (Construction)}
 \only<1>{%
 \begin{block}{Outline}
-Fix $\alpha < \frac{1}{p-1}$ and assume constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$.
+Fix $\alpha < \frac{1}{p-1}$ and assume a constant $D$ such that $\|Mf\|_{L^p_w} \le D\, [w]_{A_p}^{\alpha}\, \|f\|_{L^p_w}$ for all $w \in A_p$ and all $f \in L^p_w(\mathbb{R}^d)$. Construct a family of weights and functions and derive a contradiction.
 \end{block}}
-\pause
+\only<2-3>{%
 \begin{block}{Choose}
-For $0 < \delta < 1$ let $w_\delta(x) := |x|^{(d-\delta)(p-1)}$ and $f_\delta := w_\delta^{-\frac{1}{p-1}}\chi_{Q(0,2)} = |x|^{\delta-d}\chi_{Q(0,2)}$.
-\end{block}
-
-\only<2->{%
-\uncover<3->{%
+For $0 < \delta < 1$ let
+\vspace{-0.6em}
+\begin{align*}
+  w_\delta(x) &:= |x|^{(d-\delta)(p-1)}, \\
+  f_\delta(x) &:= \sigma_\delta(x)\,\chi_{Q(0,2)}(x) = w_\delta(x)^{-\frac{1}{p-1}}\chi_{Q(0,2)}(x) = |x|^{\delta-d}\chi_{Q(0,2)}(x).
+\end{align*}
+\end{block}}
+\only<3>{%
+\begin{block}{Key identity}
+For $0 < r \le 1$,
+\vspace{-0.5em}
 \[
-  \int_{B(0,r)} |y|^{\delta-d}\,dy = |S^{d-1}|\, \frac{r^\delta}{\delta}
-  \qquad \big(|y|^{\delta-d} \text{ barely integrable at } 0\big)
-\]}
-\uncover<4->{%
-Cube $Q$ of side $\ell$ around $0$:
-\[
-  \frac{w_\delta(Q)}{|Q|} \approx \ell^{(d-\delta)(p-1)}, \quad
-  \frac{1}{|Q|}\int_Q |y|^{\delta-d}\,dy \approx \frac{\ell^{\delta-d}}{\delta}
-  \quad\Longrightarrow\quad [w_\delta]_{A_p} \approx \delta^{1-p}
-\]}
-\uncover<5->{%
-Averaging $f_\delta$ over a cube around $0$ that contains $x$:
-\[
-  Mf_\delta(x) \gtrsim \frac{1}{|x|^d} \int_{B(0,|x|)} |y|^{\delta-d}\,dy \approx \frac{1}{\delta}\, |x|^{\delta-d} = \frac{1}{\delta}\, f_\delta(x)
-\]}}
+  \int_{B(0,r)} f_\delta\,dy = \int_{B(0,r)} |y|^{\delta-d}\,dy = |S^{d-1}| \int_0^r s^{\delta-d}\, s^{d-1}\,ds = |S^{d-1}|\, \frac{r^\delta}{\delta} .
+\]
+\end{block}}
 \end{frame}
 
 %%%%%%%%%%%%%%%
-\begin{frame}
-  \frametitle{Proof of Theorem 2 (ii)}
-\begin{block}{Bounds}
-\vspace{-0.8em}
+\begin{frame}[t]
+  \frametitle{Proof of Theorem 2 (ii) (Upper bound for $[w_\delta]_{A_p}$)}
+\begin{align*}
+  Q \text{ far from } 0: &\quad \bigg( \frac{1}{|Q|}\int_Q w_\delta\,dy \bigg) \bigg( \frac{1}{|Q|}\int_Q \sigma_\delta\,dy \bigg)^{p-1} \lesssim 1 \\
+  \onslide<2->{Q \text{ near } 0:} &\quad \onslide<2->{\bigg( \frac{1}{|Q|}\int_Q w_\delta\,dy \bigg) \bigg( \frac{1}{|Q|}\int_Q \sigma_\delta\,dy \bigg)^{p-1} \lesssim \delta^{1-p}}
+\end{align*}
+\pause\pause
+\begin{block}{Upper bound}
+\vspace{-1.1em}
 \[
-  [w_\delta]_{A_p} \le K_1\, \delta^{1-p}, \qquad \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}} .
+  [w_\delta]_{A_p} \le K_1\, \delta^{1-p}
 \]
 \end{block}
-\pause
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}[t]
+  \frametitle{Proof of Theorem 2 (ii) (Lower bound for $Mf_\delta$)}
+For $x \in Q(0,2)$ and $r := |x|_\infty$,
+\begin{align*}
+  Mf_\delta(x) &\ge \frac{1}{|Q(0,2r)|}\int_{B(0,r)} |y|^{\delta-d}\,dy = \frac{1}{(2r)^d}\cdot\frac{|S^{d-1}|\,r^\delta}{\delta} = \frac{|S^{d-1}|}{2^d\,\delta}\,r^{\delta-d} \\
+  &\onslide<2->{\ge \frac{|S^{d-1}|}{2^d\,\delta}\,|x|^{\delta-d} = K_2\,\delta^{-1} f_\delta(x).}
+\end{align*}
+\pause\pause
+\begin{block}{Lower bound}
+\vspace{-1.1em}
+\[
+  \|Mf_\delta\|_{L^p_{w_\delta}} \ge K_2\, \delta^{-1}\, \|f_\delta\|_{L^p_{w_\delta}}
+\]
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%
+\begin{frame}[t]
+  \frametitle{Proof of Theorem 2 (ii) (Contradiction)}
+{%
 \[
   \|Mf_\delta\|_{L^p_{w_\delta}} \le D\, [w_\delta]_{A_p}^{\alpha}\, \|f_\delta\|_{L^p_{w_\delta}}
 \]
-\pause
+\uncover<2->{%
 \[
-  \Longrightarrow \quad K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^{\alpha}\, \delta^{-\alpha(p-1)}
-\]
-\pause
+  K_2\, \delta^{-1} \le \frac{\|Mf_\delta\|_{L^p_{w_\delta}}}{\|f_\delta\|_{L^p_{w_\delta}}} \le D\, [w_\delta]_{A_p}^{\alpha} \le D\, K_1^{\alpha}\, \delta^{-\alpha(p-1)}
+\]}
+\uncover<3->{%
 \[
-  \Longrightarrow \quad \delta^{\alpha(p-1) - 1} \le \frac{D\, K_1^{\alpha}}{K_2},
-\]
-\pause
+  \delta^{\alpha(p-1) - 1} \le \frac{D\, K_1^{\alpha}}{K_2}
+\]}
+\uncover<4->{%
 \[
-  \delta^{\alpha(p-1) - 1} \to \infty \text{ as } \delta \to 0, \text{ contradiction}. \qquad \square
-\]
+  \text{but } \delta^{\alpha(p-1) - 1} \to \infty \text{ as } \delta \to 0, \text{ contradiction}. \qquad \square
+\]}}
 \end{frame}
 
 %%%%%%%%%%%% End frame
